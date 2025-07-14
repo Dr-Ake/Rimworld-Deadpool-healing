@@ -1,0 +1,347 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+
+<Defs>
+<HediffDef>
+  <defName>IH_Immortal</defName>
+  <hediffClass>Immortals.Immortal_Hediff</hediffClass>
+  <defaultLabelColor>(0.3, 0.7, 0.7)</defaultLabelColor>
+  <description>This pawn is graced with everlasting life. They will return from death so long as they manage to keep their head and brain intact. As they gain power from beheading other immortals they will gain the ability to regrow more parts of their body.</description>
+  <label>Immortal</label>
+  <isBad>false</isBad>
+  <scenarioCanAdd>true</scenarioCanAdd>
+  <stages>
+    <li>
+      <label>FirstDeath</label>
+      <becomeVisible>false</becomeVisible>
+    </li>
+    <li>
+      <label>Lesser Immortal</label>
+      <painFactor>0.75</painFactor>
+      <minSeverity>0.6</minSeverity>
+    </li>
+    <li>
+      <label>Immortal</label>
+      <painFactor>0.5</painFactor>
+      <minSeverity>1</minSeverity>
+    </li>
+    <li>
+      <label>Greater Immortal</label>
+      <painFactor>0.1</painFactor>
+      <minSeverity>2</minSeverity>
+    </li>
+    <li>
+      <label>High Immortal</label>
+      <painFactor>0.1</painFactor>
+      <minSeverity>4</minSeverity>
+      <capMods>
+        <li>
+          <capacity>Moving</capacity>
+          <postFactor>1.05</postFactor>
+        </li>
+      </capMods>
+    </li>
+    <li>
+      <label>Grand Immortal</label>
+      <painFactor>0.1</painFactor>
+      <minSeverity>7</minSeverity>
+      <capMods>
+        <li>
+          <capacity>Consciousness</capacity>
+          <postFactor>1.05</postFactor>
+        </li>
+        <li>
+          <capacity>Moving</capacity>
+          <postFactor>1.05</postFactor>
+        </li>
+      </capMods>
+    </li>
+    <li>
+      <label>Apex Immortal</label>
+      <painFactor>0.0</painFactor>
+      <capMods>
+        <li>
+          <capacity>Consciousness</capacity>
+          <postFactor>1.1</postFactor>
+      </li>
+        <li>
+          <capacity>Moving</capacity>
+          <postFactor>1.1</postFactor>
+        </li>
+        <li>
+          <capacity>Manipulation</capacity>
+          <postFactor>1.1</postFactor>
+        </li>
+      </capMods>
+      <minSeverity>10</minSeverity>
+    </li>
+  </stages>
+</HediffDef>
+  <HediffDef>
+    <hediffClass>HediffWithComps</hediffClass>
+    <defName>IH_Stunted</defName>
+    <defaultLabelColor>(1, 1, 1)</defaultLabelColor>
+    <description>This immortal did not come by their power naturally, and their body is still adjusting and their power is not set fully.</description>
+    <label>Stunted Immortal</label>
+    <stages>
+      <li>
+        <label>recovering</label>
+      </li>
+      <li>
+        <label>unstable</label>
+        <minSeverity>1</minSeverity>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <postFactor>0.90</postFactor>
+          </li>
+        </capMods>
+      </li>
+      <li>
+        <label>crippling</label>
+        <minSeverity>2</minSeverity>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <postFactor>0.50</postFactor>
+          </li>
+        </capMods>
+      </li>
+      <li>
+        <label>catatonic</label>
+        <minSeverity>3</minSeverity>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <setMax>0.1</setMax>
+          </li>
+        </capMods>
+      </li>
+    </stages>
+    <comps>
+      <li Class="HediffCompProperties_SelfHeal">
+        <healAmount>0.00005</healAmount>
+      </li>
+    </comps>
+  </HediffDef>
+
+  <HediffDef>
+    <defName>IH_StuntedProc</defName>
+    <defaultLabelColor>(1, 1, 1)</defaultLabelColor>
+    <description>This is a purely functional hediff that an immortal has to let the mod know they will have the stunted hediff when they revive</description>
+    <label>stuntedProc</label>
+    <stages>
+      <li>
+        <label>stunted</label>
+        <becomeVisible>false</becomeVisible>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <HediffDef>
+    <defName>IH_DeathTimer</defName>
+    <defaultLabelColor>(1, 1, 1)</defaultLabelColor>
+    <description>This is a purely functional hediff that an immortal has to tick down before they can come back to life. It doesn't have to be 0 for them to come back and has no negative effects for existing.</description>
+    <label>DeathTimer</label>
+    <stages>
+      <li>
+        <label>DeathTimer</label>
+        <becomeVisible>false</becomeVisible>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <HediffDef>
+    <hediffClass>HediffWithComps</hediffClass>
+    <defName>IH_DeathStasis</defName>
+    <defaultLabelColor>(1, 1, 1)</defaultLabelColor>
+    <description>This pawn has failed to fully revive and has now entered a state of death deep enough that they will not revive until they are fully healed</description>
+    <label>Death Stasis</label>
+    <isBad>false</isBad>
+    <stages>
+      <li>
+        <label>Death Stasis</label>
+        <becomeVisible>false</becomeVisible>
+      </li>
+      <li>
+          <label>Groggy</label>
+          <minSeverity>0.5</minSeverity>
+        <becomeVisible>true</becomeVisible>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <setMax>0.75</setMax>
+          </li>
+        </capMods>
+       </li>
+      <li>
+        <label>Drained</label>
+        <minSeverity>0.75</minSeverity>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <setMax>0.1</setMax>
+          </li>
+        </capMods>
+      </li>
+    </stages>
+    <comps>
+      <li Class="HediffCompProperties_SelfHeal">
+        <healAmount>0.0006</healAmount>
+      </li>
+    </comps>
+  </HediffDef>
+
+  <HediffDef>
+    <defName>IH_regrowing</defName>
+    <hediffClass>Immortals.Regrowing_Hediff</hediffClass>
+    <defaultLabelColor>(0.15, 0.6, 0.2)</defaultLabelColor>
+    <description>This part of the immortals body is regrowing, it will become more functional over time until it has fully grown.</description>
+    <isBad>false</isBad>
+    <label>Regrowing</label>
+    <stages>
+      <li>
+        <label>stitching</label>
+        <becomeVisible>true</becomeVisible>
+        <partEfficiencyOffset>-1.0</partEfficiencyOffset>
+      </li>
+      <li>
+        <label>growing</label>
+        <becomeVisible>true</becomeVisible>
+        <partEfficiencyOffset>-1.0</partEfficiencyOffset>
+        <minSeverity>0.1</minSeverity>
+      </li>
+      <li>
+        <label>shaping</label>
+        <becomeVisible>true</becomeVisible>
+        <partEfficiencyOffset>-0.75</partEfficiencyOffset>
+        <minSeverity>0.5</minSeverity>
+      </li>
+      <li>
+        <label>developing</label>
+        <becomeVisible>true</becomeVisible>
+        <partEfficiencyOffset>-0.5</partEfficiencyOffset>
+        <minSeverity>0.75</minSeverity>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <HediffDef ParentName="DiseaseBase">
+    <defName>IH_adjusting</defName>
+    <defaultLabelColor>(0.75, 1, 0.75)</defaultLabelColor>
+    <description>This part has just finished growing, it is still adjusting to its normal use and will be at normal capacity within a day.</description>
+    <label>Adjusting</label>
+    <stages>
+      <li>
+        <partEfficiencyOffset>-0.1</partEfficiencyOffset>
+      </li>
+    </stages>
+    <comps>
+      <li Class="HediffCompProperties_Disappears">
+        <disappearsAfterTicks>
+          <min>20000</min>
+          <max>60000</max>
+        </disappearsAfterTicks>
+      </li>
+    </comps>
+  </HediffDef>
+
+  <HediffDef>
+    <hediffClass>HediffWithComps</hediffClass>
+    <defName>IH_revived</defName>
+    <description>This pawn has recently come back from the dead, they are less likely to have a mental break as things get back to normal</description>
+    <defaultLabelColor>(1, 1, 1)</defaultLabelColor>
+    <label>Returned</label>
+    <stages>
+      <li>
+        <statOffsets>
+          <MentalBreakThreshold>-0.05</MentalBreakThreshold>
+        </statOffsets>
+      </li>
+      <li>
+        <minSeverity>0.5</minSeverity>
+        <statOffsets>
+          <MentalBreakThreshold>-0.10</MentalBreakThreshold>
+        </statOffsets>
+      </li>
+      <li>
+        <minSeverity>1</minSeverity>
+        <statOffsets>
+          <MentalBreakThreshold>-0.15</MentalBreakThreshold>
+        </statOffsets>
+      </li>
+    </stages>
+    <comps>
+      <li Class="HediffCompProperties_SelfHeal">
+        <healAmount>0.0006</healAmount>
+      </li>
+    </comps>
+  </HediffDef>
+
+  <HediffDef>
+    <hediffClass>HediffWithComps</hediffClass>
+    <defName>IH_revivedFirst</defName>
+    <description>This pawn has just returned from their first death, they will be much more on edge for a time.</description>
+    <defaultLabelColor>(0.8, 0.4, 0.2)</defaultLabelColor>
+    <label>Returned</label>
+    <stages>
+      <li>
+        <statOffsets>
+          <MentalBreakThreshold>0.05</MentalBreakThreshold>
+        </statOffsets>
+      </li>
+      <li>
+        <minSeverity>0.5</minSeverity>
+        <statOffsets>
+          <MentalBreakThreshold>0.10</MentalBreakThreshold>
+        </statOffsets>
+      </li>
+      <li>
+        <minSeverity>1</minSeverity>
+        <statOffsets>
+          <MentalBreakThreshold>0.15</MentalBreakThreshold>
+        </statOffsets>
+      </li>
+    </stages>
+    <comps>
+      <li Class="HediffCompProperties_SelfHeal">
+        <healAmount>0.0006</healAmount>
+      </li>
+    </comps>
+  </HediffDef>
+
+  <HediffDef>
+    <defName>IH_theHunger</defName>
+    <hediffClass>Immortals.Hunger_Hediff</hediffClass>
+    <description>This pawn has a gnawing hunger that they can't seem to shake</description>
+    <defaultLabelColor>(1, 0.5, 0.5)</defaultLabelColor>
+    <label>Gnawing Hunger</label>
+    <initialSeverity>0.01</initialSeverity>
+    <stages>
+      <li>
+        <label>peckish</label>
+        <minSeverity>0.1</minSeverity>
+        <hungerRateFactorOffset>0.1</hungerRateFactorOffset>
+      </li>
+      <li>
+        <label>famished</label>
+        <minSeverity>2.5</minSeverity>
+        <hungerRateFactorOffset>0.25</hungerRateFactorOffset>
+      </li>
+      <li>
+        <label>ravenous</label>
+        <minSeverity>5</minSeverity>
+        <hungerRateFactorOffset>0.5</hungerRateFactorOffset>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <HediffDef>
+    <defName>IH_hungerHolder</defName>
+    <description>This is a placeholder to calculate the proper gnawing hunger hediff as dead pawns don't have a hunger rate</description>
+    <label>HungerHolder</label>
+  </HediffDef>
+
+	
+
+</Defs>

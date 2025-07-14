@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <WorkGiverDef>
+    <defName>IH_Behead</defName>
+    <label>Behead</label>
+    <giverClass>Immortals.WorkGiver_Behead</giverClass>
+    <workType>BasicWorker</workType>
+    <verb>behead</verb>
+    <gerund>beheadding</gerund>
+    <priorityInType>100</priorityInType>
+    <requiredCapacities>
+      <li>Manipulation</li>
+    </requiredCapacities>
+  </WorkGiverDef>
+
+</Defs>

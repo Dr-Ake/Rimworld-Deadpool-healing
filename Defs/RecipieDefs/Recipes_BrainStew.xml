@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <!--
+  <RecipeDef ParentName="CookMealBase">
+    <defName>IH_CookBrainStew</defName>
+    <label>cook brain stew</label>
+    <description>Cook a stew from the brains of severed heads</description>
+    <jobString>Cooking brain stew.</jobString>
+    <workSpeedStat>CookSpeed</workSpeedStat>
+    <requiredGiverWorkType>Cooking</requiredGiverWorkType>
+    <effectWorking>Cook</effectWorking>
+    <soundWorking>Recipe_CookMeal</soundWorking>
+    <allowMixingIngredients>false</allowMixingIngredients>
+    <ingredientValueGetterClass>IngredientValueGetter_Nutrition</ingredientValueGetterClass>
+    <ingredients>
+      <li>
+        <filter>
+          <categories>
+            <li>IH_severedHead</li>
+          </categories>
+        </filter>
+        <count>0.5</count>
+      </li>
+    </ingredients>
+    <products>
+      <MealSimple>1</MealSimple>
+    </products>
+    <workSkill>Cooking</workSkill>
+  </RecipeDef>
+  !-->
+</Defs>

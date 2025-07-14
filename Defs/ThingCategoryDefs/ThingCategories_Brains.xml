@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <ThingCategoryDef>
+    <defName>IH_severedHead</defName>
+    <label>severed Head</label>
+    <parent>BodyParts</parent>
+  </ThingCategoryDef>
+</Defs>

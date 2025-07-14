@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<Defs>
+  <ThingDef ParentName="DrugBase">
+    <defName>IH_Head</defName>
+    <label>Severed head</label>
+    <description>A severed head from a creature. A pawn who eats this has a chance to become immortal depending on the tier of immortality of the pawn the head comes from. A pawn who is already immortal gains no benefit to their immortality by eating this.</description>
+    <tradeability>None</tradeability>
+    <graphicData>
+      <texPath>Things/Item/Health/HealthItem</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>0.80</drawSize>
+      <color>(190,190,190)</color>
+    </graphicData>
+    <statBases>
+      <Nutrition>0.1</Nutrition>
+      <MarketValue>12</MarketValue>
+      <DeteriorationRate>4.0</DeteriorationRate>
+      <Mass>0.1</Mass>
+    </statBases>
+    <thingCategories>
+      <li>IH_severedHead</li>
+    </thingCategories>
+    <techLevel>Neolithic</techLevel>
+    <ingestible>
+      <foodType>Meat</foodType>
+      <ingestSound>RawVegetable_Eat</ingestSound>
+      <ingestHoldOffsetStanding>
+        <northDefault>
+          <offset>(0.18,0,0)</offset>
+        </northDefault>
+      </ingestHoldOffsetStanding>
+      <tasteThought>IH_ateSeveredHead</tasteThought>
+      <ingestCommandString>Eat {0}</ingestCommandString>
+      <ingestReportString>Eating {0}.</ingestReportString>
+      <chairSearchRadius>25</chairSearchRadius>
+      <canAutoSelectAsFoodForCaravan>false</canAutoSelectAsFoodForCaravan>
+    </ingestible>
+    <tickerType>Rare</tickerType>
+    <comps>
+      <li Class="CompProperties_Rottable">
+        <daysToRotStart>2</daysToRotStart>
+        <rotDestroys>true</rotDestroys>
+      </li>
+      <li>
+        <compClass>Immortals.Immortal_HeadComp</compClass>
+      </li>
+    </comps>
+  </ThingDef>
+
+  
+</Defs>

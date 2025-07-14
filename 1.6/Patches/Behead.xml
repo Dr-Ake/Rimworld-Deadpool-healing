@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <Operation Class="PatchOperationAdd">
+    <xpath>
+      Defs/DesignationCategoryDef[defName="Orders"]/specialDesignatorClasses
+    </xpath>
+    <value>
+      <li>Immortals.Designator_Behead</li>
+      <li>Immortals.Designator_Impale</li>
+      <li>Immortals.Designator_ExtractorTrigger</li>
+    </value>
+  </Operation>
+</Patch>

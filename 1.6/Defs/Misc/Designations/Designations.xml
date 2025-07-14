@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  
+  <DesignationDef>
+    <defName>IH_Behead</defName>
+    <texturePath>UI/Behead_Icon_Pawn</texturePath>
+    <targetType>Thing</targetType>
+  </DesignationDef>
+
+  <DesignationDef>
+    <defName>IH_ExtractorTrigger</defName>
+    <texturePath>UI/TriggerExtractor_Icon_Pawn</texturePath>
+    <targetType>Thing</targetType>
+  </DesignationDef>
+
+  <DesignationDef>
+    <defName>IH_Impale</defName>
+    <texturePath>UI/ImpaledHeart_Icon_Pawn</texturePath>
+    <targetType>Thing</targetType>
+  </DesignationDef>
+
+</Defs>

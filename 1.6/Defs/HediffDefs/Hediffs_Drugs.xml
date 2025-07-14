@@ -1,0 +1,203 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<Defs>
+  <HediffDef>
+    <defName>IH_MortalisAddiction</defName>
+    <label>Mortalis Addiction</label>
+    <labelNoun>addicted to Mortalis</labelNoun>
+    <description>An addiction to mortalis.</description>
+    <hediffClass>Hediff_Addiction</hediffClass>
+    <defaultLabelColor>(1,0,0.5)</defaultLabelColor>
+    <scenarioCanAdd>true</scenarioCanAdd>
+    <maxSeverity>1.0</maxSeverity>
+    <isBad>true</isBad>
+    <comps>
+      <li Class="HediffCompProperties_SeverityPerDay">
+        <severityPerDay>-2.0</severityPerDay>
+        <showHoursToRecover>true</showHoursToRecover>
+      </li>
+    </comps>
+  </HediffDef>
+
+  <HediffDef>
+    <defName>IH_NemnirHigh</defName>
+    <label>high on nemnir</label>
+    <labelNoun>a nemnir high</labelNoun>
+    <description>Active nemnir in the bloodstream. For immortals it overcharges their healing abilities, in mortals it grants them limited healing abilities. All users enjoy a rush of power and euphoria</description>
+    <hediffClass>Immortals.MortalisDrug</hediffClass>
+    <defaultLabelColor>(1,0,0.5)</defaultLabelColor>
+    <scenarioCanAdd>true</scenarioCanAdd>
+    <maxSeverity>1.0</maxSeverity>
+    <isBad>false</isBad>
+    <comps>
+      <li Class="HediffCompProperties_SeverityPerDay">
+        <severityPerDay>-2.0</severityPerDay>
+        <showHoursToRecover>true</showHoursToRecover>
+      </li>
+    </comps>
+    <stages>
+      <li>
+        <painFactor>0.75</painFactor>
+        <restFallFactor>0.75</restFallFactor>
+        <capMods>
+          <li>
+            <capacity>Moving</capacity>
+            <offset>0.05</offset>
+          </li>
+        </capMods>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <HediffDef>
+    <defName>IH_MortalisTollerance</defName>
+    <hediffClass>Immortals.Mortalis_Hediff</hediffClass>
+    <defaultLabelColor>(0.3, 0.7, 0.7)</defaultLabelColor>
+    <description>This pawn has used too much mortalis, low levels are mostly harmless but at higher levels the body starts burning itself up from the inside. More power immortals can handle higher levels of mortalis buildup, the effects are the same but drugs will cause much lower amounts of buildup</description>
+    <label>Residual Mortalis</label>
+    <isBad>true</isBad>
+    <scenarioCanAdd>true</scenarioCanAdd>
+  
+    <stages>
+      <li>
+        <label>minor</label>
+      </li>
+      <li>
+        <label>low</label>
+        <painFactor>1.2</painFactor>
+        <minSeverity>0.2</minSeverity>
+        <becomeVisible>true</becomeVisible>
+      </li>
+      <li>
+        <label>moderate</label>
+        <painFactor>1.5</painFactor>
+        <minSeverity>0.4</minSeverity>
+      </li>
+      <li>
+        <label>high</label>
+        <painFactor>2</painFactor>
+        <minSeverity>0.7</minSeverity>
+      </li>
+      <li>
+        <label>near fatal</label>
+        <painFactor>5</painFactor>
+        <minSeverity>0.9</minSeverity>
+        <capMods>
+          <li>
+            <capacity>Moving</capacity>
+            <postFactor>0</postFactor>
+          </li>
+          <li>
+            <capacity>Consciousness</capacity>
+            <postFactor>0.01</postFactor>
+          </li>
+        </capMods>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <HediffDef>
+    <defName>IH_KomaHigh</defName>
+    <label>Under the effects of koma</label>
+    <labelNoun>a koma coma</labelNoun>
+    <description>A massive dose of active healing and reconstruction, multiplies all pain severly and causes a massive build up of mortalis.</description>
+    <hediffClass>Immortals.MortalisDrug</hediffClass>
+    <defaultLabelColor>(1,0,0.5)</defaultLabelColor>
+    <scenarioCanAdd>true</scenarioCanAdd>
+    <maxSeverity>1.0</maxSeverity>
+    <isBad>false</isBad>
+    <comps>
+      <li Class="HediffCompProperties_SeverityPerDay">
+        <severityPerDay>-5</severityPerDay>
+        <showHoursToRecover>true</showHoursToRecover>
+      </li>
+    </comps>
+    <stages>
+      <li>
+        <painFactor>2.5</painFactor>
+        <restFallFactor>5</restFallFactor>
+        <capMods>
+          <li>
+            <capacity>Moving</capacity>
+            <offset>0.05</offset>
+          </li>
+        </capMods>
+      </li>
+    </stages>
+  </HediffDef>
+
+
+  <HediffDef ParentName="AddedBodyPartBase">
+    <defName>IH_MortalisCrystalImplant</defName>
+    <label>Mortalis Crystal</label>
+    <labelNoun>implanted mortalis crystal</labelNoun>
+    <description>A mortalis crystal embeded in the brain, it will disolve over time granting the pawn immortality should they survive the full time it takes. Once it has fully disolved death will trigger the immortality in their body.</description>
+    <hediffClass>Immortals.MortalisCrystal_Hediff</hediffClass>
+    <defaultLabelColor>(1,0,0.5)</defaultLabelColor>
+    <scenarioCanAdd>true</scenarioCanAdd>
+    <maxSeverity>1.0</maxSeverity>
+    <isBad>false</isBad>
+  </HediffDef>
+
+
+  <RecipeDef ParentName="SurgeryFlesh">
+    <defName>IH_SurgeryMortalisCrystalBrain</defName>
+    <workerClass>Recipe_InstallImplant</workerClass>
+    <workAmount>2500</workAmount>
+    <surgerySuccessChanceFactor>20</surgerySuccessChanceFactor>
+    <recipeUsers>
+      <li>Human</li>
+    </recipeUsers>
+    <label>Implant Crystal in Brain</label>
+    <description>Implant a mortalis crystal into the pawns brain</description>
+    <jobString>Implanting Crystal</jobString>
+    <skillRequirements>
+      <Medicine>10</Medicine>
+    </skillRequirements>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>IH_MortalisCrystal</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <appliedOnFixedBodyParts>
+      <li>Brain</li>
+    </appliedOnFixedBodyParts>
+    <addsHediff>IH_MortalisCrystalImplant</addsHediff>
+  </RecipeDef>
+
+  <RecipeDef ParentName="SurgeryFlesh">
+    <defName>IH_SurgeryMortalisCrystalChest</defName>
+    <workerClass>Recipe_InstallImplant</workerClass>
+    <workAmount>1000</workAmount>
+    <surgerySuccessChanceFactor>20</surgerySuccessChanceFactor>
+    <recipeUsers>
+      <li>Human</li>
+    </recipeUsers>
+    <label>Implant Crystal in chest</label>
+    <description>Implant a mortalis crystal into the pawns chest</description>
+    <jobString>Implanting Crystal</jobString>
+    <skillRequirements>
+      <Medicine>3</Medicine>
+    </skillRequirements>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>IH_MortalisCrystal</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <appliedOnFixedBodyParts>
+      <li>Torso</li>
+    </appliedOnFixedBodyParts>
+    <addsHediff>IH_MortalisCrystalImplant</addsHediff>
+  </RecipeDef>
+
+</Defs>

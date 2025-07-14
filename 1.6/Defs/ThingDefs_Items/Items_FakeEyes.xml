@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+
+<Defs>
+  <ThingDef ParentName="BodyPartBase">
+    <defName>IH_FakeEye</defName>
+    <label>Fake Eye</label>
+    <description>A semi-sphere sized to fit in an empty eye socket.</description>
+    <graphicData>
+      <texPath>Things/Item/Health/HealthItem</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>0.80</drawSize>
+      <color>(190,190,190)</color>
+    </graphicData>
+    <drawGUIOverlay>true</drawGUIOverlay>
+    <statBases>
+      <WorkToMake>600</WorkToMake>
+    </statBases>
+    <stackLimit>10</stackLimit>
+    <thingCategories>
+      <li>IH_FakeEyes</li>
+    </thingCategories>
+    <techLevel>Neolithic</techLevel>
+    <tickerType>Rare</tickerType>
+    <comps>
+      <li>
+        <compClass>Immortals.FakeEye_Comp</compClass>
+      </li>
+    </comps>
+    <stuffCategories>
+      <li>Metallic</li>
+      <li>Woody</li>
+      <li>Stony</li>
+    </stuffCategories>
+    <costStuffCount>2</costStuffCount>
+  </ThingDef>
+</Defs>

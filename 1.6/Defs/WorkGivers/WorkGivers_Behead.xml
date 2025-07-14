@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <WorkGiverDef>
+    <defName>IH_Behead</defName>
+    <label>Behead</label>
+    <giverClass>Immortals.WorkGiver_Behead</giverClass>
+    <workType>BasicWorker</workType>
+    <verb>behead</verb>
+    <gerund>beheadding</gerund>
+    <priorityInType>100</priorityInType>
+    <requiredCapacities>
+      <li>Manipulation</li>
+    </requiredCapacities>
+  </WorkGiverDef>
+
+  <WorkGiverDef>
+    <defName>IH_FillImmortalExtractor</defName>
+    <label>fill immortality extractor</label>
+    <giverClass>Immortals.WorkGiver_FillImmortalExtractor</giverClass>
+    <workType>Hauling</workType>
+    <verb>fill</verb>
+    <gerund>filling</gerund>
+    <priorityInType>19</priorityInType>
+    <requiredCapacities>
+      <li>Manipulation</li>
+    </requiredCapacities>
+  </WorkGiverDef>
+ 
+  <WorkGiverDef>
+    <defName>IH_EmptyImmortalExtractor</defName>
+    <label>empty immortality extractor</label>
+    <giverClass>Immortals.WorkGiver_EmptyImmortalExtractor</giverClass>
+    <workType>Hauling</workType>
+    <verb>empty</verb>
+    <gerund>emptying</gerund>
+    <priorityInType>19</priorityInType>
+    <requiredCapacities>
+      <li>Manipulation</li>
+    </requiredCapacities>
+  </WorkGiverDef>
+
+  <WorkGiverDef>
+    <defName>IH_TriggerImmortalExtractor</defName>
+    <label>Trigger immortality extractor</label>
+    <giverClass>Immortals.WorkGiver_TriggerImmortalExtractor</giverClass>
+    <workType>Hauling</workType>
+    <verb>empty</verb>
+    <gerund>triggering</gerund>
+    <priorityInType>19</priorityInType>
+    <requiredCapacities>
+      <li>Manipulation</li>
+    </requiredCapacities>
+  </WorkGiverDef>
+
+  <WorkGiverDef>
+    <defName>IH_ImpalePawn</defName>
+    <label>Impaling pawn</label>
+    <giverClass>Immortals.WorkGiver_Impale</giverClass>
+    <workType>BasicWorker</workType>
+    <verb>empty</verb>
+    <gerund>impaling</gerund>
+    <priorityInType>19</priorityInType>
+    <requiredCapacities>
+      <li>Manipulation</li>
+    </requiredCapacities>
+  </WorkGiverDef>
+
+</Defs>

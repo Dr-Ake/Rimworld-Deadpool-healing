@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <GameConditionDef>
+    <defName>IH_Quickening</defName>
+    <conditionClass>Immortals.GameCondition_Quickening</conditionClass>
+    <label>quickening</label>
+    <description>The life of an immortal has ended</description>
+  </GameConditionDef>
+  <GameConditionDef>
+    <defName>IH_QuickeningSky</defName>
+    <conditionClass>Immortals.GameCondition_QuickeningSky</conditionClass>
+    <label>flashstorm</label>
+    <description>The life of an immortal has ended</description>
+  </GameConditionDef>
+</Defs>

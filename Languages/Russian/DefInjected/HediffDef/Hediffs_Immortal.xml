@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <IH_Immortal.label>Бессмертие</IH_Immortal.label>
+  <IH_Immortal.stages.0.label>Скрытое</IH_Immortal.stages.0.label>
+  <IH_Immortal.stages.1.label>Стадия I</IH_Immortal.stages.1.label>
+  <IH_Immortal.stages.2.label>Стадия II</IH_Immortal.stages.2.label>
+  <IH_Immortal.stages.3.label>Финальная стадия</IH_Immortal.stages.3.label>
+
+  <IH_DeathTimer.label>Таймер Воскрешения</IH_DeathTimer.label>
+  <IH_DeathTimer.stages.0.label></IH_DeathTimer.stages.0.label>
+
+
+</LanguageData>

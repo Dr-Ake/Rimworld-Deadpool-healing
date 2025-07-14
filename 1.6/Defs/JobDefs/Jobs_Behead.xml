@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <JobDef>
+    <defName>IH_Behead</defName>
+    <driverClass>Immortals.JobDriver_Behead</driverClass>
+    <reportString>Beheading TargetA.</reportString>
+    <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+  </JobDef>
+
+  <JobDef>
+    <defName>IH_FillImmortalExtractor</defName>
+    <driverClass>Immortals.JobDriver_FillImmortalExtractor</driverClass>
+    <reportString>filling TargetA.</reportString>
+    <suspendable>false</suspendable>
+    <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+  </JobDef>
+
+  <JobDef>
+    <defName>IH_EmptyImmortalExtractor</defName>
+    <driverClass>Immortals.JobDriver_EmptyImmortalExtractor</driverClass>
+    <reportString>emptying TargetA.</reportString>
+    <suspendable>false</suspendable>
+    <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+  </JobDef>
+
+  <JobDef>
+    <defName>IH_TriggerImmortalExtractor</defName>
+    <driverClass>Immortals.JobDriver_TriggerImmortalExtractor</driverClass>
+    <reportString>triggering TargetA.</reportString>
+    <suspendable>false</suspendable>
+    <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+  </JobDef>
+
+  <JobDef>
+    <defName>IH_InsertFakeEye</defName>
+    <driverClass>Immortals.JobDriver_InsertFakeEye</driverClass>
+    <reportString>removing fake eye</reportString>
+    <suspendable>false</suspendable>
+    <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+  </JobDef>
+
+  <JobDef>
+    <defName>IH_ReplaceFakeEye</defName>
+    <driverClass>Immortals.JobDriver_ReplaceFakeEye</driverClass>
+    <reportString>removing fake eye</reportString>
+    <suspendable>false</suspendable>
+    <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+  </JobDef>
+
+  <JobDef>
+    <defName>IH_ImpaleHeart</defName>
+    <driverClass>Immortals.JobDriver_Impale</driverClass>
+    <reportString>impaling TargetA.</reportString>
+    <suspendable>false</suspendable>
+    <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+  </JobDef>
+</Defs>

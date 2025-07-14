@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<Defs>
+  <ThoughtDef>
+    <defName>IH_ateSeveredHead</defName>
+    <showBubble>true</showBubble>
+    <icon>Things/Mote/ThoughtSymbol/Food</icon>
+    <durationDays>1.5</durationDays>
+    <nullifyingTraits>
+      <li>Cannibal</li>
+    </nullifyingTraits>
+    <stages>
+      <li>
+        <label>ate brains</label>
+        <description>I ate the raw brains of another creature right from their skull</description>
+        <baseMoodEffect>-15</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef>
+    <defName>IH_ateBrainStew</defName>
+    <showBubble>true</showBubble>
+    <icon>Things/Mote/ThoughtSymbol/Food</icon>
+    <durationDays>1</durationDays>
+    <nullifyingTraits>
+      <li>Cannibal</li>
+    </nullifyingTraits>
+    <stages>
+      <li>
+        <label>ate brains stew</label>
+        <description>I know there was brains in that.</description>
+        <baseMoodEffect>-5</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+</Defs>

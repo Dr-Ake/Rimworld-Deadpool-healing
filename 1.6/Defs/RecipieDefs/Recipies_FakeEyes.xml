@@ -1,0 +1,150 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+
+<Defs>
+  <RecipeDef>
+    <defName>IH_Make_FakeEye_CraftingSpot</defName>
+    <label>Carve fake eye</label>
+    <description>Carve a fake eye</description>
+    <jobString>Carving an eye</jobString>
+    <workAmount>1600</workAmount>
+    <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+    <effectWorking>Smelt</effectWorking>
+    <soundWorking>Recipe_Smelt</soundWorking>
+    <allowMixingIngredients>false</allowMixingIngredients>
+    <unfinishedThingDef>UnfinishedHealthItemBionic</unfinishedThingDef>
+    <skillRequirements>
+      <Crafting>5</Crafting>
+    </skillRequirements>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>WoodLog</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>WoodLog</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <products>
+      <IH_FakeEye>1</IH_FakeEye>
+    </products>
+    <workSkill>Crafting</workSkill>
+    <recipeUsers>
+      <li>CraftingSpot</li>
+    </recipeUsers>
+  </RecipeDef>
+  
+  <RecipeDef>
+    <defName>IH_Make_FakeEye_ArtBench</defName>
+    <label>Carve fake eye</label>
+    <description>Carve a fake eye</description>
+    <jobString>Carving an eye</jobString>
+    <workAmount>1000</workAmount>
+    <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+    <effectWorking>Smelt</effectWorking>
+    <soundWorking>Recipe_Smelt</soundWorking>
+    <allowMixingIngredients>false</allowMixingIngredients>
+    <unfinishedThingDef>UnfinishedHealthItemBionic</unfinishedThingDef>
+    <skillRequirements>
+      <Crafting>5</Crafting>
+    </skillRequirements>
+    <fixedIngredientFilter>
+      <categories>
+        <li>StoneBlocks</li>
+      </categories>
+      <thingDefs>
+        <li>WoodLog</li>
+      </thingDefs>
+      <disallowedCategories>
+        <li>PlantMatter</li>
+      </disallowedCategories>
+    </fixedIngredientFilter>
+    <ingredients>
+      <li>
+        <filter>
+          <categories>
+            <li>StoneBlocks</li>
+          </categories>
+          <thingDefs>
+            <li>WoodLog</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <products>
+      <IH_FakeEye>1</IH_FakeEye>
+    </products>
+    <workSkill>Crafting</workSkill>
+    <recipeUsers>
+      <li>TableSculpting</li>
+    </recipeUsers>
+  </RecipeDef>
+
+
+<RecipeDef>
+  <defName>IH_Make_FakeEye_Machine</defName>
+  <label>Carve fake eye</label>
+  <description>Carve a fake eye</description>
+  <jobString>Carving an eye</jobString>
+  <workAmount>500</workAmount>
+  <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+  <effectWorking>Smelt</effectWorking>
+  <soundWorking>Recipe_Smelt</soundWorking>
+  <allowMixingIngredients>false</allowMixingIngredients>
+  <unfinishedThingDef>UnfinishedHealthItemBionic</unfinishedThingDef>
+  <skillRequirements>
+    <Crafting>5</Crafting>
+  </skillRequirements>
+  <fixedIngredientFilter>
+    <categories>
+      <li>StoneBlocks</li>
+    </categories>
+    <thingDefs>
+      <li>WoodLog</li>
+      <li>Steel</li>
+      <li>Gold</li>
+      <li>Silver</li>
+      <li>Uranium</li>
+      <li>Jade</li>
+    </thingDefs>
+    <disallowedCategories>
+      <li>PlantMatter</li>
+    </disallowedCategories>
+  </fixedIngredientFilter>
+  <ingredients>
+    <li>
+      <filter>
+        <categories>
+          <li>StoneBlocks</li>
+        </categories>
+        <thingDefs>
+          <li>WoodLog</li>
+          <li>Steel</li>
+          <li>Gold</li>
+          <li>Silver</li>
+          <li>Uranium</li>
+          <li>Jade</li>
+        </thingDefs>
+      </filter>
+      <count>1</count>
+    </li>
+  </ingredients>
+  <products>
+    <IH_FakeEye>1</IH_FakeEye>
+  </products>
+  <workSkill>Crafting</workSkill>
+  <recipeUsers>
+    <li>TableMachining</li>
+  </recipeUsers>
+</RecipeDef>
+</Defs>
+
+
+

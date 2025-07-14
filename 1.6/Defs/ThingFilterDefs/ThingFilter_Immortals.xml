@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <SpecialThingFilterDef>
+    <defName>AllowImmortalCorpses</defName>
+    <label>allow immortal corpses</label>
+    <description>Allow the dead bodies of immortals.</description>
+    <parentCategory>CorpsesHumanlike</parentCategory>
+    <allowedByDefault>false</allowedByDefault>
+    <saveKey>allowCorpsesImmortal</saveKey>
+    <workerClass>Immortals.Source.SpecialThingFilterWorker_CorpsesImmortal</workerClass>
+  </SpecialThingFilterDef>
+  
+  <SpecialThingFilterDef>
+    <defName>AllowMortalCorpses</defName>
+    <label>allow mortal corpses</label>
+    <description>Allow the dead bodies of regular mortals. They won't come back.</description>
+    <parentCategory>CorpsesHumanlike</parentCategory>
+    <allowedByDefault>false</allowedByDefault>
+    <saveKey>allowCorpsesMmortal</saveKey>
+    <workerClass>Immortals.Source.SpecialThingFilterWorker_CorpsesMortal</workerClass>
+  </SpecialThingFilterDef>
+  
+</Defs>

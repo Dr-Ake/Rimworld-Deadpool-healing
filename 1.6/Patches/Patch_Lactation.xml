@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+	<Operation Class="PatchOperationConditional">
+		<xpath>Defs/HediffDef[defName="Lactating"]</xpath>
+		<match Class="PatchOperationAdd">
+			<xpath>
+				Defs/HediffDef[defName="Lactating"]
+			</xpath>
+			<value>
+				<isBad>false</isBad>
+			</value>
+		</match>
+	</Operation>
+</Patch>

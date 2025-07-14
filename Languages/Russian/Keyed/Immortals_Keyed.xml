@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <IH_Immortals>Immortals</IH_Immortals>
+  <IH_Designator_Behead>Обезглавить</IH_Designator_Behead>
+  <IH_Designator_BeheadDesc>Отрежьте голову, что бы предотвратить возвращение к жизни бессмертного.</IH_Designator_BeheadDesc>
+  <IH_MustDesignateBeheadAble>Необходимо указать колониста, мёртвого или без сознания.</IH_MustDesignateBeheadAble>
+  <IH_Default>   (Стандарт)</IH_Default>
+  <IH_DefaultNum>   (Стандартно: {0})</IH_DefaultNum>
+  <IH_off>выкл.</IH_off>
+  <IH_on>вкл.</IH_on>
+
+  <IH_ShowImmortalNumbers>Отображать уровень бессмертия</IH_ShowImmortalNumbers>
+  <IH_ShowImmortalNumbersTip>Отображение уровня силы бессмертного существа в графе здоровье</IH_ShowImmortalNumbersTip>
+
+  <!--An option so when your pawn dies their immortality goes up or down. Currently only does so by +-0.1 or none-->
+  <IH_DeathEffectOnVal>Влияние смертей на Бессмертных:</IH_DeathEffectOnVal>
+  <IH_Decrease>Уменьшить скорость воскрешения</IH_Decrease>
+  <IH_None>Без эффекта</IH_None>
+  <IH_Increase>Увеличить скорость воскрешения</IH_Increase>
+  <IH_CanGetDisease>Влияние Бессмертия на болезни</IH_CanGetDisease>
+  <IH_CanGetDiseaseTip>Влияет ли бессмертие на развитие болезней, если заболеет, может не работать с модовыми заболеваниями.</IH_CanGetDiseaseTip>
+
+  <!--Stops anything with a lethal severity of 1 at the % indicated in the settings so things like malnutrition and what not-->
+  <IH_diseaseMaxProg>Остановить развитие болезни на: </IH_diseaseMaxProg>
+  <IH_diseaseMaxProgTip>Всё, что имеет смертельную степень тяжести, включает такие вещи, как кровопотеря и тепловой удар. Установите на 100%, чтобы отключить</IH_diseaseMaxProgTip>
+  <IH_baseHealSpeed>Скорость регенерации: </IH_baseHealSpeed>
+  <IH_baseHealSpeedTip>Определяет, насколько быстро существо восстановиться и вернётся к жизни.</IH_baseHealSpeedTip>
+  <IH_firstDeathHeal>Скорость регенерации при первом воскрешении: </IH_firstDeathHeal>
+  <IH_firstDeathHealTip>Скорость регенерации бессмертных во время их первой смерти, а так же требуемое время до их воскрешения.</IH_firstDeathHealTip>
+
+  <!--The names inserted into the chances and transfer rates for the categories-->
+  <IH_humanoid>гуманоид</IH_humanoid>
+  <IH_mechanoid>механоид</IH_mechanoid>
+  <IH_animal>животное</IH_animal>
+
+  <!--Enableing and disabling the different types of pawns as well as their chances-->
+  <IH_immortalsType>Включить/Выключить, {0} с бессмертием</IH_immortalsType>
+  <IH_immortalsTypeTip>Определяет, может ли {0} появляться с бессмертием, это не влияет на уже существующих.</IH_immortalsTypeTip>
+  <IH_chance>Вероятность того, что {0} будет иметь скрытое бессмертие:</IH_chance>
+  <IH_chanceTip>Скрытое бессмертие - в этом состоянии существо не получает пользы от своего бессмертия до своей первой смерти.</IH_chanceTip>
+  <IH_chanceVisible>Вероятность того, что {0} будет иметь бессмертие: </IH_chanceVisible>
+  <IH_chanceVisibleTip>После своей первой смерти бессмертный обретает силу и это видино в его состоянии здоровья.</IH_chanceVisibleTip>
+  <IH_immortalityTransfer>Количество силы бессмертного, получаемая другим: </IH_immortalityTransfer>
+  <IH_immortalityTransferTip>Определяеться размером тела обезглавленного. По стандарту 10% силы будет переходить бессмертному линчевателю.</IH_immortalityTransferTip>
+
+  <!--Allows an exponential difference of immortality based on the size difference-->
+  <IH_immortalTransferBodyFactor>Влияние размера тела на количество получаемой силы </IH_immortalTransferBodyFactor>
+  <IH_immortalTransferBodyFactorTip>Определяет, насколько сильно размер тела существа влияет на количество получаемой силы бессмертия. 0 - означает отсутствие влияния. 1 - означает 100%. Расчет является экспоненциальным, поэтому при 200% существо с размером тела 2 даст в 4 раза больше силы бессмертному.</IH_immortalTransferBodyFactorTip>
+  <IH_immortalHealingBodyFactor>Влияние размера тела на регенерацию </IH_immortalHealingBodyFactor>
+  <IH_immortalHealingBodyFactorTip>Определяет, насколько размер тела существа влияет на скорость их регенерации. 0 - означает отсутствие влияния. 1 - означает 100%, поэтому существо с размером тела 2 будет исцеляться в два раза быстрее. На 200% одно и то же существо излечивается в 4 раза быстрее.</IH_immortalHealingBodyFactorTip>
+
+</LanguageData>
