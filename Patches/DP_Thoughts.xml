@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThoughtDef[defName="IH_revive"]/stages/li/label</xpath>
+    <value>Rebooting...</value>
+  </Operation>
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThoughtDef[defName="IH_revive"]/stages/li/description</xpath>
+    <value>Ugh, the loading screen is the worst part. Did you guys get that in slow motion? 'Cause it felt slow.</value>
+  </Operation>
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThoughtDef[defName="IH_revive"]/stages/li/baseMoodEffect</xpath>
+    <value>5</value>
+  </Operation>
+</Patch>

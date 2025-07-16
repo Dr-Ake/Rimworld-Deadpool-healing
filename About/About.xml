@@ -2,8 +2,8 @@
 
 
 <ModMetaData>
-<name>Immortals</name>
-<author>fridgeBaron</author>
+<name>Deadpool's Healing Factor</name>
+<author>CodexAgent</author>
 <supportedVersions>
   <li>1.0</li>
   <li>1.1</li>
@@ -21,7 +21,11 @@
       <downloadUrl>https://github.com/pardeike/HarmonyRimWorld/releases/latest</downloadUrl>
     </li>
   </modDependencies>
-  <packageId>fridgeBaron.Immortals</packageId>
+  <loadAfter>
+    <li>brrainz.harmony</li>
+    <li>fridgeBaron.Immortals</li>
+  </loadAfter>
+  <packageId>CodexAgent.DeadpoolsHealingFactor</packageId>
 <description>
-They are immortal, they have inside them blood of kings</description>
+Life is an endless series of train wrecks with only brief commercial-like breaks of happiness. This mod gives your pawns a healing factor so powerful, they'll wish for one of those train wrecks just to feel something. Maximum effort!</description>
 </ModMetaData>
