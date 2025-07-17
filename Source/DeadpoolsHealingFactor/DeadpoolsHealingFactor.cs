@@ -19,16 +19,12 @@ namespace DeadpoolsHealingFactor
     [HarmonyPatch(typeof(Pawn_HealthTracker), "HealthTick")]
     public static class Patch_Pawn_HealthTracker_HealthTick
     {
-        // The Postfix now takes the instance of the Pawn_HealthTracker
-        public static void Postfix(Pawn_HealthTracker __instance)
+        // Access the private 'pawn' field by naming the parameter with three underscores
+        public static void Postfix(Pawn ___pawn)
         {
-            // We need to get the pawn from the __instance
-            Pawn pawn = __instance.pawn;
-            if (pawn != null)
+            if (___pawn != null)
             {
-                // Note: We can't get the specific amount healed here,
-                // but we can confirm the tick is running for the pawn.
-                Log.Message($"[DeadpoolsHealingFactor] HealthTick for {pawn.LabelShort}.");
+                Log.Message($"[DeadpoolsHealingFactor] HealthTick for {___pawn.LabelShort}.");
             }
         }
     }
