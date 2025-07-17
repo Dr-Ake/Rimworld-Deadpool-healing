@@ -31,9 +31,9 @@
     <validWhileDespawned>true</validWhileDespawned>
     <stages>
       <li>
-        <label>content</label>
-        <description>It seems like after all not much has changed.</description>
-        <baseMoodEffect>-3 </baseMoodEffect>
+        <label>Rebooting...</label>
+        <description>Ugh, the loading screen is the worst part. Did you guys get that in slow motion? 'Cause it felt slow.</description>
+        <baseMoodEffect>5</baseMoodEffect>
       </li>
       <li>
         <label>numb to life</label>

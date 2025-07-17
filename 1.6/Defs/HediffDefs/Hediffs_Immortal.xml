@@ -5,8 +5,8 @@
     <defName>IH_Immortal</defName>
     <hediffClass>Immortals.Immortal_Hediff</hediffClass>
     <defaultLabelColor>(0.3, 0.7, 0.7)</defaultLabelColor>
-    <description>This pawn is graced with everlasting life. They will return from death as long as they manage to keep their head and brain intact. As they gain power from beheading other immortals they will gain the ability to regrow more parts of their body.</description>
-    <label>Immortal</label>
+    <description>You're probably thinking, 'My colonist just got turned into a kebab!' Well, I may be super, but I'm no hero. This healing factor means I can regenerate from pretty much anything. Now, where are the chimichangas?</description>
+    <label>Healing Factor</label>
     <isBad>false</isBad>
     <scenarioCanAdd>true</scenarioCanAdd>
     <stages>
@@ -16,22 +16,22 @@
       </li>
       <li>
         <label>Lesser Immortal</label>
-        <painFactor>0.75</painFactor>
+        <painFactor>0.0</painFactor>
         <minSeverity>0.6</minSeverity>
       </li>
       <li>
         <label>Immortal</label>
-        <painFactor>0.5</painFactor>
+        <painFactor>0.0</painFactor>
         <minSeverity>1</minSeverity>
       </li>
       <li>
         <label>Greater Immortal</label>
-        <painFactor>0.1</painFactor>
+        <painFactor>0.0</painFactor>
         <minSeverity>2</minSeverity>
       </li>
       <li>
         <label>High Immortal</label>
-        <painFactor>0.1</painFactor>
+        <painFactor>0.0</painFactor>
         <minSeverity>4</minSeverity>
         <capMods>
           <li>
@@ -42,7 +42,7 @@
       </li>
       <li>
         <label>Grand Immortal</label>
-        <painFactor>0.1</painFactor>
+        <painFactor>0.0</painFactor>
         <minSeverity>7</minSeverity>
         <capMods>
           <li>
