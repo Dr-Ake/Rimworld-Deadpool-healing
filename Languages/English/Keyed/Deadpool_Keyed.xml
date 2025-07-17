@@ -7,7 +7,7 @@
   <DP_tickRateSingle>Healing Factor tick rate(1x speed)</DP_tickRateSingle>
   <DP_tickRateSingleTip>A seperate tick rate for when the game is running at 1x speed or auto slowdown mode. This allows much more frequent ticks without so much worry about performance</DP_tickRateSingleTip>
   <DP_tickRate>Healing Factor tick rate</DP_tickRate>
-  <DP_tickRateTip>How often all immotals heal in game ticks. Default speed is 60 ticks per second so at the default of 250 an healing factor would heal every 4ish seconds. Healing speeds are multiplied by the ticks passed so there should be no change to healing rate.</DP_tickRateTip>
+  <DP_tickRateTip>How often all healing factors heal in game ticks. Default speed is 60 ticks per second so at the default of 250 a healing factor would mend every ~4 seconds. Healing speeds are multiplied by the ticks passed so there should be no change to overall rate.</DP_tickRateTip>
   <DP_tickRateRare>Multiplier for rare ticks</DP_tickRateRare>
   <DP_tickRateRareTip>Roughly how many healing factor ticks happen before a pawn will do things like attempt to regrow a limb or heal a scar.(Only uses base healing factor tick rate, not 1x)</DP_tickRateRareTip>
 
@@ -40,7 +40,7 @@
   <DP_scarHealSpeedTip>A multiplier for how fast scars heal. scars are only healed in rare ticks and at a much slower rate. At 1 a scar will heal about 1 severity per quadrum.</DP_scarHealSpeedTip>
 
 
-  <DP_healing factorTransferBodyFactor>Body size quickening factor</DP_healing factorTransferBodyFactor>
+  <DP_healing factorTransferBodyFactor>Body size PowerSurge factor</DP_healing factorTransferBodyFactor>
   <DP_healing factorTransferBodyFactorTip>Determines how much the body size of a creature impacts the amount of healing factority gained. 0 means no impact. 1 means 100%. The calculation is exponential so at 200% a creature with a body size of 2 will grant 4 times the healing factority.</DP_healing factorTransferBodyFactorTip>
   <DP_healing factorHealingBodyFactor>Body size heal factor </DP_healing factorHealingBodyFactor>
   <DP_healing factorHealingBodyFactorTip>Determines how much the body size of a creature impacts the rate at which they heal. 0 mean no impact. 1 means 100% so a creature with a body size of 2 would heal twice as fast. At 200% the same creature would heal 4 times as fast</DP_healing factorHealingBodyFactorTip>
@@ -93,7 +93,7 @@
   <DP_defaultGeneral>General</DP_defaultGeneral>
   <DP_defaultGeneralTip>Reset general settings like tick rate and healing factority numbers</DP_defaultGeneralTip>
   <DP_defaultPowerSurgeChange>PowerSurge pawn chances</DP_defaultPowerSurgeChange>
-  <DP_defaultPowerSurgeChangeTip>Resets the settings that govern how a pawn changes when they get a quickening.</DP_defaultPowerSurgeChangeTip>
+  <DP_defaultPowerSurgeChangeTip>Resets the settings that govern how a pawn changes when they get a PowerSurge.</DP_defaultPowerSurgeChangeTip>
   <DP_defaultTransfer>Transfer</DP_defaultTransfer>
   <DP_defaultTransferTip>Resets the settings that govern pawns gaining healing factority from eating severed heads and stunted healing factors</DP_defaultTransferTip>
   <DP_defaultHediffs>Custom Hediffs</DP_defaultHediffs>
@@ -118,22 +118,22 @@
   <DP_Healing FactorClassRange>Healing Factority range: </DP_Healing FactorClassRange>
   <DP_Healing FactorClassRangeTip>The minimum and maximum levels of healing factority that a visible healing factor will spawn with</DP_Healing FactorClassRangeTip>
   <DP_Healing FactorClassTransferIn>Healing Factority in: </DP_Healing FactorClassTransferIn>
-  <DP_Healing FactorClassTransferInTip>An extra multiplier for a pawn who is gaining healing factority power from another. All incoming healing factority from quickenings is multiplied by this number.</DP_Healing FactorClassTransferInTip>
+  <DP_Healing FactorClassTransferInTip>An extra multiplier for a pawn who is gaining healing factority power from another. All incoming healing factority from PowerSurges is multiplied by this number.</DP_Healing FactorClassTransferInTip>
   <DP_Healing FactorClassTransferOut>Healing Factor out: </DP_Healing FactorClassTransferOut>
-  <DP_Healing FactorClassTransferOutTip>An extra multiplier for a pawn who is giving healing factority power to another. All outgoing healing factority from quickenings is multiplied by this number.</DP_Healing FactorClassTransferOutTip>
+  <DP_Healing FactorClassTransferOutTip>An extra multiplier for a pawn who is giving healing factority power to another. All outgoing healing factority from PowerSurges is multiplied by this number.</DP_Healing FactorClassTransferOutTip>
   
   
   <!-- PowerSurge Change Stuff-->
   <DP_quickeningChange>PowerSurge pawn changes</DP_quickeningChange>
 
   <DP_learningMult>Skill experience transfer</DP_learningMult>
-  <DP_learningMultTip>Skill experience is multiplied by this after it is calculated what to give to the reciever of a quickening</DP_learningMultTip>
+  <DP_learningMultTip>Skill experience is multiplied by this after it is calculated what to give to the reciever of a PowerSurge</DP_learningMultTip>
   <DP_passionChance>Passion gain chance</DP_passionChance>
-  <DP_passionChanceTip>The chance that a pawn will recieve a passion from a pawn during quickening. Each chance can increase a passion from none to minor or from minor to major.</DP_passionChanceTip>
+  <DP_passionChanceTip>The chance that a pawn will recieve a passion from a pawn during PowerSurge. Each chance can increase a passion from none to minor or from minor to major.</DP_passionChanceTip>
   <DP_passionChances>Passion gain chances</DP_passionChances>
-  <DP_passionChancesTip>The number of times per quickening that a chance is rolled to gain a passion or increase a passion</DP_passionChancesTip>
+  <DP_passionChancesTip>The number of times per PowerSurge that a chance is rolled to gain a passion or increase a passion</DP_passionChancesTip>
   <DP_passionLoss>Passion loss chance</DP_passionLoss>
-  <DP_passionLossTip>The chance that a pawn will lose passions during a quickening.</DP_passionLossTip>
+  <DP_passionLossTip>The chance that a pawn will lose passions during a PowerSurge.</DP_passionLossTip>
   <DP_passionLimit>Passion Limit</DP_passionLimit>
   <DP_passionLimitTip>A hard limit on how many passions a pawn can have, minor passions count as 1 and majors count as 2. -1 to dissable</DP_passionLimitTip>
 
@@ -151,7 +151,7 @@
   <DP_NewClassTip>Creates a new healing factority class which you can edit.</DP_NewClassTip>
 
   <DP_DeleteClass>Delete Class</DP_DeleteClass>
-  <DP_DeleteClassTip>Removes an immorality class, this cannot be undone. To be sure you mean to do this you must slide the slider below all the way to the right</DP_DeleteClassTip>
+  <DP_DeleteClassTip>Removes a healing factor class. This cannot be undone. To be sure you mean to do this you must slide the slider below all the way to the right</DP_DeleteClassTip>
   <DP_slideConfirm>Slide then click</DP_slideConfirm>
   <DP_slideConfirmTip>To confirm you want to delete this class slide this all the way to the right.</DP_slideConfirmTip>
   <DP_editDefault>Use default ({0})</DP_editDefault>
@@ -165,7 +165,7 @@
   <DP_Healing FactorClassChanceVisibleTip>The chance that a pawn who has generated as healing factor will be given a higher tier of healing factority between healing factority range</DP_Healing FactorClassChanceVisibleTip>
 
   <DP_Healing FactorClassPawnsTip>All the pawns in this list are in this healing factority class</DP_Healing FactorClassPawnsTip>
-  <DP_Healing FactorClassNonPawnsTip>All the pawns in this list are not in this immorality class. Red means they are not in any immorality class.</DP_Healing FactorClassNonPawnsTip>
+  <DP_Healing FactorClassNonPawnsTip>All the pawns in this list are not in this healing factor class. Red means they are not in any healing factor class.</DP_Healing FactorClassNonPawnsTip>
   <DP_Healing FactorClassLoadMissing>Healing Factors count not find {0} pawn defs, these could be from removed mods. You may clear these old pawns from healing factor classes in the healing factor options menu, or you may leave them as they are harmless. These are the missing defs: {1}</DP_Healing FactorClassLoadMissing>
   
   <!-- Transfer and stunted stuff-->
@@ -183,8 +183,8 @@
   <DP_stealStageTip>>Chance that a pawn will gain hidden healing factority from eating the severed head from an apex healing factor</DP_stealStageTip>
 
 
-  <DP_MortalisMultiplier>Mortalis multiplier</DP_MortalisMultiplier>
-  <DP_MortalisMultiplierTip>Mortalis made in the extractor is multiplied by this value</DP_MortalisMultiplierTip>
+  <DP_MortalisMultiplier>Chimichanga multiplier</DP_MortalisMultiplier>
+  <DP_MortalisMultiplierTip>Chimichanga goo made in the extractor is multiplied by this value</DP_MortalisMultiplierTip>
 
 
   <DP_stuntedChance>Stunted healing factority chance</DP_stuntedChance>
@@ -285,7 +285,7 @@
   <!--Enableing and disabling the different types of pawns as well as their chances-->
 
   <DP_Extractor_Contained_Heads>Contains {0} of {1} severed heads</DP_Extractor_Contained_Heads>
-  <DP_Extractor_Awaiting>Awaiting quickening trigger</DP_Extractor_Awaiting>
+  <DP_Extractor_Awaiting>Awaiting PowerSurge trigger</DP_Extractor_Awaiting>
   <DP_Extractor_Finished>Finished</DP_Extractor_Finished>
   <DP_Extractor_Progress>Progress: {0}, {1}</DP_Extractor_Progress>
   <DP_Extractor_Speed_Bonus>Speed bonus from heat</DP_Extractor_Speed_Bonus>
@@ -344,9 +344,9 @@
 
 
   <DP_Designator_ExtractorTrigger>Extractor Trigger</DP_Designator_ExtractorTrigger>
-  <DP_Designator_ExtractorTriggerDesc>Use this healing factor pawn to trigger a mortalis extractor.</DP_Designator_ExtractorTriggerDesc>
+  <DP_Designator_ExtractorTriggerDesc>Use this healing factor pawn to trigger a chimichanga extractor.</DP_Designator_ExtractorTriggerDesc>
 
-  <DP_StoredMortalis>Mortalis Bits inside {0}</DP_StoredMortalis>	
+  <DP_StoredMortalis>Chimichanga bits inside {0}</DP_StoredMortalis>
 	
   <DP_Designator_Impale>Impale Pawn</DP_Designator_Impale>
   <DP_Designator_ImpaleDesc>Take a piece of steel and drive it through the heart of a pawn. This will stop an healing factor from reviving.</DP_Designator_ImpaleDesc>
