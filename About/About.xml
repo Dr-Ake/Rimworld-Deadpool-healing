@@ -23,7 +23,6 @@
   </modDependencies>
   <loadAfter>
     <li>brrainz.harmony</li>
-    <li>fridgeBaron.Immortals</li>
   </loadAfter>
   <packageId>CodexAgent.DeadpoolsHealingFactor</packageId>
 <description>
