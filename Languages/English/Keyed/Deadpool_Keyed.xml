@@ -1,4 +1,364 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
+  
+  <!-- General Settings-->
   <DP_GeneralSettings>General Settings (Now with more sarcasm)</DP_GeneralSettings>
+  
+  <DP_tickRateSingle>Healing Factor tick rate(1x speed)</DP_tickRateSingle>
+  <DP_tickRateSingleTip>A seperate tick rate for when the game is running at 1x speed or auto slowdown mode. This allows much more frequent ticks without so much worry about performance</DP_tickRateSingleTip>
+  <DP_tickRate>Healing Factor tick rate</DP_tickRate>
+  <DP_tickRateTip>How often all immotals heal in game ticks. Default speed is 60 ticks per second so at the default of 250 an healing factor would heal every 4ish seconds. Healing speeds are multiplied by the ticks passed so there should be no change to healing rate.</DP_tickRateTip>
+  <DP_tickRateRare>Multiplier for rare ticks</DP_tickRateRare>
+  <DP_tickRateRareTip>Roughly how many healing factor ticks happen before a pawn will do things like attempt to regrow a limb or heal a scar.(Only uses base healing factor tick rate, not 1x)</DP_tickRateRareTip>
+
+  <DP_disableFlashstorm>Safe flashstorms</DP_disableFlashstorm>
+  <DP_disableFlashstormTip>Makes flashstorms that spawn from a beheaded healing factor not start fires or do damage.</DP_disableFlashstormTip>
+ 
+  <DP_firstDeathGrantsPowerSurge>Unknown Healing Factor PowerSurge</DP_firstDeathGrantsPowerSurge>
+  <DP_firstDeathGrantsPowerSurgeTip>Enables/Disables if you can gain healing factority from a pawn who hasent had their first death.</DP_firstDeathGrantsPowerSurgeTip>
+
+  <DP_ShowHealing FactorNumbers>Reveal Healing Factority numbers</DP_ShowHealing FactorNumbers>
+  <DP_ShowHealing FactorNumbersTip>Reveals the specific healing factor for healing factor pawns</DP_ShowHealing FactorNumbersTip>
+	
+	
+  <DP_AllowBeheadAll>Behead all pawns</DP_AllowBeheadAll>
+  <DP_AllowBeheadAllTip>Allows theoretically all pawns to be beheaded, instead of just healing factor ones</DP_AllowBeheadAllTip>
+	
+  <DP_AllowBeheadAllLeavesHead>Always drop head</DP_AllowBeheadAllLeavesHead>
+  <DP_AllowBeheadAllLeavesHeadTip>Makes all beheaded things drop a severed head</DP_AllowBeheadAllLeavesHeadTip>
+
+  <!-- General Healing Factority Settings-->
+  <DP_GeneralHealing FactoritySettings>General Healing Factority Settings</DP_GeneralHealing FactoritySettings>
+  
+  <DP_DeathEffectOnVal>Effect of deaths On healing factority,</DP_DeathEffectOnVal>
+  <DP_DeathEffectOnValTip>A pawns healing factority value will change by this number whenever they die.</DP_DeathEffectOnValTip>
+
+  <DP_baseHealSpeed>Healing Rate relative to 1: </DP_baseHealSpeed>
+  <DP_baseHealSpeedTip>Adjusts how fast a pawn will heal wounds and come back to life.</DP_baseHealSpeedTip>
+
+  <DP_scarHealSpeed>Scar heal speed</DP_scarHealSpeed>
+  <DP_scarHealSpeedTip>A multiplier for how fast scars heal. scars are only healed in rare ticks and at a much slower rate. At 1 a scar will heal about 1 severity per quadrum.</DP_scarHealSpeedTip>
+
+
+  <DP_healing factorTransferBodyFactor>Body size quickening factor</DP_healing factorTransferBodyFactor>
+  <DP_healing factorTransferBodyFactorTip>Determines how much the body size of a creature impacts the amount of healing factority gained. 0 means no impact. 1 means 100%. The calculation is exponential so at 200% a creature with a body size of 2 will grant 4 times the healing factority.</DP_healing factorTransferBodyFactorTip>
+  <DP_healing factorHealingBodyFactor>Body size heal factor </DP_healing factorHealingBodyFactor>
+  <DP_healing factorHealingBodyFactorTip>Determines how much the body size of a creature impacts the rate at which they heal. 0 mean no impact. 1 means 100% so a creature with a body size of 2 would heal twice as fast. At 200% the same creature would heal 4 times as fast</DP_healing factorHealingBodyFactorTip>
+
+
+  <!-- Regrowth Settigns-->
+  <DP_regrowth>Regrowth Settings</DP_regrowth>
+  
+  <DP_regrowSpeed>Regrowth Speed: </DP_regrowSpeed>
+  <DP_regrowSpeedTip>The Speed at which a pawn will regrow limbs and organs</DP_regrowSpeedTip>
+  <DP_regrowMaxParts>Max parts regrowing</DP_regrowMaxParts>
+  <DP_regrowMaxPartsTip>Limits the number of activly regrowing parts to this number. Does not affect vital organs that start regrowing while a pawn is dead.</DP_regrowMaxPartsTip>
+  <DP_regrowCostsNoFood>Enable regrowth food cost </DP_regrowCostsNoFood>
+  <DP_regrowCostsNoFoodTip>Enables/Disables the acceleration of a pawns hunger while they are regenerating limbs and organs</DP_regrowCostsNoFoodTip>
+  <DP_regrowCostsFood>Regrowth Food Cost: </DP_regrowCostsFood>
+  <DP_regrowCostsFoodTip>The food cost of regrowth is multiplied by this value</DP_regrowCostsFoodTip>
+
+  <DP_accumulateFoodNeed>Hunger accumuation multiplier</DP_accumulateFoodNeed>
+  <DP_accumulateFoodNeedTip>While pawns are regenerating and starving or dead they will gain a hediff that increases hunger. Spending time not starving reduces this.</DP_accumulateFoodNeedTip>
+
+  <DP_perStageHp>Part Regrowth Hp</DP_perStageHp>
+  <DP_perStageHpTip>Adjusts the values of max part Hp per healing factority stage, these values are added to the severity multiplier</DP_perStageHpTip>
+  
+  <DP_regrowLesser>Lesser Healing Factor</DP_regrowLesser>
+  <DP_regrowLesserTip>Max base HP of a part a lesser healing factor can regrow.</DP_regrowLesserTip>
+  <DP_regrowHealing Factor>Healing Factor</DP_regrowHealing Factor>
+  <DP_regrowHealing FactorTip>Max base HP of a part an healing factor can regrow.</DP_regrowHealing FactorTip>
+  <DP_regrowGreater>Greater Healing Factor</DP_regrowGreater>
+  <DP_regrowGreaterTip>Max base HP of a part a greater healing factor can regrow.</DP_regrowGreaterTip>
+  <DP_regrowHigh>High Healing Factor</DP_regrowHigh>
+  <DP_regrowHighTip>Max base HP of a part a high healing factor can regrow.</DP_regrowHighTip>
+  <DP_regrowGrand>Grand Healing Factor</DP_regrowGrand>
+  <DP_regrowGrandTip>Max base HP of a part a grand healing factor can regrow.</DP_regrowGrandTip>
+  <DP_regrowApex>Apex Healing Factor</DP_regrowApex>
+  <DP_regrowApexTip>Max base HP of a part an apex healing factor can regrow.</DP_regrowApexTip>
+  
+  <!-- Default and Utility Stuff-->
+  <DP_defaultAll>Default settings</DP_defaultAll>
+  <DP_defaultAllTip>Shows several check boxes to select what sections to default</DP_defaultAllTip>
+
+
+  <DP_defaultHealing FactorClasses>Healing Factor classes</DP_defaultHealing FactorClasses>
+  <DP_defaultHealing FactorClassesTip>Removes all healing factor classes and regenerates them using default values</DP_defaultHealing FactorClassesTip>
+  <DP_defaultDefaultHealing Factor>Default healing factority</DP_defaultDefaultHealing Factor>
+  <DP_defaultDefaultHealing FactorTip>Reset the default healing factority settings. As in the settings for things without an healing factority class or any setting in an healing factority class that uses default</DP_defaultDefaultHealing FactorTip>
+  <DP_defaultRegrowth>Regrowth</DP_defaultRegrowth>
+  <DP_defaultRegrowthTip>Reset the per stage regrowth settings to default values.</DP_defaultRegrowthTip>
+  <DP_defaultGeneralHealing Factor>General healing factority</DP_defaultGeneralHealing Factor>
+  <DP_defaultGeneralHealing FactorTip>Reset things like healing/regrowth rates</DP_defaultGeneralHealing FactorTip>
+  <DP_defaultGeneral>General</DP_defaultGeneral>
+  <DP_defaultGeneralTip>Reset general settings like tick rate and healing factority numbers</DP_defaultGeneralTip>
+  <DP_defaultPowerSurgeChange>PowerSurge pawn chances</DP_defaultPowerSurgeChange>
+  <DP_defaultPowerSurgeChangeTip>Resets the settings that govern how a pawn changes when they get a quickening.</DP_defaultPowerSurgeChangeTip>
+  <DP_defaultTransfer>Transfer</DP_defaultTransfer>
+  <DP_defaultTransferTip>Resets the settings that govern pawns gaining healing factority from eating severed heads and stunted healing factors</DP_defaultTransferTip>
+  <DP_defaultHediffs>Custom Hediffs</DP_defaultHediffs>
+  <DP_defaultHediffsTip>Resets all the changed hediffs.</DP_defaultHediffsTip>
+  
+  <DP_removeHealing Factority>Remove Healing Factority</DP_removeHealing Factority>
+  <DP_removeHealing FactorityTip>Removes ALL healing factority from EVERY pawn in the game, this cannot be reversed</DP_removeHealing FactorityTip>
+  <DP_addHealing Factority>Add Healing Factority</DP_addHealing Factority>
+  <DP_addHealing FactorityTip>Attempts to add healing factority to every pawn both on the current map and in the world</DP_addHealing FactorityTip>
+
+  <DP_defaultConfirm>Confirm?</DP_defaultConfirm>
+
+  
+  <!-- Default Healing Factority-->
+  <DP_defaultHealing Factority>Default Healing Factority Settings</DP_defaultHealing Factority>
+  
+  <DP_chance>hidden healing factority: </DP_chance>
+  <DP_chanceTip>Hidden healing factority or pre first death, in this state the pawn has no benefits of their healing factority until they die.</DP_chanceTip>
+  <DP_chanceVisible>visible healing factority: </DP_chanceVisible>
+  <DP_chanceVisibleTip>Visible healing factority or post first death, an healing factor in this state has full benefits from their healing factority. This is the chance a hidden healing factor will have their healing factority increased to a value between the range below. </DP_chanceVisibleTip>
+
+  <DP_Healing FactorClassRange>Healing Factority range: </DP_Healing FactorClassRange>
+  <DP_Healing FactorClassRangeTip>The minimum and maximum levels of healing factority that a visible healing factor will spawn with</DP_Healing FactorClassRangeTip>
+  <DP_Healing FactorClassTransferIn>Healing Factority in: </DP_Healing FactorClassTransferIn>
+  <DP_Healing FactorClassTransferInTip>An extra multiplier for a pawn who is gaining healing factority power from another. All incoming healing factority from quickenings is multiplied by this number.</DP_Healing FactorClassTransferInTip>
+  <DP_Healing FactorClassTransferOut>Healing Factor out: </DP_Healing FactorClassTransferOut>
+  <DP_Healing FactorClassTransferOutTip>An extra multiplier for a pawn who is giving healing factority power to another. All outgoing healing factority from quickenings is multiplied by this number.</DP_Healing FactorClassTransferOutTip>
+  
+  
+  <!-- PowerSurge Change Stuff-->
+  <DP_quickeningChange>PowerSurge pawn changes</DP_quickeningChange>
+
+  <DP_learningMult>Skill experience transfer</DP_learningMult>
+  <DP_learningMultTip>Skill experience is multiplied by this after it is calculated what to give to the reciever of a quickening</DP_learningMultTip>
+  <DP_passionChance>Passion gain chance</DP_passionChance>
+  <DP_passionChanceTip>The chance that a pawn will recieve a passion from a pawn during quickening. Each chance can increase a passion from none to minor or from minor to major.</DP_passionChanceTip>
+  <DP_passionChances>Passion gain chances</DP_passionChances>
+  <DP_passionChancesTip>The number of times per quickening that a chance is rolled to gain a passion or increase a passion</DP_passionChancesTip>
+  <DP_passionLoss>Passion loss chance</DP_passionLoss>
+  <DP_passionLossTip>The chance that a pawn will lose passions during a quickening.</DP_passionLossTip>
+  <DP_passionLimit>Passion Limit</DP_passionLimit>
+  <DP_passionLimitTip>A hard limit on how many passions a pawn can have, minor passions count as 1 and majors count as 2. -1 to dissable</DP_passionLimitTip>
+
+  <!-- Healing Factority class stuff-->
+  <DP_disabled>disabled</DP_disabled>
+  <DP_humanoid>Humanoid</DP_humanoid>
+  <DP_animal>Animals</DP_animal>
+
+
+  <DP_categoriesOn>Show pawn specific settings</DP_categoriesOn>
+  <DP_categoriesOff>Hide pawn specific settings</DP_categoriesOff>
+  <DP_categoriesTip>Opens the setings section that lets you change/add/remove healing factority classes.</DP_categoriesTip>
+
+  <DP_NewClass>New class</DP_NewClass>
+  <DP_NewClassTip>Creates a new healing factority class which you can edit.</DP_NewClassTip>
+
+  <DP_DeleteClass>Delete Class</DP_DeleteClass>
+  <DP_DeleteClassTip>Removes an immorality class, this cannot be undone. To be sure you mean to do this you must slide the slider below all the way to the right</DP_DeleteClassTip>
+  <DP_slideConfirm>Slide then click</DP_slideConfirm>
+  <DP_slideConfirmTip>To confirm you want to delete this class slide this all the way to the right.</DP_slideConfirmTip>
+  <DP_editDefault>Use default ({0})</DP_editDefault>
+  
+
+  <DP_Healing FactorClassCanBe>Can be healing factor</DP_Healing FactorClassCanBe>
+  <DP_Healing FactorClassCanBeTip>Enables/Disables the pawns in this healing factority class from being able to spawn as healing factor</DP_Healing FactorClassCanBeTip>
+  <DP_Healing FactorClassChance>Healing Factority Chance: </DP_Healing FactorClassChance>
+  <DP_Healing FactorClassChanceTip>The chance a pawn will spawn with healing factority. By default this healing factority will be pre-first death but visible chance allows them to be higher tiers of healing factors</DP_Healing FactorClassChanceTip>
+  <DP_Healing FactorClassChanceVisible>Visible Chance: </DP_Healing FactorClassChanceVisible>
+  <DP_Healing FactorClassChanceVisibleTip>The chance that a pawn who has generated as healing factor will be given a higher tier of healing factority between healing factority range</DP_Healing FactorClassChanceVisibleTip>
+
+  <DP_Healing FactorClassPawnsTip>All the pawns in this list are in this healing factority class</DP_Healing FactorClassPawnsTip>
+  <DP_Healing FactorClassNonPawnsTip>All the pawns in this list are not in this immorality class. Red means they are not in any immorality class.</DP_Healing FactorClassNonPawnsTip>
+  <DP_Healing FactorClassLoadMissing>Healing Factors count not find {0} pawn defs, these could be from removed mods. You may clear these old pawns from healing factor classes in the healing factor options menu, or you may leave them as they are harmless. These are the missing defs: {1}</DP_Healing FactorClassLoadMissing>
+  
+  <!-- Transfer and stunted stuff-->
+  <DP_transferSettings>Transfer Settings</DP_transferSettings>
+  
+  <DP_stealStage1>Healing Factor</DP_stealStage1>
+  <DP_stealStage1Tip>Chance that a pawn will gain hidden healing factority from eating the severed head from an healing factor</DP_stealStage1Tip>
+  <DP_stealStage2>Greater</DP_stealStage2>
+  <DP_stealStage2Tip>>Chance that a pawn will gain hidden healing factority from eating the severed head from a greater healing factor</DP_stealStage2Tip>
+  <DP_stealStage3>High</DP_stealStage3>
+  <DP_stealStage3Tip>>Chance that a pawn will gain hidden healing factority from eating the severed head from a high healing factor</DP_stealStage3Tip>
+  <DP_stealStage4>Grand</DP_stealStage4>
+  <DP_stealStageTip>>Chance that a pawn will gain hidden healing factority from eating the severed head from a grand healing factor</DP_stealStageTip>
+  <DP_stealStage5>Apex</DP_stealStage5>
+  <DP_stealStageTip>>Chance that a pawn will gain hidden healing factority from eating the severed head from an apex healing factor</DP_stealStageTip>
+
+
+  <DP_MortalisMultiplier>Mortalis multiplier</DP_MortalisMultiplier>
+  <DP_MortalisMultiplierTip>Mortalis made in the extractor is multiplied by this value</DP_MortalisMultiplierTip>
+
+
+  <DP_stuntedChance>Stunted healing factority chance</DP_stuntedChance>
+  <DP_stuntedChacneTip>The chance that a pawn who gains healing factority will become a stunted healing factor</DP_stuntedChacneTip>
+  <DP_stuntedBurnChance>Chance a stunted healing factor self burns </DP_stuntedBurnChance>
+  <DP_stuntedBurnChanceTip>Every rare tick a stunted healing factor will roll to see if it self burns. These burns cannot be healed by healing factority but will reduce the level of the stunted hediff curing them sooner.</DP_stuntedBurnChanceTip>
+  <DP_stuntedBurnRate>The severity of the self burns </DP_stuntedBurnRate>
+  <DP_stuntedBurnRateTip>A multiplier that effects the damage of the stunted burns.</DP_stuntedBurnRateTip>
+  
+  
+  
+  <!--Default Hediff Stuff-->
+  <DP_defaultHediffs>Default Hediffs</DP_defaultHediffs>
+
+  <DP_conditionMax>Max condition progress</DP_conditionMax>
+  <DP_conditionMaxTip>The maximum progress conditions should get to, every healing factor tick they will be set to this value if it is over this value. Conditions have a lethal severity of 1 and are non-tendable like bloodloss or malnutrition.</DP_conditionMaxTip>
+  <DP_diseaseMax>Max disease progress</DP_diseaseMax>
+  <DP_diseaseMaxTip>The maximum progress diseases should get to, every healing factor tick they will be set to this value if it is over this value. Diseases have a lethal severity of 1 and are tendable like infections of flu.</DP_diseaseMaxTip>
+  <!--Hediff Settings Shit-->
+  
+  <DP_hediffShowOnlyBad>Only bad hediffs</DP_hediffShowOnlyBad>
+  <DP_hediffShowOnlyBadTip>Hides all hediffs that have isBad set to false</DP_hediffShowOnlyBadTip>
+
+  <DP_hediffShowOnlyCondition>Only lethal</DP_hediffShowOnlyCondition>
+  <DP_hediffShowOnlyConditionTip>Hides all hediffs that do not have a lethal severity</DP_hediffShowOnlyConditionTip>
+
+  <DP_hediffShowOnlyCustom>Only custom</DP_hediffShowOnlyCustom>
+  <DP_hediffShowOnlyCustomTip>Hides all hediffs that do not have custom settings.</DP_hediffShowOnlyCustomTip>
+
+  <DP_condition>Condition</DP_condition>
+  <DP_conditionTip>A condition hediff has a lethal severity of 1 and is non-tendable such as bloodloss or malnutrition.</DP_conditionTip>
+  <DP_disease>Disease</DP_disease>
+  <DP_diseaseTip>A disesase hediff has a lethal severity of 1 and is tendable such as the flu or an infection.</DP_diseaseTip>
+  <DP_other>Other</DP_other>
+  <DP_otherTip>Hediffs that don't fit into the other categories.</DP_otherTip>
+  
+  <DP_hediffMaxProgress>Max progress: </DP_hediffMaxProgress>
+  <DP_hediffMaxProgressTip>The maximum progress this hediff should get to, every tick it will be set to this value if it is over this value.</DP_hediffMaxProgressTip>
+  <DP_hediffHealSpeed>Heal speed: </DP_hediffHealSpeed>
+  <DP_hediffHealSpeedTip>A multiplier for how fast this hediff heals. If set to 0 it will ignore this hediff</DP_hediffHealSpeedTip>
+
+  <DP_hediffneedToCure>Need to cure: </DP_hediffneedToCure>
+  <DP_hediffneedToCureTip>Does a pawn need to cure this hediff before it revives</DP_hediffneedToCureTip>
+  <DP_hediffCanGet>Can get </DP_hediffCanGet>
+  <DP_hediffCanGetTip>Should a pawn be able to get this hediff? This doesn't full stop a pawn from getting a hediff it just removes it when the healing factority healing ticks</DP_hediffCanGetTip>
+
+  <DP_hediffRegrow>regrow: </DP_hediffRegrow>
+  <DP_hediffRegrowTip>Hediffs with this enabled will be *saved* to pawns every rare tick and when a hediff is missing that was there before it will be re-added.</DP_hediffRegrowTip>
+
+  <DP_hediffLoadMissing>Healing Factors could not find {0} hediffs, it is possible they are from unloaded mods. You may clear these old hediff settings in the healing factors options page, or leave them as they are harmless. These are the hediffs defs: {1}</DP_hediffLoadMissing>
+  
+  
+  <!-- Other shit-->
+  
+  
+  <DP_Healing Factors>Healing Factors</DP_Healing Factors>
+  <DP_Designator_Behead>Behead</DP_Designator_Behead>
+  <DP_Designator_BeheadDesc>Cut off the head of a pawn or whatever may pass as a head for the pawn. This will stop any healing factors from coming back to life.</DP_Designator_BeheadDesc>
+  <DP_MustDesignateBeheadAble>Must designate pawn or creature who is dead or downed with a head.</DP_MustDesignateBeheadAble>
+  <DP_Default>   (Default)</DP_Default>
+  <DP_DefaultNum>   (Default: {0})</DP_DefaultNum>
+  <DP_off>off</DP_off>
+  <DP_on>on</DP_on>
+  <DP_yes>yes</DP_yes>
+  <DP_no>no</DP_no>
+
+
+  
+ 
+  <DP_CanGetDisease>Can Healing Factors Get Diseases</DP_CanGetDisease>
+  <DP_CanGetDiseaseTip>Will cure healing factors of diseases if they contract them, a disease if any tendable fatal hediff.</DP_CanGetDiseaseTip>
+  <DP_CanGetConditions>Can Healing Factors Get Conditions</DP_CanGetConditions>
+  <DP_CanGetConditionsTip>Will cure healing factors of any conditions, a condition is any non-tendable fatal hediff</DP_CanGetConditionsTip>
+  <DP_healScars>Heal Scars</DP_healScars>
+  <DP_classPawns>Class pawns</DP_classPawns>
+  <DP_nonClassPawns>Other pawns</DP_nonClassPawns>
+  
+  
+  <!--Stops anything with a lethal severity of 1 at the % indicated in the settings so things like malnutrition and what not-->
+  <DP_diseaseMaxProg>Stops the progress of a lethal disease at: </DP_diseaseMaxProg>
+  <DP_diseaseMaxProgTip>Anything that is tendable with a lethal severity of 100% this includes things like infections and the flu. Set to 100% to disable</DP_diseaseMaxProgTip>
+  <DP_conditionMaxProg>Stops the progress of a lethal condition at: </DP_conditionMaxProg>
+  <DP_conditionMaxProgTip>Anything that is not tendable with a lethal severity of 100% this includes things like bloodloss and heatstroke</DP_conditionMaxProgTip>
+
+  <DP_firstDeathHeal>Healing speed prior to first resurrection: </DP_firstDeathHeal>
+  <DP_firstDeathHealTip>The healing speed of an healing factor after they have died their first death and before they have respawned. Changes how long they will be dead on their first death.</DP_firstDeathHealTip>
+  
+  <!--The names inserted into the chances and transfer rates for the categories-->
+
+
+  <DP_lesser>Lesser Healing Factor</DP_lesser>
+  <DP_healing factor>Healing Factor</DP_healing factor>
+  <DP_greater>Greater Healing Factor</DP_greater>
+  <DP_high>High Healing Factor</DP_high>
+  <DP_grand>Grand Healing Factor</DP_grand>
+  <DP_apex>Apex Healing Factor</DP_apex>
+
+  <!--Enableing and disabling the different types of pawns as well as their chances-->
+
+  <DP_Extractor_Contained_Heads>Contains {0} of {1} severed heads</DP_Extractor_Contained_Heads>
+  <DP_Extractor_Awaiting>Awaiting quickening trigger</DP_Extractor_Awaiting>
+  <DP_Extractor_Finished>Finished</DP_Extractor_Finished>
+  <DP_Extractor_Progress>Progress: {0}, {1}</DP_Extractor_Progress>
+  <DP_Extractor_Speed_Bonus>Speed bonus from heat</DP_Extractor_Speed_Bonus>
+  
+  <!--Allows an exponential difference of healing factority based on the size difference-->
+
+  <DP_DaysLeftSeverity>Days remaining </DP_DaysLeftSeverity>
+
+
+  <DP_partStages>Max base part Hp Settings</DP_partStages>
+  <DP_maxPartSize>Max part Hp Limit: </DP_maxPartSize>
+  <DP_maxPartSizeTip>Limits the maximum part Hp any healing factor can regrow.</DP_maxPartSizeTip>
+  <DP_maxPartStage>The maximum base part Hp added to calculate parts they can regrow when an healing factor is at the {0} stage</DP_maxPartStage>
+  <DP_severityMaxPart>Severity Multiplier : </DP_severityMaxPart>
+  <DP_severityMaxPartTip>This value is multiplied by the severity of the healing factor hediff. This value is then added to per stage values.</DP_severityMaxPartTip>
+  <DP_otherStageSettings>Other max part Hp settings</DP_otherStageSettings>
+  <DP_stageValues>Stage Values</DP_stageValues>
+
+  <DP_severityCheck>Check specific healing factor severity: </DP_severityCheck>
+  <DP_severityCheckTip>Tool to see how specific severities would affect max part Hp</DP_severityCheckTip>
+  
+  <!--Editing stuff and such-->
+  <DP_disable>None</DP_disable>
+ 
+  <DP_hediffsOn>Show heddif specific settings</DP_hediffsOn>
+  <DP_hediffsOff>Hide hediff specific settings</DP_hediffsOff>
+
+
+  <DP_Healing FactorClassHealScars>Heal scars: </DP_Healing FactorClassHealScars>
+
+  
+  <DP_hediffs>Edit hediff specific settings</DP_hediffs>
+  <DP_editShowChanged>Show only changed hediffs</DP_editShowChanged>
+
+  <DP_editClearChanged>Clear changed hediffs</DP_editClearChanged>
+  <DP_editClearChangedConrfirm>Confirm clear changed hediffs</DP_editClearChangedConrfirm>
+  <DP_disease>Disease</DP_disease>
+  <DP_condition>Condition</DP_condition>
+  
+  <DP_editShowGood>Show non-bad hediffs</DP_editShowGood>
+  <DP_editShowNonLethal>Show non-lethal hediffs</DP_editShowNonLethal>
+  <DP_editRemoveCustom>Remove custom settings</DP_editRemoveCustom>
+  <DP_search>Search:</DP_search>
+
+  <DP_editNoMax>No max progress</DP_editNoMax>
+  <DP_editNoMaxTip>This condition will progress like normal</DP_editNoMaxTip>
+  <DP_editMaxProg>Max progress: {0}</DP_editMaxProg>
+  <DP_editDisabled>This condition is disabled for healing factors</DP_editDisabled>
+
+  <DP_editCureDead>Have to cure this condition before revive</DP_editCureDead>
+  <DP_editCanGet>Can healing factors have this condition</DP_editCanGet>
+  <DP_editHealHediff>Should this condition heal over time</DP_editHealHediff>
+
+  <DP_stageSteal>{0} head {1} </DP_stageSteal>
+  <DP_stageStealChance>healing factority chance</DP_stageStealChance>
+
+
+  <DP_Designator_ExtractorTrigger>Extractor Trigger</DP_Designator_ExtractorTrigger>
+  <DP_Designator_ExtractorTriggerDesc>Use this healing factor pawn to trigger a mortalis extractor.</DP_Designator_ExtractorTriggerDesc>
+
+  <DP_StoredMortalis>Mortalis Bits inside {0}</DP_StoredMortalis>	
+	
+  <DP_Designator_Impale>Impale Pawn</DP_Designator_Impale>
+  <DP_Designator_ImpaleDesc>Take a piece of steel and drive it through the heart of a pawn. This will stop an healing factor from reviving.</DP_Designator_ImpaleDesc>
+  <DP_MustDesignateImpaleAble>Must designate downed or dead pawn.</DP_MustDesignateImpaleAble>
+
+  <DP_NoSteel>No steel</DP_NoSteel>
+
+
+	<DP_GainNoBrainCheat>No Brain Level</DP_GainNoBrainCheat>
+	<DP_GainNoBrainCheatTip>Healing Factors passed this level will gain the ability to survive without their brain. Might take a minute or so to happen as it is only checked during rare ticks. You can also manually add the hediff to no part to get this functionality.</DP_GainNoBrainCheatTip>
+
+	<DP_NoBrainCheat>No Brain Cheat</DP_NoBrainCheat>
+	<DP_NoBrainCheatTip>Allows colonists to not die if they lose their conciousness part. This setting is not permanent and turning it off allows them to die again.</DP_NoBrainCheatTip>
+
 </LanguageData>
