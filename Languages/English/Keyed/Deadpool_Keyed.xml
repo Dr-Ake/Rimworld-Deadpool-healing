@@ -7,7 +7,7 @@
   <DP_tickRateSingle>Healing Factor tick rate(1x speed)</DP_tickRateSingle>
   <DP_tickRateSingleTip>A seperate tick rate for when the game is running at 1x speed or auto slowdown mode. This allows much more frequent ticks without so much worry about performance</DP_tickRateSingleTip>
   <DP_tickRate>Healing Factor tick rate</DP_tickRate>
-  <DP_tickRateTip>How often all healing factors heal in game ticks. Default speed is 60 ticks per second so at the default of 250 a healing factor would mend every ~4 seconds. Healing speeds are multiplied by the ticks passed so there should be no change to overall rate.</DP_tickRateTip>
+  <DP_tickRateTip>How often all pawns with healing factor heal in game ticks. Default speed is 60 ticks per second so at the default of 250 a healing factor would mend every ~4 seconds. Healing speeds are multiplied by the ticks passed so there should be no change to overall rate.</DP_tickRateTip>
   <DP_tickRateRare>Multiplier for rare ticks</DP_tickRateRare>
   <DP_tickRateRareTip>Roughly how many healing factor ticks happen before a pawn will do things like attempt to regrow a limb or heal a scar.(Only uses base healing factor tick rate, not 1x)</DP_tickRateRareTip>
 
