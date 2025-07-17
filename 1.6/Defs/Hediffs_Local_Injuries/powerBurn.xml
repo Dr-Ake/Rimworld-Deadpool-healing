@@ -2,7 +2,7 @@
 
 <Defs>
   <HediffDef ParentName="InjuryBase">
-    <defName>DP_Burn</defName>
+    <defName>Deadpool_Burn</defName>
     <label>deadpool burn</label>
     <labelNoun>an deadpool burn</labelNoun>
     <description>An deadpool burn.</description>

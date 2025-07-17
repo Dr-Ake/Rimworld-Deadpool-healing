@@ -2,10 +2,10 @@
 
 <Defs>
   <DamageDef ParentName="Flame">
-    <defName>DP_internalBurn</defName>
+    <defName>Deadpool_InternalBurn</defName>
     <label>deadpool internal burn</label>
     <workerClass>DamageWorker_AddInjury</workerClass>
     <defaultArmorPenetration>1000</defaultArmorPenetration>
-    <hediff>DP_Burn</hediff>
+    <hediff>Deadpool_Burn</hediff>
   </DamageDef>
 </Defs>
