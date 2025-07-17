@@ -241,9 +241,6 @@
   
   
   <DP_Healing Factors>Healing Factors</DP_Healing Factors>
-  <DP_Designator_Behead>Behead</DP_Designator_Behead>
-  <DP_Designator_BeheadDesc>Cut off the head of a pawn or whatever may pass as a head for the pawn. This will stop any healing factors from coming back to life.</DP_Designator_BeheadDesc>
-  <DP_MustDesignateBeheadAble>Must designate pawn or creature who is dead or downed with a head.</DP_MustDesignateBeheadAble>
   <DP_Default>   (Default)</DP_Default>
   <DP_DefaultNum>   (Default: {0})</DP_DefaultNum>
   <DP_off>off</DP_off>
@@ -348,9 +345,6 @@
 
   <DP_StoredMortalis>X-Gene samples inside {0}</DP_StoredMortalis>
 	
-  <DP_Designator_Impale>Impale Pawn</DP_Designator_Impale>
-  <DP_Designator_ImpaleDesc>Take a piece of steel and drive it through the heart of a pawn. This will stop an healing factor from reviving.</DP_Designator_ImpaleDesc>
-  <DP_MustDesignateImpaleAble>Must designate downed or dead pawn.</DP_MustDesignateImpaleAble>
 
   <DP_NoSteel>No steel</DP_NoSteel>
 
