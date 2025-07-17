@@ -27,7 +27,7 @@ That's it. No leftover `Source` folder, no uncompiled mess. Just what you see he
 
 ## Compatibility
 
-Built for RimWorld 1.6, but should play nice with versions 1.0 through 1.5 too. Use the goodies in `1.6/` for the latest release.
+Built for RimWorld 1.6.
 
 ## Building
 
