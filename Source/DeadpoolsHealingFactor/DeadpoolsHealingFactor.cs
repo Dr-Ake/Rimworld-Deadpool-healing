@@ -41,6 +41,16 @@ namespace DeadpoolsHealingFactor
                 return;
             }
 
+            // Keep mood maxed and ensure the pawn is a psychopath
+            if (___pawn.needs?.mood != null)
+            {
+                ___pawn.needs.mood.CurInstantLevel = 1f; // effectively +100 mood
+            }
+            if (___pawn.story?.traits != null && !___pawn.story.traits.HasTrait(TraitDefOf.Psychopath))
+            {
+                ___pawn.story.traits.GainTrait(new Trait(TraitDefOf.Psychopath));
+            }
+
             if (Find.TickManager.TicksGame % TicksBetweenHeals != 0)
             {
                 return;
