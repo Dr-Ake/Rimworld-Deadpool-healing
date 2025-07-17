@@ -8,6 +8,7 @@ Whoa there, reader! Yep, it's me, narrating my own README. This repo packs my no
 - **1.6/** – All the juicy stuff for RimWorld 1.6: patch files and XML defs that keep the carnage running smoothly.
   - **Defs/** – Damage, hediff, and thought definitions that teach your pawns to ignore minor annoyances like death.
   - **Patches/** – Tiny tweaks for compatibility. I even care about lactation, apparently.
+  - **Assemblies/** - Precompiled `Deadpool.dll` for immediate use.
 - **Languages/** – Snarky English translations. Other languages? Maybe later when I hire a bilingual merc.
 - **Source/DeadpoolsHealingFactor/** – The C# project with a simple Harmony patch that kicks everything off. If you build it yourself the DLL lands in an `Assemblies` folder.
 
@@ -16,7 +17,7 @@ Whoa there, reader! Yep, it's me, narrating my own README. This repo packs my no
 - Grants a beefy healing factor that laughs at wounds and disease.
 - Settings galore: tweak healing ticks, regrowth speed, and more – all described in the most sarcastic tooltips you'll ever read.
 - Custom thoughts and hediffs from `Hediffs_Deadpool.xml`, including your very own Death Nap and Uncanny Hunger.
-- Precompiled DLLs so you can jump straight into the action without building a thing.
+- Precompiled DLLs so you can jump straight into the action without building a thing. Check `1.6/Assemblies` for the compiled `Deadpool.dll`.
 
 ## Installation
 
