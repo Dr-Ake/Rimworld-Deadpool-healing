@@ -9,7 +9,7 @@ Whoa there, reader! Yep, it's me, narrating my own README. This repo packs my no
   - **Defs/** – Damage, hediff, and thought definitions that teach your pawns to ignore minor annoyances like death.
   - **Patches/** – Tiny tweaks for compatibility. I even care about lactation, apparently.
 - **Languages/** – Snarky English translations. Other languages? Maybe later when I hire a bilingual merc.
-That's it. No leftover `Source` folder, no uncompiled mess. Just what you see here.
+- **Source/DeadpoolsHealingFactor/** – The C# project with a simple Harmony patch that kicks everything off. If you build it yourself the DLL lands in an `Assemblies` folder.
 
 ## Features
 
@@ -30,6 +30,6 @@ Built for RimWorld 1.6.
 
 ## Building
 
-You won't find the original C# source here (shhh, trade secret). The included DLL is ready to roll, so just plug it in and enjoy.
+Open the project in `Source/DeadpoolsHealingFactor` with your favorite .NET build tools and compile it. The resulting DLL will appear in an `Assemblies` folder next to the source.
 
 Now quit reading this file and go break the fourth wall somewhere else. Chimichangas await!
