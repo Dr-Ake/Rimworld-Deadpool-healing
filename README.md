@@ -30,6 +30,12 @@ Built for RimWorld 1.6.
 
 ## Building
 
-Open the project in `Source/DeadpoolsHealingFactor` with your favorite .NET build tools and compile it. The resulting DLL will appear in an `Assemblies` folder next to the source.
+Set the `RimWorldDir` environment variable to your RimWorld installation path before building. For example on Windows:
+
+```
+set RimWorldDir=C:\Program Files (x86)\Steam\steamapps\common\RimWorld
+```
+
+Harmony's DLL is expected under `Mods/Harmony/Assemblies` inside that directory. Once configured, open the project in `Source/DeadpoolsHealingFactor` with your favorite .NET build tools and compile it. The resulting DLL will appear in an `Assemblies` folder next to the source.
 
 Now quit reading this file and go break the fourth wall somewhere else. Chimichangas await!
