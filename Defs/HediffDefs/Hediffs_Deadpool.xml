@@ -1,87 +1,87 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 
+
 <Defs>
-  <HediffDef>
-    <defName>IH_Immortal</defName>
-    <hediffClass>Immortals.Immortal_Hediff</hediffClass>
-    <defaultLabelColor>(0.3, 0.7, 0.7)</defaultLabelColor>
-    <description>You're probably thinking, 'My colonist just got turned into a kebab!' Well, I may be super, but I'm no hero. This healing factor means I can regenerate from pretty much anything. Now, where are the chimichangas?</description>
-    <label>Healing Factor</label>
-    <isBad>false</isBad>
-    <scenarioCanAdd>true</scenarioCanAdd>
-    <stages>
-      <li>
-        <label>FirstDeath</label>
-        <becomeVisible>false</becomeVisible>
+<HediffDef>
+  <defName>DP_HealingFactor</defName>
+  <defaultLabelColor>(0.3, 0.7, 0.7)</defaultLabelColor>
+  <description>This pawn shrugs off fatal wounds with an over-the-top healing factor. Heads roll, jokes follow.
+  <label>Healing Factor</label>
+  <isBad>false</isBad>
+  <scenarioCanAdd>true</scenarioCanAdd>
+  <stages>
+    <li>
+      <label>FirstDeath</label>
+      <becomeVisible>false</becomeVisible>
+    </li>
+    <li>
+      <label>Barely Dead</label>
+      <painFactor>0.75</painFactor>
+      <minSeverity>0.6</minSeverity>
+    </li>
+    <li>
+      <label>Full Factor</label>
+      <painFactor>0.5</painFactor>
+      <minSeverity>1</minSeverity>
+    </li>
+    <li>
+      <label>Mostly Deadproof</label>
+      <painFactor>0.1</painFactor>
+      <minSeverity>2</minSeverity>
+    </li>
+    <li>
+      <label>Can't Touch This</label>
+      <painFactor>0.1</painFactor>
+      <minSeverity>4</minSeverity>
+      <capMods>
+        <li>
+          <capacity>Moving</capacity>
+          <postFactor>1.05</postFactor>
+        </li>
+      </capMods>
+    </li>
+    <li>
+      <label>Seriously Stop</label>
+      <painFactor>0.1</painFactor>
+      <minSeverity>7</minSeverity>
+      <capMods>
+        <li>
+          <capacity>Consciousness</capacity>
+          <postFactor>1.05</postFactor>
+        </li>
+        <li>
+          <capacity>Moving</capacity>
+          <postFactor>1.05</postFactor>
+        </li>
+      </capMods>
+    </li>
+    <li>
+      <label>Maximum Effort</label>
+      <painFactor>0.0</painFactor>
+      <capMods>
+        <li>
+          <capacity>Consciousness</capacity>
+          <postFactor>1.1</postFactor>
       </li>
-      <li>
-        <label>Lesser Immortal</label>
-        <painFactor>0.0</painFactor>
-        <minSeverity>0.6</minSeverity>
-      </li>
-      <li>
-        <label>Immortal</label>
-        <painFactor>0.0</painFactor>
-        <minSeverity>1</minSeverity>
-      </li>
-      <li>
-        <label>Greater Immortal</label>
-        <painFactor>0.0</painFactor>
-        <minSeverity>2</minSeverity>
-      </li>
-      <li>
-        <label>High Immortal</label>
-        <painFactor>0.0</painFactor>
-        <minSeverity>4</minSeverity>
-        <capMods>
-          <li>
-            <capacity>Moving</capacity>
-            <postFactor>1.05</postFactor>
-          </li>
-        </capMods>
-      </li>
-      <li>
-        <label>Grand Immortal</label>
-        <painFactor>0.0</painFactor>
-        <minSeverity>7</minSeverity>
-        <capMods>
-          <li>
-            <capacity>Consciousness</capacity>
-            <postFactor>1.05</postFactor>
-          </li>
-          <li>
-            <capacity>Moving</capacity>
-            <postFactor>1.05</postFactor>
-          </li>
-        </capMods>
-      </li>
-      <li>
-        <label>Apex Immortal</label>
-        <painFactor>0.0</painFactor>
-        <capMods>
-          <li>
-            <capacity>Consciousness</capacity>
-            <postFactor>1.1</postFactor>
-          </li>
-          <li>
-            <capacity>Moving</capacity>
-            <postFactor>1.1</postFactor>
-          </li>
-          <li>
-            <capacity>Manipulation</capacity>
-            <postFactor>1.1</postFactor>
-          </li>
-        </capMods>
-        <minSeverity>10</minSeverity>
-      </li>
-    </stages>
-  </HediffDef>
+        <li>
+          <capacity>Moving</capacity>
+          <postFactor>1.1</postFactor>
+        </li>
+        <li>
+          <capacity>Manipulation</capacity>
+          <postFactor>1.1</postFactor>
+        </li>
+      </capMods>
+      <minSeverity>10</minSeverity>
+    </li>
+  </stages>
+</HediffDef>
   <HediffDef>
     <hediffClass>HediffWithComps</hediffClass>
-    <defName>IH_Stunted</defName>
+    <defName>DP_Stunted</defName>
     <defaultLabelColor>(1, 1, 1)</defaultLabelColor>
-    <description>This immortal did not come by their power naturally, and their body is still adjusting and their power is not set fully.</description>
-    <label>Stunted Immortal</label>
+    <description>Their healing factor is having a rough day and hasn't quite kicked in yet.</description>
+    <label>Stunted Factor</label>
     <stages>
       <li>
         <label>recovering</label>
@@ -125,10 +125,10 @@
   </HediffDef>
 
   <HediffDef>
-    <defName>IH_StuntedProc</defName>
+    <defName>DP_StuntedProc</defName>
     <defaultLabelColor>(1, 1, 1)</defaultLabelColor>
-    <description>This is a purely functional hediff that an immortal has to let the mod know they will have the stunted hediff when they revive</description>
-    <label>stuntedProc</label>
+    <description>Internal note: this pawn will wake up with a stunted healing factor</description>
+    <label>Stunted Flag</label>
     <stages>
       <li>
         <label>stunted</label>
@@ -138,9 +138,9 @@
   </HediffDef>
 
   <HediffDef>
-    <defName>IH_DeathTimer</defName>
+    <defName>DP_DeathTimer</defName>
     <defaultLabelColor>(1, 1, 1)</defaultLabelColor>
-    <description>This is a purely functional hediff that an immortal has to tick down before they can come back to life. It doesn't have to be 0 for them to come back and has no negative effects for existing.</description>
+    <description>Counts the moments until this pawn springs back from the grave.</description>
     <label>DeathTimer</label>
     <stages>
       <li>
@@ -152,19 +152,19 @@
 
   <HediffDef>
     <hediffClass>HediffWithComps</hediffClass>
-    <defName>IH_DeathStasis</defName>
+    <defName>DP_DeathStasis</defName>
     <defaultLabelColor>(1, 1, 1)</defaultLabelColor>
-    <description>This pawn has failed to fully revive and has now entered a state of death deep enough that they will not revive until they are fully healed.</description>
-    <label>Death Stasis</label>
+    <description>Too broken to heal right away, this pawn is parked in a death nap until patched up.</description>
+    <label>Death Nap</label>
     <isBad>false</isBad>
     <stages>
       <li>
-        <label>Death Stasis</label>
+        <label>Death Nap</label>
         <becomeVisible>false</becomeVisible>
       </li>
       <li>
-        <label>Groggy</label>
-        <minSeverity>0.5</minSeverity>
+          <label>Groggy</label>
+          <minSeverity>0.5</minSeverity>
         <becomeVisible>true</becomeVisible>
         <capMods>
           <li>
@@ -172,7 +172,7 @@
             <setMax>0.75</setMax>
           </li>
         </capMods>
-      </li>
+       </li>
       <li>
         <label>Drained</label>
         <minSeverity>0.75</minSeverity>
@@ -192,10 +192,9 @@
   </HediffDef>
 
   <HediffDef>
-    <defName>IH_regrowing</defName>
-    <hediffClass>Immortals.Regrowing_Hediff</hediffClass>
+    <defName>DP_regrowing</defName>
     <defaultLabelColor>(0.15, 0.6, 0.2)</defaultLabelColor>
-    <description>This part of the immortals body is regrowing, it will become more functional over time until it has fully grown.</description>
+    <description>This body part is busy growing back. Give it a minute.</description>
     <isBad>false</isBad>
     <label>Regrowing</label>
     <stages>
@@ -226,9 +225,9 @@
   </HediffDef>
 
   <HediffDef ParentName="DiseaseBase">
-    <defName>IH_adjusting</defName>
+    <defName>DP_adjusting</defName>
     <defaultLabelColor>(0.75, 1, 0.75)</defaultLabelColor>
-    <description>This part has just finished growing, it is still adjusting to its normal use and will be at normal capacity within a day.</description>
+    <description>The brand-new part is settling in. It'll be fine tomorrow.</description>
     <label>Adjusting</label>
     <stages>
       <li>
@@ -247,10 +246,10 @@
 
   <HediffDef>
     <hediffClass>HediffWithComps</hediffClass>
-    <defName>IH_revived</defName>
-    <description>This pawn has recently come back from the dead, they are less likely to have a mental break as things get back to normal.</description>
+    <defName>DP_revived</defName>
+    <description>Having cheated death, this pawn feels strangely upbeat.</description>
     <defaultLabelColor>(1, 1, 1)</defaultLabelColor>
-    <label>Returned</label>
+    <label>Back Again</label>
     <stages>
       <li>
         <statOffsets>
@@ -279,10 +278,10 @@
 
   <HediffDef>
     <hediffClass>HediffWithComps</hediffClass>
-    <defName>IH_revivedFirst</defName>
-    <description>This pawn has just returned from their first death, they will be much more on edge for a time.</description>
+    <defName>DP_revivedFirst</defName>
+    <description>First death jitters make this pawn a little twitchy.</description>
     <defaultLabelColor>(0.8, 0.4, 0.2)</defaultLabelColor>
-    <label>Returned</label>
+    <label>Back Again</label>
     <stages>
       <li>
         <statOffsets>
@@ -310,11 +309,10 @@
   </HediffDef>
 
   <HediffDef>
-    <defName>IH_theHunger</defName>
-    <hediffClass>Immortals.Hunger_Hediff</hediffClass>
-    <description>This pawn has a gnawing hunger that they can't seem to shake.</description>
+    <defName>DP_theHunger</defName>
+    <description>A weird hunger keeps bugging this pawn. Must be taco time.</description>
     <defaultLabelColor>(1, 0.5, 0.5)</defaultLabelColor>
-    <label>Gnawing Hunger</label>
+    <label>Uncanny Hunger</label>
     <initialSeverity>0.01</initialSeverity>
     <stages>
       <li>
@@ -336,28 +334,11 @@
   </HediffDef>
 
   <HediffDef>
-    <defName>IH_hungerHolder</defName>
-    <description>This is a placeholder to calculate the proper gnawing hunger hediff as dead pawns don't have a hunger rate</description>
-    <label>HungerHolder</label>
-	  <stages>
-		  <li>
-			  <label>Hidden</label>
-			  <becomeVisible>false</becomeVisible>
-		  </li>
-	  </stages>
-	<isBad>false</isBad>
+    <defName>DP_hungerHolder</defName>
+    <description>Helper hediff used to track hunger for the temporarily deceased.</description>
+    <label>Hunger Placeholder</label>
   </HediffDef>
 
-	<HediffDef>
-		<defName>IH_noBrainCheat</defName>
-		<description>This is a hediff to track which pawns shouldn't die from brain loss</description>
-		<label>No brain cheat</label>
-		<isBad>false</isBad>
-		<stages>
-			<li>
-				<label>Hidden</label>
-				<becomeVisible>false</becomeVisible>
-			</li>
-		</stages>
-	</HediffDef>
+	
+
 </Defs>

@@ -2,11 +2,11 @@
 <Defs>
   <SpecialThingFilterDef>
     <defName>AllowImmortalCorpses</defName>
-    <label>allow immortal corpses</label>
-    <description>Allow the dead bodies of immortals.</description>
+    <label>allow healing-factor corpses</label>
+    <description>Allow the corpses of the hard-to-kill crowd.</description>
     <parentCategory>CorpsesHumanlike</parentCategory>
     <allowedByDefault>false</allowedByDefault>
-    <saveKey>allowCorpsesImmortal</saveKey>
+    <saveKey>allowCorpsesDeadpool</saveKey>
     <workerClass>Immortals.Source.SpecialThingFilterWorker_CorpsesImmortal</workerClass>
   </SpecialThingFilterDef>
   

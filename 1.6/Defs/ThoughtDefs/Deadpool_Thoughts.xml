@@ -1,33 +1,33 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Defs>
   <ThoughtDef>
-    <defName>IH_reviveFirst</defName>
+    <defName>DP_reviveFirst</defName>
     <workerClass>ThoughtWorker_Hediff</workerClass>
-    <hediff>IH_revivedFirst</hediff>
+    <hediff>DP_revivedFirst</hediff>
     <validWhileDespawned>true</validWhileDespawned>
     <stages>
       <li>
-        <label>content</label>
-        <description>It seems like after all not much has changed.</description>
+        <label>Wait, what?</label>
+        <description>Wasn't I just dead? That was weird.</description>
         <baseMoodEffect>5</baseMoodEffect>
       </li>
       <li>
-        <label>Living life</label>
-        <description>What more can I do with this new life?</description>
+        <label>Second chance</label>
+        <description>Maybe I should use this for good... nah.</description>
         <baseMoodEffect>10</baseMoodEffect>
       </li>
       <li>
-        <label>I'm alive!</label>
-        <description>I thought I was dead, but I'm not. What happened?</description>
+        <label>Where's my stuff?</label>
+        <description>Seriously, who looted my body?</description>
         <baseMoodEffect>20</baseMoodEffect>
       </li>
     </stages>
   </ThoughtDef>
 
   <ThoughtDef>
-    <defName>IH_revive</defName>
+    <defName>DP_revive</defName>
     <workerClass>ThoughtWorker_Hediff</workerClass>
-    <hediff>IH_revived</hediff>
+    <hediff>DP_revived</hediff>
     <validWhileDespawned>true</validWhileDespawned>
     <stages>
       <li>
@@ -36,13 +36,13 @@
         <baseMoodEffect>5</baseMoodEffect>
       </li>
       <li>
-        <label>numb to life</label>
-        <description>how will I die this time?</description>
+        <label>Getting old</label>
+        <description>Can we not keep doing this?</description>
         <baseMoodEffect>-8</baseMoodEffect>
       </li>
       <li>
-        <label>I died again</label>
-        <description>The pain and misery of dieing is still so vivid</description>
+        <label>Make it stop</label>
+        <description>Even I'm tired of me dying.</description>
         <baseMoodEffect>-12</baseMoodEffect>
       </li>
     </stages>

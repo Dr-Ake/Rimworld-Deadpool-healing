@@ -2,10 +2,10 @@
 
 <Defs>
   <HediffDef ParentName="InjuryBase">
-    <defName>IH_Burn</defName>
-    <label>immortal burn</label>
-    <labelNoun>an immortal burn</labelNoun>
-    <description>An immortal burn.</description>
+    <defName>DP_Burn</defName>
+    <label>deadpool burn</label>
+    <labelNoun>an deadpool burn</labelNoun>
+    <description>An deadpool burn.</description>
     <comps>
       <li Class="HediffCompProperties_TendDuration">
         <labelTendedWell>bandaged</labelTendedWell>
