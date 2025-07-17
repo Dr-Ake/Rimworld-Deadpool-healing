@@ -1,27 +1,3 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
-  <SpecialThingFilterDef>
-    <defName>AllowHealingFactorCorpses</defName>
-    <label>allow Deadpool-like corpses</label>
-    <description>Allow the corpses of the hard-to-kill crowd.</description>
-    <parentCategory>CorpsesHumanlike</parentCategory>
-    <allowedByDefault>false</allowedByDefault>
-    <saveKey>allowCorpsesDeadpool</saveKey>
-    <workerClass>DeadpoolMod.Source.SpecialThingFilterWorker_HealingFactorCorpses</workerClass>
-      <!-- These workerClasses will need to be implemented in C# under a new
-           namespace to remove the dependency on the old framework. -->
-  </SpecialThingFilterDef>
-  
-  <SpecialThingFilterDef>
-    <defName>AllowNormalCorpses</defName>
-    <label>allow regular corpses</label>
-    <description>Allow the dead bodies of regular mortals. They won't come back.</description>
-    <parentCategory>CorpsesHumanlike</parentCategory>
-    <allowedByDefault>false</allowedByDefault>
-      <saveKey>allowCorpsesMortal</saveKey>
-    <workerClass>DeadpoolMod.Source.SpecialThingFilterWorker_NormalCorpses</workerClass>
-      <!-- These workerClasses will need to be implemented in C# under a new
-           namespace to remove the dependency on the old framework. -->
-  </SpecialThingFilterDef>
-  
 </Defs>
