@@ -1,34 +1,27 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
+    <OutputType>Library</OutputType>
     <TargetFramework>net472</TargetFramework>
-    <AssemblyName>Deadpool</AssemblyName>
-    <RootNamespace>DeadpoolsHealingFactor</RootNamespace>
     <LangVersion>latest</LangVersion>
+    <AssemblyTitle>DeadpoolsHealingFactor</AssemblyTitle>
+    <Version>1.0.0.0</Version>
+    <Authors>Dr-Ake</Authors>
+    <Company>Dr-Ake</Company>
+    <Copyright>Copyright © 2025</Copyright>
   </PropertyGroup>
-  <ItemGroup>
-    <!-- RimWorld and Harmony references should be adjusted to local paths -->
-    <Reference Include="Assembly-CSharp">
-      <HintPath>$(RimWorldDir)/RimWorldWin64_Data/Managed/Assembly-CSharp.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.CoreModule">
-      <HintPath>$(RimWorldDir)/RimWorldWin64_Data/Managed/UnityEngine.CoreModule.dll</HintPath>
-    </Reference>
-    <Reference Include="0Harmony">
-      <HintPath>$(RimWorldDir)/Mods/Harmony/Assemblies/0Harmony.dll</HintPath>
-    </Reference>
-  </ItemGroup>
 
   <ItemGroup>
     <Reference Include="Assembly-CSharp">
       <HintPath>..\..\..\..\RimWorldWin64_Data\Managed\Assembly-CSharp.dll</HintPath>
-      <Private>false</Private>
+      <Private>False</Private>
     </Reference>
     <Reference Include="UnityEngine.CoreModule">
       <HintPath>..\..\..\..\RimWorldWin64_Data\Managed\UnityEngine.CoreModule.dll</HintPath>
-      <Private>false</Private>
+      <Private>False</Private>
     </Reference>
+
     <Reference Include="0Harmony">
-      <HintPath>..\..\..\..\workshop\content\294100\2009463077\Current\Assemblies\0Harmony.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\workshop\content\294100\2009463077\Current\Assemblies\0Harmony.dll</HintPath>
       <Private>False</Private>
     </Reference>
   </ItemGroup>
