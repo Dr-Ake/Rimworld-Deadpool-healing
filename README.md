@@ -43,3 +43,7 @@ Now quit reading this file and go break the fourth wall somewhere else. Chimicha
 ## License
 
 This project is released under the [MIT License](LICENSE).
+
+## Disclaimer
+
+This mod is entirely unofficial and not endorsed by Marvel, Ludeon Studios, or anyone else who could send a cease-and-desist. Use at your own risk and remember: chimichangas not included.
