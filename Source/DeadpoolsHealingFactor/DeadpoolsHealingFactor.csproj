@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net472</TargetFramework>
+    <AssemblyName>Deadpool</AssemblyName>
+    <RootNamespace>DeadpoolsHealingFactor</RootNamespace>
+    <LangVersion>latest</LangVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <!-- RimWorld and Harmony references should be adjusted to local paths -->
+    <Reference Include="Assembly-CSharp">
+      <HintPath>$(RimWorldDir)/RimWorldWin64_Data/Managed/Assembly-CSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.CoreModule">
+      <HintPath>$(RimWorldDir)/RimWorldWin64_Data/Managed/UnityEngine.CoreModule.dll</HintPath>
+    </Reference>
+    <Reference Include="0Harmony">
+      <HintPath>$(RimWorldDir)/Mods/Harmony/Assemblies/0Harmony.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+</Project>
