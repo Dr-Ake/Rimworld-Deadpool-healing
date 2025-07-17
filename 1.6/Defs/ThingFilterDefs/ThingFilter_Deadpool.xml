@@ -1,23 +1,27 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
   <SpecialThingFilterDef>
-    <defName>AllowImmortalCorpses</defName>
-    <label>allow healing-factor corpses</label>
+    <defName>AllowHealingFactorCorpses</defName>
+    <label>allow Deadpool-like corpses</label>
     <description>Allow the corpses of the hard-to-kill crowd.</description>
     <parentCategory>CorpsesHumanlike</parentCategory>
     <allowedByDefault>false</allowedByDefault>
     <saveKey>allowCorpsesDeadpool</saveKey>
-    <workerClass>Immortals.Source.SpecialThingFilterWorker_CorpsesImmortal</workerClass>
+    <workerClass>DeadpoolMod.Source.SpecialThingFilterWorker_HealingFactorCorpses</workerClass>
+    <!-- These workerClasses will need to be implemented in C# under a new
+         namespace to remove the dependency on the 'Immortals' mod. -->
   </SpecialThingFilterDef>
   
   <SpecialThingFilterDef>
-    <defName>AllowMortalCorpses</defName>
-    <label>allow mortal corpses</label>
+    <defName>AllowNormalCorpses</defName>
+    <label>allow regular corpses</label>
     <description>Allow the dead bodies of regular mortals. They won't come back.</description>
     <parentCategory>CorpsesHumanlike</parentCategory>
     <allowedByDefault>false</allowedByDefault>
     <saveKey>allowCorpsesMmortal</saveKey>
-    <workerClass>Immortals.Source.SpecialThingFilterWorker_CorpsesMortal</workerClass>
+    <workerClass>DeadpoolMod.Source.SpecialThingFilterWorker_NormalCorpses</workerClass>
+    <!-- These workerClasses will need to be implemented in C# under a new
+         namespace to remove the dependency on the 'Immortals' mod. -->
   </SpecialThingFilterDef>
   
 </Defs>
