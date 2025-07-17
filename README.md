@@ -5,8 +5,7 @@ Whoa there, reader! Yep, it's me, narrating my own README. This repo packs my no
 ## What's in the box?
 
 - **About/** – Metadata and a spiffy preview image so you know what you just downloaded.
-- **1.6/** – All the juicy stuff for RimWorld 1.6: compiled assemblies, patch files, and XML defs that keep the carnage running smoothly.
-  - **Assemblies/** – `Deadpool.pdb` debug symbols only. No extra UnityEngine modules needed.
+- **1.6/** – All the juicy stuff for RimWorld 1.6: patch files and XML defs that keep the carnage running smoothly.
   - **Defs/** – Damage, hediff, and thought definitions that teach your pawns to ignore minor annoyances like death.
   - **Patches/** – Tiny tweaks for compatibility. I even care about lactation, apparently.
 - **Languages/** – Snarky English translations. Other languages? Maybe later when I hire a bilingual merc.
