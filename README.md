@@ -1,6 +1,6 @@
 # Deadpool's Healing Factor
 
-This RimWorld mod injects your pawns with a ridiculous healing factor worthy of the Merc with a Mouth. No Immortals framework, no mystical quickenings—just fast regeneration and bad jokes.
+This RimWorld mod injects your pawns with a ridiculous healing factor worthy of the Merc with a Mouth. No bulky framework, no mystical PowerSurges—just fast regeneration and bad jokes.
 
 ## Repository layout
 

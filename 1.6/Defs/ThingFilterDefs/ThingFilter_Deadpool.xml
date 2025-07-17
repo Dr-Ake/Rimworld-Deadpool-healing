@@ -8,8 +8,8 @@
     <allowedByDefault>false</allowedByDefault>
     <saveKey>allowCorpsesDeadpool</saveKey>
     <workerClass>DeadpoolMod.Source.SpecialThingFilterWorker_HealingFactorCorpses</workerClass>
-    <!-- These workerClasses will need to be implemented in C# under a new
-         namespace to remove the dependency on the 'Immortals' mod. -->
+      <!-- These workerClasses will need to be implemented in C# under a new
+           namespace to remove the dependency on the old framework. -->
   </SpecialThingFilterDef>
   
   <SpecialThingFilterDef>
@@ -18,10 +18,10 @@
     <description>Allow the dead bodies of regular mortals. They won't come back.</description>
     <parentCategory>CorpsesHumanlike</parentCategory>
     <allowedByDefault>false</allowedByDefault>
-    <saveKey>allowCorpsesMmortal</saveKey>
+      <saveKey>allowCorpsesMortal</saveKey>
     <workerClass>DeadpoolMod.Source.SpecialThingFilterWorker_NormalCorpses</workerClass>
-    <!-- These workerClasses will need to be implemented in C# under a new
-         namespace to remove the dependency on the 'Immortals' mod. -->
+      <!-- These workerClasses will need to be implemented in C# under a new
+           namespace to remove the dependency on the old framework. -->
   </SpecialThingFilterDef>
   
 </Defs>
