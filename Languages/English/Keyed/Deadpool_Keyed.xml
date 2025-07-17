@@ -183,8 +183,8 @@
   <DP_stealStageTip>>Chance that a pawn will gain hidden healing factority from eating the severed head from an apex healing factor</DP_stealStageTip>
 
 
-  <DP_MortalisMultiplier>Chimichanga multiplier</DP_MortalisMultiplier>
-  <DP_MortalisMultiplierTip>Chimichanga goo made in the extractor is multiplied by this value</DP_MortalisMultiplierTip>
+  <DP_MortalisMultiplier>X-Gene multiplier</DP_MortalisMultiplier>
+  <DP_MortalisMultiplierTip>X-Gene sample yield from the extractor is multiplied by this value</DP_MortalisMultiplierTip>
 
 
   <DP_stuntedChance>Stunted healing factority chance</DP_stuntedChance>
@@ -344,9 +344,9 @@
 
 
   <DP_Designator_ExtractorTrigger>Extractor Trigger</DP_Designator_ExtractorTrigger>
-  <DP_Designator_ExtractorTriggerDesc>Use this healing factor pawn to trigger a chimichanga extractor.</DP_Designator_ExtractorTriggerDesc>
+  <DP_Designator_ExtractorTriggerDesc>Use this healing factor pawn to trigger an X-Gene extractor.</DP_Designator_ExtractorTriggerDesc>
 
-  <DP_StoredMortalis>Chimichanga bits inside {0}</DP_StoredMortalis>
+  <DP_StoredMortalis>X-Gene samples inside {0}</DP_StoredMortalis>
 	
   <DP_Designator_Impale>Impale Pawn</DP_Designator_Impale>
   <DP_Designator_ImpaleDesc>Take a piece of steel and drive it through the heart of a pawn. This will stop an healing factor from reviving.</DP_Designator_ImpaleDesc>
