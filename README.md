@@ -10,8 +10,6 @@ Whoa there, reader! Yep, it's me, narrating my own README. This repo packs my no
   - **Defs/** – Damage, hediff, and thought definitions that teach your pawns to ignore minor annoyances like death.
   - **Patches/** – Tiny tweaks for compatibility. I even care about lactation, apparently.
 - **Languages/** – Snarky English translations. Other languages? Maybe later when I hire a bilingual merc.
-- **Textures/** – the mod's UI elements.
-
 That's it. No leftover `Source` folder, no uncompiled mess. Just what you see here.
 
 ## Features
