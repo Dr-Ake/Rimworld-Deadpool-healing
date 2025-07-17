@@ -1,6 +1,6 @@
 # Deadpool's Healing Factor
 
-Whoa there, reader! Yep, it's me, narrating my own README. This repo packs my not-so-secret sauce straight into your RimWorld pawns. Install it and watch them shrug off decapitations faster than you can yell "Maximum effort!" No sprawling frameworks, no mystical X-Men tie-ins – just an absurd dose of regeneration wrapped in a tidy mod.
+Whoa there, reader! Yep, it's me, narrating my own README. This repo packs my not-so-secret sauce straight into your RimWorld pawns. Install it and watch them shrug off decapitations faster than you can yell "Chimichanga!" No sprawling frameworks, no mystical X-Men tie-ins – just an absurd dose of regeneration wrapped in a tidy mod.
 
 ## What's in the box?
 
