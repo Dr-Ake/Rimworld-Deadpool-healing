@@ -17,8 +17,8 @@
   <DP_firstDeathGrantsPowerSurge>Unknown Healing Factor PowerSurge</DP_firstDeathGrantsPowerSurge>
   <DP_firstDeathGrantsPowerSurgeTip>Toggle whether rookies can share their healing mojo before the first "oops" moment.</DP_firstDeathGrantsPowerSurgeTip>
 
-  <DP_ShowHealing FactorNumbers>Reveal Healing Factority numbers</DP_ShowHealing FactorNumbers>
-  <DP_ShowHealing FactorNumbersTip>Shows the exact healing factor value, because who doesn't love stats?</DP_ShowHealing FactorNumbersTip>
+  <DP_ShowHealingFactorNumbers>Reveal Healing Factority numbers</DP_ShowHealingFactorNumbers>
+  <DP_ShowHealingFactorNumbersTip>Shows the exact healing factor value, because who doesn't love stats?</DP_ShowHealingFactorNumbersTip>
 	
 	
   <DP_AllowBeheadAll>Behead all pawns</DP_AllowBeheadAll>
@@ -28,7 +28,7 @@
   <DP_AllowBeheadAllLeavesHeadTip>Every beheading comes with a souvenir head. Collect them all!</DP_AllowBeheadAllLeavesHeadTip>
 
   <!-- General Healing Factority Settings-->
-  <DP_GeneralHealing FactoritySettings>General Healing Factority Settings</DP_GeneralHealing FactoritySettings>
+  <DP_GeneralHealingFactoritySettings>General Healing Factority Settings</DP_GeneralHealingFactoritySettings>
   
   <DP_DeathEffectOnVal>Effect of deaths On healing factority,</DP_DeathEffectOnVal>
   <DP_DeathEffectOnValTip>How much their healing mojo shifts every time they bite it.</DP_DeathEffectOnValTip>
@@ -40,10 +40,10 @@
   <DP_scarHealSpeedTip>Multiplier for scar healing. Only ticks during rare moments, so don't hold your breath.</DP_scarHealSpeedTip>
 
 
-  <DP_healing factorTransferBodyFactor>Body size PowerSurge factor</DP_healing factorTransferBodyFactor>
-  <DP_healing factorTransferBodyFactorTip>Bigger critters give more healing juice. Science!</DP_healing factorTransferBodyFactorTip>
-  <DP_healing factorHealingBodyFactor>Body size heal factor </DP_healing factorHealingBodyFactor>
-  <DP_healing factorHealingBodyFactorTip>Bigger bodies heal faster. Go figure.</DP_healing factorHealingBodyFactorTip>
+  <DP_healingfactorTransferBodyFactor>Body size PowerSurge factor</DP_healingfactorTransferBodyFactor>
+  <DP_healingfactorTransferBodyFactorTip>Bigger critters give more healing juice. Science!</DP_healingfactorTransferBodyFactorTip>
+  <DP_healingfactorHealingBodyFactor>Body size heal factor </DP_healingfactorHealingBodyFactor>
+  <DP_healingfactorHealingBodyFactorTip>Bigger bodies heal faster. Go figure.</DP_healingfactorHealingBodyFactorTip>
 
 
   <!-- Regrowth Settigns-->
@@ -66,8 +66,8 @@
   
   <DP_regrowLesser>Lesser Healing Factor</DP_regrowLesser>
   <DP_regrowLesserTip>Max HP of limbs a lesser factor can grow back. Baby steps.</DP_regrowLesserTip>
-  <DP_regrowHealing Factor>Healing Factor</DP_regrowHealing Factor>
-  <DP_regrowHealing FactorTip>Max HP for standard factor regrowth. Pretty standard.</DP_regrowHealing FactorTip>
+  <DP_regrowHealingFactor>Healing Factor</DP_regrowHealingFactor>
+  <DP_regrowHealingFactorTip>Max HP for standard factor regrowth. Pretty standard.</DP_regrowHealingFactorTip>
   <DP_regrowGreater>Greater Healing Factor</DP_regrowGreater>
   <DP_regrowGreaterTip>How tough the parts a greater factor can regrow.</DP_regrowGreaterTip>
   <DP_regrowHigh>High Healing Factor</DP_regrowHigh>
@@ -82,14 +82,14 @@
   <DP_defaultAllTip>Hit this to reset stuff. Check the boxes first if you care.</DP_defaultAllTip>
 
 
-  <DP_defaultHealing FactorClasses>Healing Factor classes</DP_defaultHealing FactorClasses>
-  <DP_defaultHealing FactorClassesTip>Deletes every healing class and rebuilds them like new. Bold move.</DP_defaultHealing FactorClassesTip>
-  <DP_defaultDefaultHealing Factor>Default healing factority</DP_defaultDefaultHealing Factor>
-  <DP_defaultDefaultHealing FactorTip>Restores default healing numbers for anything not fancy enough for a class.</DP_defaultDefaultHealing FactorTip>
+  <DP_defaultHealingFactorClasses>Healing Factor classes</DP_defaultHealingFactorClasses>
+  <DP_defaultHealingFactorClassesTip>Deletes every healing class and rebuilds them like new. Bold move.</DP_defaultHealingFactorClassesTip>
+  <DP_defaultDefaultHealingFactor>Default healing factority</DP_defaultDefaultHealingFactor>
+  <DP_defaultDefaultHealingFactorTip>Restores default healing numbers for anything not fancy enough for a class.</DP_defaultDefaultHealingFactorTip>
   <DP_defaultRegrowth>Regrowth</DP_defaultRegrowth>
   <DP_defaultRegrowthTip>Back to factory settings for regrowth stages.</DP_defaultRegrowthTip>
-  <DP_defaultGeneralHealing Factor>General healing factority</DP_defaultGeneralHealing Factor>
-  <DP_defaultGeneralHealing FactorTip>Resets general healing and regrowth rates. Boring but necessary.</DP_defaultGeneralHealing FactorTip>
+  <DP_defaultGeneralHealingFactor>General healing factority</DP_defaultGeneralHealingFactor>
+  <DP_defaultGeneralHealingFactorTip>Resets general healing and regrowth rates. Boring but necessary.</DP_defaultGeneralHealingFactorTip>
   <DP_defaultGeneral>General</DP_defaultGeneral>
   <DP_defaultGeneralTip>Rolls everything back to baseline. Tick rate, numbers, the works.</DP_defaultGeneralTip>
   <DP_defaultPowerSurgeChange>PowerSurge pawn chances</DP_defaultPowerSurgeChange>
@@ -99,28 +99,28 @@
   <DP_defaultHediffs>Custom Hediffs</DP_defaultHediffs>
   <DP_defaultHediffsTip>Back to the boring default conditions.</DP_defaultHediffsTip>
   
-  <DP_removeHealing Factority>Remove Healing Factority</DP_removeHealing Factority>
-  <DP_removeHealing FactorityTip>Strips everyone of healing factor. No take-backs.</DP_removeHealing FactorityTip>
-  <DP_addHealing Factority>Add Healing Factority</DP_addHealing Factority>
-  <DP_addHealing FactorityTip>Attempts to bless everyone everywhere with healing factor. Sharing is caring.</DP_addHealing FactorityTip>
+  <DP_removeHealingFactority>Remove Healing Factority</DP_removeHealingFactority>
+  <DP_removeHealingFactorityTip>Strips everyone of healing factor. No take-backs.</DP_removeHealingFactorityTip>
+  <DP_addHealingFactority>Add Healing Factority</DP_addHealingFactority>
+  <DP_addHealingFactorityTip>Attempts to bless everyone everywhere with healing factor. Sharing is caring.</DP_addHealingFactorityTip>
 
   <DP_defaultConfirm>Confirm?</DP_defaultConfirm>
 
   
   <!-- Default Healing Factority-->
-  <DP_defaultHealing Factority>Default Healing Factority Settings</DP_defaultHealing Factority>
+  <DP_defaultHealingFactority>Default Healing Factority Settings</DP_defaultHealingFactority>
   
   <DP_chance>hidden healing factority: </DP_chance>
   <DP_chanceTip>Chance a pawn secretly has the factor but no perks until they die once.</DP_chanceTip>
   <DP_chanceVisible>visible healing factority: </DP_chanceVisible>
   <DP_chanceVisibleTip>Chance a pawn shows up already using their factor. They skip the awkward first death.</DP_chanceVisibleTip>
 
-  <DP_Healing FactorClassRange>Healing Factority range: </DP_Healing FactorClassRange>
-  <DP_Healing FactorClassRangeTip>Range of healing power new pawns spawn with.</DP_Healing FactorClassRangeTip>
-  <DP_Healing FactorClassTransferIn>Healing Factority in: </DP_Healing FactorClassTransferIn>
-  <DP_Healing FactorClassTransferInTip>Incoming healing power gets multiplied by this. Sharing is caring.</DP_Healing FactorClassTransferInTip>
-  <DP_Healing FactorClassTransferOut>Healing Factor out: </DP_Healing FactorClassTransferOut>
-  <DP_Healing FactorClassTransferOutTip>Outgoing healing juice is scaled by this. Give generously.</DP_Healing FactorClassTransferOutTip>
+  <DP_HealingFactorClassRange>Healing Factority range: </DP_HealingFactorClassRange>
+  <DP_HealingFactorClassRangeTip>Range of healing power new pawns spawn with.</DP_HealingFactorClassRangeTip>
+  <DP_HealingFactorClassTransferIn>Healing Factority in: </DP_HealingFactorClassTransferIn>
+  <DP_HealingFactorClassTransferInTip>Incoming healing power gets multiplied by this. Sharing is caring.</DP_HealingFactorClassTransferInTip>
+  <DP_HealingFactorClassTransferOut>Healing Factor out: </DP_HealingFactorClassTransferOut>
+  <DP_HealingFactorClassTransferOutTip>Outgoing healing juice is scaled by this. Give generously.</DP_HealingFactorClassTransferOutTip>
   
   
   <!-- PowerSurge Change Stuff-->
@@ -157,16 +157,16 @@
   <DP_editDefault>Use default ({0})</DP_editDefault>
   
 
-  <DP_Healing FactorClassCanBe>Can be healing factor</DP_Healing FactorClassCanBe>
-  <DP_Healing FactorClassCanBeTip>Toggle whether this class can even spawn as healing factor.</DP_Healing FactorClassCanBeTip>
-  <DP_Healing FactorClassChance>Healing Factority Chance: </DP_Healing FactorClassChance>
-  <DP_Healing FactorClassChanceTip>Base chance for a pawn to pop out with healing factor.</DP_Healing FactorClassChanceTip>
-  <DP_Healing FactorClassChanceVisible>Visible Chance: </DP_Healing FactorClassChanceVisible>
-  <DP_Healing FactorClassChanceVisibleTip>Chance the newly spawned factor pawn gets bumped up a tier.</DP_Healing FactorClassChanceVisibleTip>
+  <DP_HealingFactorClassCanBe>Can be healing factor</DP_HealingFactorClassCanBe>
+  <DP_HealingFactorClassCanBeTip>Toggle whether this class can even spawn as healing factor.</DP_HealingFactorClassCanBeTip>
+  <DP_HealingFactorClassChance>Healing Factority Chance: </DP_HealingFactorClassChance>
+  <DP_HealingFactorClassChanceTip>Base chance for a pawn to pop out with healing factor.</DP_HealingFactorClassChanceTip>
+  <DP_HealingFactorClassChanceVisible>Visible Chance: </DP_HealingFactorClassChanceVisible>
+  <DP_HealingFactorClassChanceVisibleTip>Chance the newly spawned factor pawn gets bumped up a tier.</DP_HealingFactorClassChanceVisibleTip>
 
-  <DP_Healing FactorClassPawnsTip>Pawns already enrolled in this class.</DP_Healing FactorClassPawnsTip>
-  <DP_Healing FactorClassNonPawnsTip>Pawns not in this class. Red means they're in no class at all.</DP_Healing FactorClassNonPawnsTip>
-  <DP_Healing FactorClassLoadMissing>Could not find {0} pawn defs from removed mods. They can be cleared in options. Missing defs: {1}</DP_Healing FactorClassLoadMissing>
+  <DP_HealingFactorClassPawnsTip>Pawns already enrolled in this class.</DP_HealingFactorClassPawnsTip>
+  <DP_HealingFactorClassNonPawnsTip>Pawns not in this class. Red means they're in no class at all.</DP_HealingFactorClassNonPawnsTip>
+  <DP_HealingFactorClassLoadMissing>Could not find {0} pawn defs from removed mods. They can be cleared in options. Missing defs: {1}</DP_HealingFactorClassLoadMissing>
   
   <!-- Transfer and stunted stuff-->
   <DP_transferSettings>Transfer Settings</DP_transferSettings>
@@ -240,7 +240,7 @@
   <!-- Other shit-->
   
   
-  <DP_Healing Factors>Healing Factors</DP_Healing Factors>
+  <DP_HealingFactors>Healing Factors</DP_HealingFactors>
   <DP_Default>   (Default)</DP_Default>
   <DP_DefaultNum>   (Default: {0})</DP_DefaultNum>
   <DP_off>off</DP_off>
@@ -273,7 +273,7 @@
 
 
   <DP_lesser>Lesser Healing Factor</DP_lesser>
-  <DP_healing factor>Healing Factor</DP_healing factor>
+  <DP_healingfactor>Healing Factor</DP_healingfactor>
   <DP_greater>Greater Healing Factor</DP_greater>
   <DP_high>High Healing Factor</DP_high>
   <DP_grand>Grand Healing Factor</DP_grand>
@@ -311,7 +311,7 @@
   <DP_hediffsOff>Hide hediff specific settings</DP_hediffsOff>
 
 
-  <DP_Healing FactorClassHealScars>Heal scars: </DP_Healing FactorClassHealScars>
+  <DP_HealingFactorClassHealScars>Heal scars: </DP_HealingFactorClassHealScars>
 
   
   <DP_hediffs>Edit hediff specific settings</DP_hediffs>
