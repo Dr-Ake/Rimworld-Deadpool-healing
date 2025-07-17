@@ -7,7 +7,7 @@ This RimWorld mod injects your pawns with a ridiculous healing factor worthy of 
 - `About/` – mod metadata and preview image.
 - `1.6/` – assemblies and definitions for RimWorld 1.6.
 - `Defs/` – definitions for earlier game versions.
-- `Languages/` – English and Russian translations.
+- `Languages/` – English translations.
 - `Textures/` – UI icons for mod actions.
 - `Source/obj/` – build artifacts; the original C# source is not included.
 
@@ -15,7 +15,7 @@ This RimWorld mod injects your pawns with a ridiculous healing factor worthy of 
 
 - Grants pawns a powerful healing factor that shrugs off injuries.
 - Offers settings to adjust how quickly bodies mend.
-- Translation support for English with limited Russian entries.
+- Translation support for English.
 - Provides a precompiled DLL for RimWorld 1.6.
 
 ## Installation
