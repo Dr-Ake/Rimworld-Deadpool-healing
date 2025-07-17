@@ -20,13 +20,7 @@ namespace DeadpoolsHealingFactor
     [HarmonyPatch(typeof(Pawn_HealthTracker), "HealthTick")]
     public static class Patch_Pawn_HealthTracker_HealthTick
     {
-        // Healing factor settings
-        private const float BaseHealAmount = 0.5f;
-        private const int TicksBetweenHeals = 250;
-
-        // Regrowth settings
-        private const float RegrowSpeed = 0.01f;
-        private const int MaxRegrowingParts = 2;
+        // default values are kept in Settings.cs
 
         public static void Postfix(Pawn_HealthTracker __instance, Pawn ___pawn)
         {
@@ -42,21 +36,21 @@ namespace DeadpoolsHealingFactor
             }
 
             // Keep mood maxed and ensure the pawn is a psychopath
-            if (___pawn.needs?.mood != null)
+            if (DeadpoolsHealingFactorMod.settings.boostMood && ___pawn.needs?.mood != null)
             {
                 ___pawn.needs.mood.CurInstantLevel = 1f; // effectively +100 mood
             }
-            if (___pawn.story?.traits != null && !___pawn.story.traits.HasTrait(TraitDefOf.Psychopath))
+            if (DeadpoolsHealingFactorMod.settings.forcePsychopath && ___pawn.story?.traits != null && !___pawn.story.traits.HasTrait(TraitDefOf.Psychopath))
             {
                 ___pawn.story.traits.GainTrait(new Trait(TraitDefOf.Psychopath));
             }
 
-            if (Find.TickManager.TicksGame % TicksBetweenHeals != 0)
+            if (Find.TickManager.TicksGame % DeadpoolsHealingFactorMod.settings.ticksBetweenHeals != 0)
             {
                 return;
             }
 
-            float healAmount = BaseHealAmount * hediff.Severity;
+            float healAmount = DeadpoolsHealingFactorMod.settings.baseHealAmount * hediff.Severity;
 
             Hediff_Injury injury = ___pawn.health.hediffSet.hediffs
                 .OfType<Hediff_Injury>()
@@ -64,7 +58,7 @@ namespace DeadpoolsHealingFactor
                 .OrderByDescending(h => h.Severity)
                 .FirstOrDefault();
 
-            if (injury != null)
+            if (DeadpoolsHealingFactorMod.settings.enableHealing && injury != null)
             {
                 injury.Heal(healAmount);
                 if (Prefs.DevMode)
@@ -80,39 +74,42 @@ namespace DeadpoolsHealingFactor
                 .Where(h => h.def == regrowingDef)
                 .ToList();
 
-            foreach (var regrow in regrowingHediffs)
+            if (DeadpoolsHealingFactorMod.settings.enableRegrowth)
             {
-                regrow.Severity += RegrowSpeed * hediff.Severity;
-                if (regrow.Severity >= 1.0f)
+                foreach (var regrow in regrowingHediffs)
                 {
-                    BodyPartRecord partToRestore = regrow.Part;
-                    ___pawn.health.RemoveHediff(regrow);
-                    ___pawn.health.RestorePart(partToRestore);
+                    regrow.Severity += DeadpoolsHealingFactorMod.settings.regrowSpeed * hediff.Severity;
+                    if (regrow.Severity >= 1.0f)
+                    {
+                        BodyPartRecord partToRestore = regrow.Part;
+                        ___pawn.health.RemoveHediff(regrow);
+                        ___pawn.health.RestorePart(partToRestore);
                     if (Prefs.DevMode)
                     {
                         Log.Message($"[DeadpoolsHealingFactor] Restored {partToRestore.Label} on {___pawn.LabelShort}.");
                     }
                 }
-            }
-            
-            if (regrowingHediffs.Count < MaxRegrowingParts)
-            {
-                // **THE FIX IS HERE:** Changed 'missing.parent' to 'missing.Part.parent'
-                var missingParts = ___pawn.health.hediffSet.GetMissingPartsCommonAncestors();
-                foreach (var missing in missingParts)
-                {
-                    // A Hediff_MissingPart's 'Part' property is the BodyPartRecord
-                    BodyPartRecord parent = missing.Part.parent; 
+                }
 
-                    // Check if the parent part is already growing
-                    if (parent != null && !___pawn.health.hediffSet.hediffs.Any(h => h.def == regrowingDef && h.Part == parent))
+                if (regrowingHediffs.Count < DeadpoolsHealingFactorMod.settings.maxRegrowingParts)
+                {
+                    // **THE FIX IS HERE:** Changed 'missing.parent' to 'missing.Part.parent'
+                    var missingParts = ___pawn.health.hediffSet.GetMissingPartsCommonAncestors();
+                    foreach (var missing in missingParts)
                     {
-                        ___pawn.health.AddHediff(regrowingDef, parent);
-                        if (Prefs.DevMode)
+                        // A Hediff_MissingPart's 'Part' property is the BodyPartRecord
+                        BodyPartRecord parent = missing.Part.parent;
+
+                        // Check if the parent part is already growing
+                        if (parent != null && !___pawn.health.hediffSet.hediffs.Any(h => h.def == regrowingDef && h.Part == parent))
                         {
-                            Log.Message($"[DeadpoolsHealingFactor] Started regrowing a child of {parent.Label} on {___pawn.LabelShort}.");
+                            ___pawn.health.AddHediff(regrowingDef, parent);
+                            if (Prefs.DevMode)
+                            {
+                                Log.Message($"[DeadpoolsHealingFactor] Started regrowing a child of {parent.Label} on {___pawn.LabelShort}.");
+                            }
+                            break;
                         }
-                        break; 
                     }
                 }
             }
