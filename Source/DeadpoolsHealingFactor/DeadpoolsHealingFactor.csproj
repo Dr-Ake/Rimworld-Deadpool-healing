@@ -4,7 +4,7 @@
     <TargetFramework>net472</TargetFramework>
     <LangVersion>latest</LangVersion>
     <AssemblyTitle>DeadpoolsHealingFactor</AssemblyTitle>
-    <Version>1.0.0.0</Version>
+    <Version>0.0.2.0</Version>
     <Authors>Dr-Ake</Authors>
     <Company>Dr-Ake</Company>
     <Copyright>Copyright © 2025</Copyright>
