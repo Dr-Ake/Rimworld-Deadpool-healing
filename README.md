@@ -21,10 +21,9 @@ Hi. It's me. The guy on the cover. I heal fast. Your pawns? Now they do too. Ins
 
 ## What's in the box?
 - **About/**: Metadata and that handsome preview image up there.
-- **1.6/**: All the defs and compiled bits for RimWorld 1.6.
+- **1.6/**: All the defs for RimWorld 1.6.
   - **Defs/**: Hediffs that make the magic happen.
-  - **Assemblies/**: Compiled DLL for drop-in use.
-- **Source/DeadpoolsHealingFactor/**: Clean C# project using Harmony; builds drop into `1.6/Assemblies`.
+- **Source/DeadpoolsHealingFactor/**: Clean C# project using Harmony; building will create `1.6/Assemblies` locally.
 
 ## Installation
 1. Install Harmony first (`brrainz.harmony`). You already have it. If you don't, get it.
@@ -59,7 +58,7 @@ Set the `RimWorldDir` environment variable before building. PowerShell example:
 $env:RimWorldDir = "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld"
 ```
 
-Then build the project in `Source/DeadpoolsHealingFactor`. The DLL lands in `1.6/Assemblies`.
+Then build the project in `Source/DeadpoolsHealingFactor`. The build will place a DLL into `1.6/Assemblies` on your machine. This repository no longer ships a precompiled DLL.
 
 ## FAQ
 - **Does this make pawns immortal?**
