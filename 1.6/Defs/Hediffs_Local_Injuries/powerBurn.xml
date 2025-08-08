@@ -3,9 +3,9 @@
 <Defs>
   <HediffDef ParentName="InjuryBase">
     <defName>Deadpool_Burn</defName>
-    <label>deadpool burn</label>
-    <labelNoun>an deadpool burn</labelNoun>
-    <description>An deadpool burn.</description>
+    <label>Deadpool burn</label>
+    <labelNoun>a Deadpool burn</labelNoun>
+    <description>A Deadpool burn.</description>
     <comps>
       <li Class="HediffCompProperties_TendDuration">
         <labelTendedWell>bandaged</labelTendedWell>

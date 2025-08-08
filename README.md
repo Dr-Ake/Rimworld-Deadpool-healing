@@ -12,7 +12,7 @@ Whoa there, reader! Yep, it's me, narrating my own README. This repo packs my no
   - **Patches/** – Tiny tweaks for compatibility. I even care about lactation, apparently.
   - **Assemblies/** - Precompiled `Deadpool.dll` for immediate use.
 - **Languages/** – Snarky English translations. Other languages? Maybe later when I hire a bilingual merc.
-- **Source/DeadpoolsHealingFactor/** – The C# project with a simple Harmony patch that kicks everything off. If you build it yourself the DLL lands in an `Assemblies` folder.
+- **Source/DeadpoolsHealingFactor/** – The C# project with a simple Harmony patch that kicks everything off. Building places the DLL into `1.6/Assemblies`.
 
 ## Features
 
@@ -33,13 +33,13 @@ Built for RimWorld 1.6.
 
 ## Building
 
-Set the `RimWorldDir` environment variable to your RimWorld installation path before building. For example on Windows:
+Set the `RimWorldDir` environment variable to your RimWorld installation path before building. For example on Windows PowerShell:
 
 ```
-set RimWorldDir=C:\Program Files (x86)\Steam\steamapps\common\RimWorld
+$env:RimWorldDir = "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld"
 ```
 
-Harmony's DLL is expected under `Mods/Harmony/Assemblies` inside that directory. Once configured, open the project in `Source/DeadpoolsHealingFactor` with your favorite .NET build tools and compile it. The resulting DLL will appear in an `Assemblies` folder next to the source.
+Harmony's DLL is expected under `Mods/Harmony/Assemblies` inside that directory. Once configured, open the project in `Source/DeadpoolsHealingFactor` with your favorite .NET build tools and compile it. The resulting DLL will appear in `1.6/Assemblies`.
 
 Now quit reading this file and go break the fourth wall somewhere else. Chimichangas await!
 

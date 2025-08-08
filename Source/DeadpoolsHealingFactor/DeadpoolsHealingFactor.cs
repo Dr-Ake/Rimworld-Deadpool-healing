@@ -6,6 +6,18 @@ using Verse;
 
 namespace DeadpoolsHealingFactor
 {
+    [DefOf]
+    public static class DPDefOf
+    {
+        public static HediffDef DP_HealingFactor;
+        public static HediffDef DP_regrowing;
+        public static HediffDef DP_adjusting;
+
+        static DPDefOf()
+        {
+            DefOfHelper.EnsureInitializedInCtor(typeof(DPDefOf));
+        }
+    }
     [StaticConstructorOnStartup]
     public static class DeadpoolsHealingFactor
     {
@@ -29,8 +41,18 @@ namespace DeadpoolsHealingFactor
                 return;
             }
 
-            Hediff hediff = ___pawn.health?.hediffSet?.GetFirstHediffOfDef(HediffDef.Named("DP_HealingFactor"));
+            Hediff hediff = ___pawn.health?.hediffSet?.GetFirstHediffOfDef(DPDefOf.DP_HealingFactor);
             if (hediff == null)
+            {
+                return;
+            }
+
+            int interval = DeadpoolsHealingFactorMod.settings.ticksBetweenHeals;
+            if (interval <= 0)
+            {
+                interval = 250;
+            }
+            if (Find.TickManager.TicksGame % interval != 0)
             {
                 return;
             }
@@ -40,14 +62,12 @@ namespace DeadpoolsHealingFactor
             {
                 ___pawn.needs.mood.CurInstantLevel = 1f; // effectively +100 mood
             }
-            if (DeadpoolsHealingFactorMod.settings.forcePsychopath && ___pawn.story?.traits != null && !___pawn.story.traits.HasTrait(TraitDefOf.Psychopath))
+            if (DeadpoolsHealingFactorMod.settings.forcePsychopath
+                && ___pawn.RaceProps?.Humanlike == true
+                && ___pawn.story?.traits != null
+                && !___pawn.story.traits.HasTrait(TraitDefOf.Psychopath))
             {
                 ___pawn.story.traits.GainTrait(new Trait(TraitDefOf.Psychopath));
-            }
-
-            if (Find.TickManager.TicksGame % DeadpoolsHealingFactorMod.settings.ticksBetweenHeals != 0)
-            {
-                return;
             }
 
             float healAmount = DeadpoolsHealingFactorMod.settings.baseHealAmount * hediff.Severity;
@@ -68,7 +88,7 @@ namespace DeadpoolsHealingFactor
             }
 
             // ---------- Limb regrowth logic ----------
-            HediffDef regrowingDef = HediffDef.Named("DP_regrowing");
+            HediffDef regrowingDef = DPDefOf.DP_regrowing;
 
             var regrowingHediffs = ___pawn.health.hediffSet.hediffs
                 .Where(h => h.def == regrowingDef)
@@ -84,6 +104,8 @@ namespace DeadpoolsHealingFactor
                         BodyPartRecord partToRestore = regrow.Part;
                         ___pawn.health.RemoveHediff(regrow);
                         ___pawn.health.RestorePart(partToRestore);
+                        // Apply a short-lived adjustment debuff to the restored part to simulate recovery
+                        ___pawn.health.AddHediff(DPDefOf.DP_adjusting, partToRestore);
                     if (Prefs.DevMode)
                     {
                         Log.Message($"[DeadpoolsHealingFactor] Restored {partToRestore.Label} on {___pawn.LabelShort}.");
@@ -93,7 +115,6 @@ namespace DeadpoolsHealingFactor
 
                 if (regrowingHediffs.Count < DeadpoolsHealingFactorMod.settings.maxRegrowingParts)
                 {
-                    // **THE FIX IS HERE:** Changed 'missing.parent' to 'missing.Part.parent'
                     var missingParts = ___pawn.health.hediffSet.GetMissingPartsCommonAncestors();
                     foreach (var missing in missingParts)
                     {

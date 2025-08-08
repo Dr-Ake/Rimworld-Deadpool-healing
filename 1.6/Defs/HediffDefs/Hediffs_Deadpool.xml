@@ -193,7 +193,7 @@
   <HediffDef>
     <defName>DP_regrowing</defName>
     <defaultLabelColor>(0.15, 0.6, 0.2)</defaultLabelColor>
-    <description>This body part is busy growing back. Give it a minute.</description>
+    <description>This body part is regrowing. Give it a minute.</description>
     <isBad>false</isBad>
     <label>Regrowing</label>
     <stages>
