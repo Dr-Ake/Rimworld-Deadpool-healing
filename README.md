@@ -1,52 +1,85 @@
-# Deadpool's Healing Factor
+## Deadpool's Healing Factor
 
-**Version 0.0.2.0**
+Version 0.0.2.0
 
-Whoa there, reader! Yep, it's me, narrating my own README. This repo packs my not-so-secret sauce straight into your RimWorld pawns. Install it and watch them shrug off decapitations faster than you can yell "Chimichanga!" No sprawling frameworks, no mystical X-Men tie-ins – just an absurd dose of regeneration wrapped in a tidy mod.
+Hi. It's me. The guy on the cover. I heal fast. Your pawns? Now they do too. Install this and watch limbs regrow, moods skyrocket, and death become a mild inconvenience. Fourth wall? What fourth wall.
+
+![Preview](About/Preview.png)
+
+### TL;DR
+- **What**: A standalone, lightweight RimWorld 1.6 mod that gives pawns Deadpool-style regeneration.
+- **Why**: Because losing arms is funny… until it's your crafter.
+- **How**: Harmony patch that heals, regrows, and buffs on a configurable schedule.
+
+## Features (Maximum Effort Edition)
+- **Healing factor**: Wounds heal automatically at intervals you set. Severity scales the healing.
+- **Limb/part regrowth**: Missing parts regrow over time. You can cap how many grow at once and tune the speed.
+- **Recovery wobble**: Freshly regrown parts get a short “adjusting” period to keep it spicy.
+- **Mood juice**: Optional mood max buff. Because happy pawns shoot straighter. Science.
+- **Psychopath switch**: Optional trait application for humanlikes. You wanted Deadpool… you get Deadpool.
+- **Snark with settings**: Sliders and toggles for tick rate, heal amount, regrow speed, and more.
 
 ## What's in the box?
-
-- **About/** – Metadata and a spiffy preview image so you know what you just downloaded.
-- **1.6/** – All the juicy stuff for RimWorld 1.6: patch files and XML defs that keep the carnage running smoothly.
-  - **Defs/** – Damage, hediff, and thought definitions that teach your pawns to ignore minor annoyances like death.
-  - **Patches/** – Tiny tweaks for compatibility. I even care about lactation, apparently.
-  - **Assemblies/** - Precompiled `Deadpool.dll` for immediate use.
-- **Languages/** – Snarky English translations. Other languages? Maybe later when I hire a bilingual merc.
-- **Source/DeadpoolsHealingFactor/** – The C# project with a simple Harmony patch that kicks everything off. Building places the DLL into `1.6/Assemblies`.
-
-## Features
-
-- Grants a beefy healing factor that laughs at wounds and disease.
-- Settings galore: tweak healing ticks, regrowth speed, and more – all described in the most sarcastic tooltips you'll ever read.
-- Custom thoughts and hediffs from `Hediffs_Deadpool.xml`, including your very own Death Nap and Uncanny Hunger.
-- Precompiled DLLs so you can jump straight into the action without building a thing. Check `1.6/Assemblies` for the compiled `Deadpool.dll`.
+- **About/**: Metadata and that handsome preview image up there.
+- **1.6/**: All the defs, patches, and compiled bits for RimWorld 1.6.
+  - **Defs/**: Hediffs, thoughts, and damage types that make the magic happen.
+  - **Patches/**: Small compatibility tweaks.
+  - **Assemblies/**: Compiled DLL for drop-in use.
+- **Languages/**: English with extra sarcasm. You're welcome.
+- **Source/DeadpoolsHealingFactor/**: Clean C# project using Harmony; builds drop into `1.6/Assemblies`.
 
 ## Installation
+1. Install Harmony first (`brrainz.harmony`). You already have it. If you don't, get it.
+2. Drop this mod folder into `RimWorld/Mods`.
+3. Activate it in the mod list. Profit.
 
-1. Grab [Harmony](https://github.com/pardeike/HarmonyRimWorld) if you don't already have it.
-2. Drop this folder into your RimWorld `Mods` directory.
-3. Fire up the game and enable **Deadpool's Healing Factor**. Boom – your colonists just went full mutant.
+## In‑Game Settings (aka the Chimichanga Menu)
+- **Enable Healing**: Turns the passive healing on/off.
+- **Enable Regrowth**: Let those missing parts make a comeback tour.
+- **Boost Mood**: Keep mood topped off. Big smiles, fewer tantrums.
+- **Force Psychopath**: Applies the Psychopath trait to humanlikes with the factor.
+- **Ticks Between Heals**: How often the healing/regrowth logic runs.
+- **Base Heal Amount**: How much gets healed per tick, scaled by severity.
+- **Regrow Speed**: How fast parts regrow (severity multiplies this).
+- **Max Regrowing Parts**: Parallel limbs, baby. Cap the simultaneous regrowths.
+
+## How it works (without the technobabble)
+- Pawns with `Healing Factor` get periodic healing based on a tick interval and severity.
+- When a missing part is detected and slots are available, regrowth starts on the parent.
+- When a part finishes, it's restored and briefly marked as “adjusting” before returning to full strength.
+- Optional: mood max and Psychopath trait application (humanlikes only) to stay on theme.
 
 ## Compatibility
+- Built for RimWorld 1.6.
+- Requires Harmony. Load after Harmony (it’s in the metadata already).
+- Safe for existing saves. Remove at your own risk; I’m not resurrecting your colony.
 
-Built for RimWorld 1.6.
-
-## Building
-
-Set the `RimWorldDir` environment variable to your RimWorld installation path before building. For example on Windows PowerShell:
+## Building from Source
+Set the `RimWorldDir` environment variable before building. PowerShell example:
 
 ```
 $env:RimWorldDir = "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld"
 ```
 
-Harmony's DLL is expected under `Mods/Harmony/Assemblies` inside that directory. Once configured, open the project in `Source/DeadpoolsHealingFactor` with your favorite .NET build tools and compile it. The resulting DLL will appear in `1.6/Assemblies`.
+Then build the project in `Source/DeadpoolsHealingFactor`. The DLL lands in `1.6/Assemblies`.
 
-Now quit reading this file and go break the fourth wall somewhere else. Chimichangas await!
+## FAQ
+- **Does this make pawns immortal?**
+  Not literally. It heals fast, regrows parts, and keeps moods up. You can still lose people to, say, being on fire forever.
+- **Can I turn off the Psychopath thing?**
+  Yes. Toggle it in settings.
+- **How many limbs can grow back at once?**
+  You choose with “Max Regrowing Parts.” Regrowth speed scales with severity.
+- **Is it performance‑friendly?**
+  Yep. Work happens on a configurable interval and uses cached defs.
+
+## Credits
+- Code and design: Dr-Ake
+- Harmony magic: Brrainz and contributors
+- Inspiration: The unkillable, unshut‑uppable Deadpool
 
 ## License
-
-This project is released under the [MIT License](LICENSE).
+MIT. See `LICENSE`.
 
 ## Disclaimer
-
-This mod is entirely unofficial and not endorsed by Marvel, Ludeon Studios, or anyone else who could send a cease-and-desist. Use at your own risk and remember: chimichangas not included.
+Unofficial fan work. Not endorsed by Marvel, Ludeon Studios, or anyone with expensive lawyers. Chimichangas sold separately.
