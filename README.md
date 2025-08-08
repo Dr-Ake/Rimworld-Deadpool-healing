@@ -21,11 +21,9 @@ Hi. It's me. The guy on the cover. I heal fast. Your pawns? Now they do too. Ins
 
 ## What's in the box?
 - **About/**: Metadata and that handsome preview image up there.
-- **1.6/**: All the defs, patches, and compiled bits for RimWorld 1.6.
-  - **Defs/**: Hediffs, thoughts, and damage types that make the magic happen.
-  - **Patches/**: Small compatibility tweaks.
+- **1.6/**: All the defs and compiled bits for RimWorld 1.6.
+  - **Defs/**: Hediffs that make the magic happen.
   - **Assemblies/**: Compiled DLL for drop-in use.
-- **Languages/**: English with extra sarcasm. You're welcome.
 - **Source/DeadpoolsHealingFactor/**: Clean C# project using Harmony; builds drop into `1.6/Assemblies`.
 
 ## Installation
