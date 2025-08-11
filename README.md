@@ -74,6 +74,7 @@ Then build the project in `Source/DeadpoolsHealingFactor`. The build will place 
 - Code and design: Dr-Ake
 - Harmony magic: Brrainz and contributors
 - Inspiration: The unkillable, unshut‑uppable Deadpool
+- Also heavy inspiration and special thanks to the Immortal Mod/ Highlander Mod
 
 ## License
 MIT. See `LICENSE`.
