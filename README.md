@@ -62,7 +62,7 @@ Then build the project in `Source/DeadpoolsHealingFactor`. The build will place 
 
 ## FAQ
 - **Does this make pawns immortal?**
-  Not literally. It heals fast, regrows parts, and keeps moods up. You can still lose people to, say, being on fire forever.
+  Immortal? Please. That's a big word. Let's just say they'll be really, *really* hard to kill. They can still die from things like, you know, being turned to ash, or if you're a monster and decide to delete their save file. So, not 'immortal,' just... 'inconveniently durable.'
 - **Can I turn off the Psychopath thing?**
   Yes. Toggle it in settings.
 - **How many limbs can grow back at once?**
