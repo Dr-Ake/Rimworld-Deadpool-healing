@@ -1,0 +1,12 @@
+﻿# Build outputs
+Source/**/obj/
+Source/**/bin/
+1.6/Assemblies/*.dll
+
+# VS/MSBuild transient
+*.cache
+*.pdb
+*.user
+*.suo
+*.log
+*.vs/
