@@ -18,7 +18,6 @@
   <loadAfter>
     <li>brrainz.harmony</li>
   </loadAfter>
-  <packageId>CodexAgent.DeadpoolsHealingFactor</packageId>
-<description>
-Ever wish your colonists could regrow limbs faster than you can say "chimichanga"? This standalone mod hands them Deadpool's healing factor so they can laugh in the face of dismemberment.</description>
+  <packageId>Dr-Ake.DeadpoolsHealingFactor</packageId>
+<description>Hi. It's me. The guy on the cover. I heal fast. Your pawns? Now they do too. Install this and watch limbs regrow, moods skyrocket, and death become a mild inconvenience. Fourth wall? What fourth wall.</description>
 </ModMetaData>
