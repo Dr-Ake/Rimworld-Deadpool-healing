@@ -125,10 +125,8 @@ namespace DeadpoolsHealingFactor
                         {
                             h.Severity = (float)Math.Max(0f, h.Severity - healAmount);
                         }
-                        if (h.Severity <= 0f)
-                        {
-                            toRemove.Add(h);
-                        }
+                        // Ensure eventual cure even if severity is sticky
+                        toRemove.Add(h);
                     }
                 }
                 foreach (var h in toRemove)
@@ -253,10 +251,8 @@ namespace DeadpoolsHealingFactor
                         {
                             h.Severity = (float)Math.Max(0f, h.Severity - healAmount);
                         }
-                        if (h.Severity <= 0f)
-                        {
-                            toRemove.Add(h);
-                        }
+                        // Ensure eventual cure even if severity is sticky
+                        toRemove.Add(h);
                     }
                 }
                 foreach (var h in toRemove)
