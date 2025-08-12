@@ -18,7 +18,7 @@
   <loadAfter>
     <li>brrainz.harmony</li>
   </loadAfter>
-  <packageId>dr-ake.deadpoolshealingfactor</packageId>
+  <packageId>DrAke.DeadpoolsHealingFactor</packageId>
   <description>Hi. It's me. The guy on the cover. I heal fast. Your pawns? Now they do too. Limbs regrow (yes, heads), scars fade, diseases clear, and even death is just a coffee break. If a pawn with the factor dies, they keep healing on the slab and get back up when fully restored. Not immortal—ashes and kidnapping still ruin the vibe—but pretty close. Maximum effort.
 
 Usage: Give a pawn the hediff “Healing Factor” (Health tab → Add health condition). You can assign it via Character Editor, scenario, or other hediff‑adding tools.</description>
