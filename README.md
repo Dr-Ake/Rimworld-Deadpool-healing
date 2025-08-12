@@ -23,7 +23,7 @@ Hi. It's me. The guy on the cover. I heal fast. Your pawns? Now they do too. Ins
 - **About/**: Metadata and that handsome preview image up there.
 - **1.6/**: All the defs for RimWorld 1.6.
   - **Defs/**: Hediffs that make the magic happen.
-- **Source/DeadpoolsHealingFactor/**: Clean C# project using Harmony; building will create `1.6/Assemblies` locally.
+- **Source/DeadpoolsHealingFactor/**: The C# source code, if you're into that sort of thing. The pre-compiled DLL is already in `1.6/Assemblies`.
 
 ## Installation
 1. Install Harmony first (`brrainz.harmony`). You already have it. If you don't, get it.
@@ -51,14 +51,8 @@ Hi. It's me. The guy on the cover. I heal fast. Your pawns? Now they do too. Ins
 - Requires Harmony. Load after Harmony (it’s in the metadata already).
 - Safe for existing saves. Remove at your own risk; I’m not resurrecting your colony.
 
-## Building from Source
-Set the `RimWorldDir` environment variable before building. PowerShell example:
-
-```
-$env:RimWorldDir = "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld"
-```
-
-Then build the project in `Source/DeadpoolsHealingFactor`. The build will place a DLL into `1.6/Assemblies` on your machine. This repository no longer ships a precompiled DLL.
+## Building from Source (Don't)
+Psst. Hey. You. Yeah, you with the compiler. Put it away. I already did the hard work for you. The `DeadpoolsHealingFactor.dll` is right there in the `1.6/Assemblies` folder, all shiny and pre-compiled. No need to get your hands dirty. Just grab the mod, drop it in, and let the healing begin. You're welcome.
 
 ## FAQ
 - **Does this make pawns immortal?**
