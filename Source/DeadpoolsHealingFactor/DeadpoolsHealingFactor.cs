@@ -54,9 +54,13 @@ namespace DeadpoolsHealingFactor
             {
                 interval = 250;
             }
-            if (Find.TickManager.TicksGame % interval != 0)
+            // Pawn.HealthTick only runs for living pawns; keep the modulo for live case
+            if (___pawn.Spawned && !___pawn.Dead)
             {
-                return;
+                if (Find.TickManager.TicksGame % interval != 0)
+                {
+                    return;
+                }
             }
 
             // Keep mood maxed (via reflection to handle non-public setters across versions) and ensure the pawn is a psychopath
@@ -164,16 +168,13 @@ namespace DeadpoolsHealingFactor
                     var missingParts = ___pawn.health.hediffSet.GetMissingPartsCommonAncestors();
                     foreach (var missing in missingParts)
                     {
-                        // A Hediff_MissingPart's 'Part' property is the BodyPartRecord
-                        BodyPartRecord parent = missing.Part.parent;
-
-                        // Check if the parent part is already growing
-                        if (parent != null && !___pawn.health.hediffSet.hediffs.Any(h => h.def == regrowingDef && h.Part == parent))
+                        BodyPartRecord targetPart = missing.Part; // regrow the missing part itself (handles head, etc.)
+                        if (targetPart != null && !___pawn.health.hediffSet.hediffs.Any(h => h.def == regrowingDef && h.Part == targetPart))
                         {
-                            ___pawn.health.AddHediff(regrowingDef, parent);
+                            ___pawn.health.AddHediff(regrowingDef, targetPart);
                             if (Prefs.DevMode)
                             {
-                                Log.Message($"[DeadpoolsHealingFactor] Started regrowing a child of {parent.Label} on {___pawn.LabelShort}.");
+                                Log.Message($"[DeadpoolsHealingFactor] Started regrowing {targetPart.Label} on {___pawn.LabelShort}.");
                             }
                             break;
                         }
@@ -212,16 +213,14 @@ namespace DeadpoolsHealingFactor
             {
                 interval = 250;
             }
-            if (Find.TickManager.TicksGame % interval != 0)
-            {
-                return;
-            }
+            // Corpse.TickRare runs every 250 ticks. Always process here and scale by step factor
+            float stepFactor = 250f / Math.Max(1, interval);
 
             float severityFactor = factor.Severity <= 0f ? 1f : factor.Severity;
 
             if (DeadpoolsHealingFactorMod.settings.enableHealing)
             {
-                float healAmount = DeadpoolsHealingFactorMod.settings.baseHealAmount * severityFactor;
+                float healAmount = DeadpoolsHealingFactorMod.settings.baseHealAmount * severityFactor * stepFactor;
                 List<Hediff> all = pawn.health.hediffSet.hediffs;
                 List<Hediff> toRemove = new List<Hediff>();
                 foreach (var h in all)
@@ -275,7 +274,7 @@ namespace DeadpoolsHealingFactor
 
                 foreach (var regrow in regrowingHediffs)
                 {
-                    regrow.Severity += DeadpoolsHealingFactorMod.settings.regrowSpeed * severityFactor;
+                    regrow.Severity += DeadpoolsHealingFactorMod.settings.regrowSpeed * severityFactor * stepFactor;
                     if (regrow.Severity >= 1.0f)
                     {
                         BodyPartRecord partToRestore = regrow.Part;
@@ -290,10 +289,10 @@ namespace DeadpoolsHealingFactor
                     var missingParts = pawn.health.hediffSet.GetMissingPartsCommonAncestors();
                     foreach (var missing in missingParts)
                     {
-                        BodyPartRecord parent = missing.Part.parent;
-                        if (parent != null && !pawn.health.hediffSet.hediffs.Any(h => h.def == regrowingDef && h.Part == parent))
+                        BodyPartRecord targetPart = missing.Part;
+                        if (targetPart != null && !pawn.health.hediffSet.hediffs.Any(h => h.def == regrowingDef && h.Part == targetPart))
                         {
-                            pawn.health.AddHediff(regrowingDef, parent);
+                            pawn.health.AddHediff(regrowingDef, targetPart);
                             break;
                         }
                     }
