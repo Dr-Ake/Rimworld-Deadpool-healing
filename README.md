@@ -9,11 +9,13 @@ Hi. It's me. The guy on the cover. I heal fast. Your pawns? Now they do too. Ins
 ### TL;DR
 - **What**: A standalone, lightweight RimWorld 1.6 mod that gives pawns Deadpool-style regeneration.
 - **Why**: Because losing arms is funny… until it's your crafter.
-- **How**: Harmony patch that heals, regrows, and buffs on a configurable schedule.
+- **How**: Harmony patch that heals, regrows, and buffs on a configurable schedule — even while dead.
 
 ## Features (Maximum Effort Edition)
+- **You can die… briefly**: If a pawn with the factor dies, healing and regrowth keep going on the corpse. When everything’s restored, they stand back up like nothing happened.
 - **Healing factor**: Wounds heal automatically at intervals you set. Severity scales the healing.
-- **Limb/part regrowth**: Missing parts regrow over time. You can cap how many grow at once and tune the speed.
+- **Limb/part regrowth**: Missing parts regrow over time (including head). Cap how many grow at once and tune the speed.
+- **Everything heals**: Scars fade, diseases tick down and clear, and general nasty stuff gets purged over time. Prosthetics/bionics are respected.
 - **Recovery wobble**: Freshly regrown parts get a short “adjusting” period to keep it spicy.
 - **Mood juice**: Optional mood max buff. Because happy pawns shoot straighter. Science.
 - **Psychopath switch**: Optional trait application for humanlikes. You wanted Deadpool… you get Deadpool.
@@ -42,8 +44,8 @@ Hi. It's me. The guy on the cover. I heal fast. Your pawns? Now they do too. Ins
 
 ## How it works (without the technobabble)
 - Pawns with `Healing Factor` get periodic healing based on a tick interval and severity.
-- When a missing part is detected and slots are available, regrowth starts on the parent.
-- When a part finishes, it's restored and briefly marked as “adjusting” before returning to full strength.
+- If they die, the healing/regrowth still runs on their corpse. Once all injuries are healed and missing parts are back, they resurrect automatically.
+- Regrowth anchors on the parent and restores the missing child (so full limbs and even heads grow back).
 - Optional: mood max and Psychopath trait application (humanlikes only) to stay on theme.
 
 ## Compatibility
@@ -56,7 +58,7 @@ Psst. Hey. You. Yeah, you with the compiler. Put it away. I already did the hard
 
 ## FAQ
 - **Does this make pawns immortal?**
-  Immortal? Please. That's a big word. Let's just say they'll be really, *really* hard to kill. They can still die from things like, you know, being turned to ash, or if you're a monster and decide to delete their save file. So, not 'immortal,' just... 'inconveniently durable.'
+  Immortal? Please. That's a big word. Let's just say death is a coffee break. Chop the head off? It grows back. Turn them into paste or ashes? Okay, that’s cheating. Also, pro-tip: don’t let them get kidnapped — hard to heal your way out of the cargo hold.
 - **Can I turn off the Psychopath thing?**
   Yes. Toggle it in settings.
 - **How many limbs can grow back at once?**
