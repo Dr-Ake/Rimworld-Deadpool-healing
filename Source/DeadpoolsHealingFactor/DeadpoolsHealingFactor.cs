@@ -57,10 +57,19 @@ namespace DeadpoolsHealingFactor
                 return;
             }
 
-            // Keep mood maxed and ensure the pawn is a psychopath
+            // Keep mood maxed (via reflection to handle non-public setters across versions) and ensure the pawn is a psychopath
             if (DeadpoolsHealingFactorMod.settings.boostMood && ___pawn.needs?.mood != null)
             {
-                ___pawn.needs.mood.CurInstantLevel = 1f; // effectively +100 mood
+                try
+                {
+                    var need = ___pawn.needs.mood;
+                    var curLevelProp = typeof(Need).GetProperty("CurLevel", BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic);
+                    curLevelProp?.SetValue(need, 1f, null);
+                }
+                catch
+                {
+                    // Ignore if API changes; mood boost is optional
+                }
             }
             if (DeadpoolsHealingFactorMod.settings.forcePsychopath
                 && ___pawn.RaceProps?.Humanlike == true

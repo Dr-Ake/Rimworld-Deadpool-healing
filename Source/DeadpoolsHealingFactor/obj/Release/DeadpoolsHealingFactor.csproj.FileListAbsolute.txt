@@ -1,0 +1,2 @@
+C:\Users\Drake\Documents\Repo\Rimworld-Deadpool-healing\Source\DeadpoolsHealingFactor\obj\Release\DeadpoolsHealingFactor.csproj.AssemblyReference.cache
+C:\Users\Drake\Documents\Repo\Rimworld-Deadpool-healing\Source\DeadpoolsHealingFactor\obj\Release\DeadpoolsHealingFactor.csproj.CoreCompileInputs.cache
