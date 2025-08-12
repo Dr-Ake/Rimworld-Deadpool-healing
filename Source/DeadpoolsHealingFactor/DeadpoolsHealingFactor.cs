@@ -79,7 +79,8 @@ namespace DeadpoolsHealingFactor
                 ___pawn.story.traits.GainTrait(new Trait(TraitDefOf.Psychopath));
             }
 
-            float healAmount = DeadpoolsHealingFactorMod.settings.baseHealAmount * hediff.Severity;
+            float severityFactor = hediff.Severity <= 0f ? 1f : hediff.Severity;
+            float healAmount = DeadpoolsHealingFactorMod.settings.baseHealAmount * severityFactor;
 
             Hediff_Injury injury = ___pawn.health.hediffSet.hediffs
                 .OfType<Hediff_Injury>()
@@ -107,7 +108,7 @@ namespace DeadpoolsHealingFactor
             {
                 foreach (var regrow in regrowingHediffs)
                 {
-                    regrow.Severity += DeadpoolsHealingFactorMod.settings.regrowSpeed * hediff.Severity;
+                    regrow.Severity += DeadpoolsHealingFactorMod.settings.regrowSpeed * severityFactor;
                     if (regrow.Severity >= 1.0f)
                     {
                         BodyPartRecord partToRestore = regrow.Part;
