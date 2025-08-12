@@ -149,7 +149,10 @@ namespace DeadpoolsHealingFactor
                     regrow.Severity += DeadpoolsHealingFactorMod.settings.regrowSpeed * severityFactor;
                     if (regrow.Severity >= 1.0f)
                     {
-                        BodyPartRecord partToRestore = regrow.Part;
+                        // Restore the first missing child of the regrow anchor part (parent)
+                        BodyPartRecord partToRestore = ___pawn.health.hediffSet.GetMissingPartsCommonAncestors()
+                            .Select(mp => mp.Part)
+                            .FirstOrDefault(p => p?.parent == regrow.Part) ?? regrow.Part;
                         ___pawn.health.RemoveHediff(regrow);
                         ___pawn.health.RestorePart(partToRestore);
                         // Apply a short-lived adjustment debuff to the restored part to simulate recovery
@@ -166,13 +169,13 @@ namespace DeadpoolsHealingFactor
                     var missingParts = ___pawn.health.hediffSet.GetMissingPartsCommonAncestors();
                     foreach (var missing in missingParts)
                     {
-                        BodyPartRecord targetPart = missing.Part; // regrow the missing part itself (handles head, etc.)
-                        if (targetPart != null && !___pawn.health.hediffSet.hediffs.Any(h => h.def == regrowingDef && h.Part == targetPart))
+                        BodyPartRecord parent = missing.Part?.parent; // anchor on parent, restore child at completion
+                        if (parent != null && !___pawn.health.hediffSet.hediffs.Any(h => h.def == regrowingDef && h.Part == parent))
                         {
-                            ___pawn.health.AddHediff(regrowingDef, targetPart);
+                            ___pawn.health.AddHediff(regrowingDef, parent);
                             if (Prefs.DevMode)
                             {
-                                Log.Message($"[DeadpoolsHealingFactor] Started regrowing {targetPart.Label} on {___pawn.LabelShort}.");
+                                Log.Message($"[DeadpoolsHealingFactor] Started regrowing a child of {parent.Label} on {___pawn.LabelShort}.");
                             }
                             break;
                         }
@@ -273,7 +276,9 @@ namespace DeadpoolsHealingFactor
                     regrow.Severity += DeadpoolsHealingFactorMod.settings.regrowSpeed * severityFactor * stepFactor;
                     if (regrow.Severity >= 1.0f)
                     {
-                        BodyPartRecord partToRestore = regrow.Part;
+                        BodyPartRecord partToRestore = pawn.health.hediffSet.GetMissingPartsCommonAncestors()
+                            .Select(mp => mp.Part)
+                            .FirstOrDefault(p => p?.parent == regrow.Part) ?? regrow.Part;
                         pawn.health.RemoveHediff(regrow);
                         pawn.health.RestorePart(partToRestore);
                         pawn.health.AddHediff(DPDefOf.DP_adjusting, partToRestore);
@@ -285,10 +290,10 @@ namespace DeadpoolsHealingFactor
                     var missingParts = pawn.health.hediffSet.GetMissingPartsCommonAncestors();
                     foreach (var missing in missingParts)
                     {
-                        BodyPartRecord targetPart = missing.Part;
-                        if (targetPart != null && !pawn.health.hediffSet.hediffs.Any(h => h.def == regrowingDef && h.Part == targetPart))
+                        BodyPartRecord parent = missing.Part?.parent;
+                        if (parent != null && !pawn.health.hediffSet.hediffs.Any(h => h.def == regrowingDef && h.Part == parent))
                         {
-                            pawn.health.AddHediff(regrowingDef, targetPart);
+                            pawn.health.AddHediff(regrowingDef, parent);
                             break;
                         }
                     }
