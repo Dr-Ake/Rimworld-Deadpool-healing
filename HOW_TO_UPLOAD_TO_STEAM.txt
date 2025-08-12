@@ -1,0 +1,35 @@
+How to Upload/Update on Steam Workshop (RimWorld)
+=================================================
+
+Prereqs
+-------
+- This mod folder contains:
+  - About/About.xml (metadata)
+  - About/Preview.png (preview image shown on Steam)
+  - 1.6/ (Defs and Assemblies)
+
+Preview image
+-------------
+- The preview image for the Workshop page is set in About/About.xml via:
+  <previewImagePath>About/Preview.png</previewImagePath>
+- Replace About/Preview.png with your preferred preview (keep same filename). Recommended size ~640×360.
+
+First-time upload
+-----------------
+1) Start RimWorld → Mods → select this mod → Upload to Steam Workshop.
+2) Fill in title/tags/visibility as needed. The game will create About/PublishedFileId.txt after the first upload.
+3) Verify the Workshop page shows the preview image and description.
+
+Updating an existing Workshop item
+----------------------------------
+- Keep About/PublishedFileId.txt in the mod folder (created by the first upload).
+- Rebuild the DLL (see HOW_TO_COMPILE.txt) so 1.6/Assemblies/DeadpoolsHealingFactor.dll is up to date.
+- From RimWorld → Mods → select this mod → Upload to Steam Workshop again. The game will update the existing item linked by PublishedFileId.txt.
+
+Notes
+-----
+- You must have Steam running and be logged in on the account that owns/created the Workshop item.
+- If you accidentally delete About/PublishedFileId.txt, the game will try to create a NEW Workshop item. To update the existing one, restore that file (it contains the numeric Workshop ID).
+- The description on Steam comes from About/About.xml. Edit the <description> there.
+
+
