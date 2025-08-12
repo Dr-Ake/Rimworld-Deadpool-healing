@@ -1,0 +1,131 @@
+How to Compile Deadpool's Healing Factor (RimWorld 1.6)
+======================================================
+
+This document explains, in detail, how to compile this mod's DLL on Windows from a fresh machine. It includes the exact tools to install, the environment configuration, multiple build methods (MSBuild and a fallback using the Roslyn C# compiler), and troubleshooting for the errors we actually hit.
+
+Repository layout (relevant bits)
+---------------------------------
+- Source/DeadpoolsHealingFactor/DeadpoolsHealingFactor.csproj
+- Source/DeadpoolsHealingFactor/*.cs
+- 1.6/Assemblies/ (build output target)
+
+Prerequisites
+-------------
+1) RimWorld installed (Steam)
+   Example path:
+   C:\Program Files (x86)\Steam\steamapps\common\RimWorld
+
+2) Harmony mod (workshop) to reference 0Harmony.dll
+   Example path(s):
+   C:\Program Files (x86)\Steam\steamapps\workshop\content\294100\2009463077\Current\Assemblies
+
+3) Visual Studio Build Tools (2019 or 2022)
+   - Install: https://visualstudio.microsoft.com/downloads/ (Build Tools)
+   - Workloads: 
+     - .NET desktop build tools (includes MSBuild)
+   - Components (recommended):
+     - .NET Framework 4.8 targeting pack (Microsoft.Net.Component.4.8.TargetingPack)
+     - Optionally 4.7.2 targeting pack (Microsoft.Net.Component.4.7.2.TargetingPack)
+
+4) PowerShell (Windows 10/11 default) with Administrator rights available (for installing VS components).
+
+5) Git (optional, for pulling/pushing changes).
+
+Project configuration notes
+---------------------------
+- The project no longer references Verse.dll (it is not present in recent RimWorld Managed folders); instead, we rely on Assembly-CSharp.dll and UnityEngine.* modules.
+- Harmony path is configurable via a project property: HarmonyDir
+  - If not provided, it falls back to RimWorldDir\\Mods\\Harmony\\Assemblies\\0Harmony.dll
+  - We recommend pointing to the workshop path under "Current\\Assemblies".
+- Build output is written to: 1.6\\Assemblies\\DeadpoolsHealingFactor.dll
+
+Method A: Build with MSBuild (preferred once targeting packs are installed)
+--------------------------------------------------------------------------
+1) Ensure MSBuild exists (one of these):
+   - C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\MSBuild\Current\Bin\MSBuild.exe
+   - C:\Program Files\Microsoft Visual Studio\2022\BuildTools\MSBuild\Current\Bin\MSBuild.exe
+
+2) Ensure the .NET Framework 4.8 Targeting Pack is installed (required by this csproj):
+   - Open an elevated PowerShell (Run as Administrator) and run:
+     Start-Process -FilePath "C:\Program Files (x86)\Microsoft Visual Studio\Installer\setup.exe" -ArgumentList 'modify --installPath "C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\BuildTools" --add Microsoft.Net.Component.4.8.TargetingPack --quiet --norestart' -Verb RunAs -Wait
+
+   - To verify installation completed:
+     Test-Path "C:\\Program Files (x86)\\Reference Assemblies\\Microsoft\\Framework\\.NETFramework\\v4.8"
+
+3) Build command (run in repo root, adjust paths if needed):
+   PowerShell:
+   $env:RimWorldDir = "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld"
+   $env:HarmonyDir  = "C:\\Program Files (x86)\\Steam\\steamapps\\workshop\\content\\294100\\2009463077\\Current\\Assemblies"
+
+   & "C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\BuildTools\\MSBuild\\Current\\Bin\\MSBuild.exe" `
+     "Source\\DeadpoolsHealingFactor\\DeadpoolsHealingFactor.csproj" `
+     /m /v:m /p:Configuration=Release /p:Platform=AnyCPU `
+     /p:RimWorldDir="$env:RimWorldDir" /p:HarmonyDir="$env:HarmonyDir"
+
+   Output: 1.6\\Assemblies\\DeadpoolsHealingFactor.dll
+
+Method B: Fallback — build with Roslyn C# compiler (no targeting pack required)
+------------------------------------------------------------------------------
+Use this if MSBuild fails due to missing targeting packs. This compiles directly against the RimWorld runtime DLLs and Harmony.
+
+PowerShell (repo root):
+$rw = "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld"
+$harmonyDir = "C:\\Program Files (x86)\\Steam\\steamapps\\workshop\\content\\294100\\2009463077\\Current\\Assemblies"
+$roslyn = "C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\BuildTools\\MSBuild\\Current\\Bin\\Roslyn\\csc.exe"
+if (!(Test-Path $roslyn)) { $roslyn = "C:\\Program Files\\Microsoft Visual Studio\\2022\\BuildTools\\MSBuild\\Current\\Bin\\Roslyn\\csc.exe" }
+$managed = Join-Path $rw 'RimWorldWin64_Data\\Managed'
+$refNames = @('mscorlib.dll','System.dll','System.Core.dll','System.Xml.dll','System.Xml.Linq.dll','System.Net.Http.dll','netstandard.dll','System.Runtime.dll','Assembly-CSharp.dll','UnityEngine.CoreModule.dll','UnityEngine.dll')
+$refs = $refNames | ForEach-Object { Join-Path $managed $_ }
+$refs += (Join-Path $harmonyDir '0Harmony.dll')
+New-Item -ItemType Directory -Force -Path '1.6\\Assemblies' | Out-Null
+$out='1.6\\Assemblies\\DeadpoolsHealingFactor.dll'
+if(Test-Path $out){ Remove-Item $out -Force }
+$args = @('/noconfig','/nostdlib+','/target:library','/optimize+','/langversion:latest',"/out:$out")
+foreach($r in $refs){ $args += "/reference:`"$r`"" }
+$args += 'Source\\DeadpoolsHealingFactor\\DeadpoolsHealingFactor.cs'
+$args += 'Source\\DeadpoolsHealingFactor\\Settings.cs'
+& $roslyn @args
+
+Output: 1.6\\Assemblies\\DeadpoolsHealingFactor.dll
+
+Deploy and test in RimWorld
+---------------------------
+1) Copy the entire 1.6 folder (including Assemblies and Defs) into RimWorld\\Mods or use this repo directly as a mod folder.
+2) Enable the mod in RimWorld.
+3) Ensure Harmony is loaded before this mod.
+4) Give a pawn the hediff "Healing Factor" (DP_HealingFactor) via Character Editor or scenario.
+5) Observe healing ticks at the configured interval; missing parts regrow; if a pawn dies, healing/regrowth continues and they resurrect once fully restored.
+
+Troubleshooting (real errors we hit and fixes)
+----------------------------------------------
+MSB3644: The reference assemblies for .NETFramework,Version=v4.8 were not found.
+- Fix: Install the .NET 4.8 targeting pack via Visual Studio Installer (see Method A step 2).
+
+MSB3274: The primary reference "0Harmony" could not be resolved because it was built against .NETFramework v4.7.2.
+- Fix: Either target .NET 4.8 via MSBuild (Method A) or use the Roslyn fallback (Method B), which compiles against the game runtime assemblies and Harmony directly.
+
+Verse.dll missing
+- Newer RimWorld builds do not expose Verse.dll in Managed; remove that reference (already done in this project) and reference Assembly-CSharp.dll and UnityEngine.* instead.
+
+PowerShell PSReadLine glitches (ArgumentOutOfRangeException) or quoting issues
+- Re-run the command, avoid pasting with wrapped lines, or run commands in smaller segments.
+
+Harmony path not found
+- Use the workshop path: ...\\2009463077\\Current\\Assemblies\\0Harmony.dll. Verify the file exists.
+
+Notes on code behavior
+----------------------
+- The mod heals:
+  - Regular injuries (ticks down severity)
+  - Scars/permanent injuries (removed)
+  - Diseases (severity reduced to 0 then removed), including chronic like asthma
+  - Missing parts (regrow mechanics), preserving prosthetics/bionics (Hediff_AddedPart)
+- Healing continues while dead; pawn resurrects when fully restored.
+- Mood boost is applied via reflection to avoid API changes.
+- The hediff is not auto-applied; assign it via editor/scenario.
+
+Where output goes
+-----------------
+1.6\\Assemblies\\DeadpoolsHealingFactor.dll
+
+

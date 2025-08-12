@@ -10,7 +10,7 @@
     <scenarioCanAdd>true</scenarioCanAdd>
     <stages>
       <li>
-        <label>FirstDeath</label>
+        <label>Unawakened x gene</label>
         <becomeVisible>false</becomeVisible>
       </li>
       <li>
