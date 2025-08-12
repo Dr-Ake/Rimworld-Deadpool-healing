@@ -219,17 +219,51 @@ namespace DeadpoolsHealingFactor
 
             float severityFactor = factor.Severity <= 0f ? 1f : factor.Severity;
 
-            // Heal one worst injury
-            Hediff_Injury injury = pawn.health.hediffSet.hediffs
-                .OfType<Hediff_Injury>()
-                .Where(h => !h.IsPermanent() && h.CanHealNaturally() && h.Severity > 0)
-                .OrderByDescending(h => h.Severity)
-                .FirstOrDefault();
-
-            if (DeadpoolsHealingFactorMod.settings.enableHealing && injury != null)
+            if (DeadpoolsHealingFactorMod.settings.enableHealing)
             {
                 float healAmount = DeadpoolsHealingFactorMod.settings.baseHealAmount * severityFactor;
-                injury.Heal(healAmount);
+                List<Hediff> all = pawn.health.hediffSet.hediffs;
+                List<Hediff> toRemove = new List<Hediff>();
+                foreach (var h in all)
+                {
+                    if (h == null) continue;
+                    if (h.def == DPDefOf.DP_HealingFactor || h.def == DPDefOf.DP_regrowing || h.def == DPDefOf.DP_adjusting) continue;
+                    if (h is Hediff_MissingPart) continue;
+                    if (h is Hediff_AddedPart) continue;
+
+                    if (h is Hediff_Injury inj)
+                    {
+                        if (inj.IsPermanent())
+                        {
+                            toRemove.Add(inj);
+                        }
+                        else if (inj.Severity > 0)
+                        {
+                            inj.Severity = (float)Math.Max(0f, inj.Severity - healAmount);
+                            if (inj.Severity <= 0f)
+                            {
+                                toRemove.Add(inj);
+                            }
+                        }
+                        continue;
+                    }
+
+                    if (h.def.isBad)
+                    {
+                        if (h.Severity > 0f)
+                        {
+                            h.Severity = (float)Math.Max(0f, h.Severity - healAmount);
+                        }
+                        if (h.Severity <= 0f)
+                        {
+                            toRemove.Add(h);
+                        }
+                    }
+                }
+                foreach (var h in toRemove)
+                {
+                    pawn.health.RemoveHediff(h);
+                }
             }
 
             if (DeadpoolsHealingFactorMod.settings.enableRegrowth)
