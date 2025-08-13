@@ -31,7 +31,10 @@
       <Beauty>0</Beauty>
       <MaxHitPoints>50</MaxHitPoints>
     </statBases>
+    <altitudeLayer>Item</altitudeLayer>
+    <drawGUIOverlay>true</drawGUIOverlay>
     <comps>
+      <li Class="CompProperties_Forbiddable" />
       <li Class="CompProperties_Usable">
         <useLabel>inject</useLabel>
       </li>
