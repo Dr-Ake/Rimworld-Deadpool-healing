@@ -9,9 +9,6 @@
     <workSkill>Crafting</workSkill>
     <workSpeedStat>DrugCookingSpeed</workSpeedStat>
     <effectWorking>Clean</effectWorking>
-    <soundWorking>Recipe_DrugCook</soundWorking>
-    <unfinishedThingDef>UnfinishedThing</unfinishedThingDef>
-    <unfinishedThingLabel>healing injector</unfinishedThingLabel>
     <skillRequirements>
       <Crafting>12</Crafting>
     </skillRequirements>
