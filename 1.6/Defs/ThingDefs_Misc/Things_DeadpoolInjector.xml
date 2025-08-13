@@ -33,6 +33,7 @@
     </statBases>
     <altitudeLayer>Item</altitudeLayer>
     <drawGUIOverlay>true</drawGUIOverlay>
+    <alwaysHaulable>true</alwaysHaulable>
     <comps>
       <li Class="CompProperties_Forbiddable" />
       <li Class="CompProperties_Usable">
