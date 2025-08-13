@@ -17,23 +17,43 @@
     </researchPrerequisites>
     <ingredients>
       <li>
-        <thingDef>ComponentSpacer</thingDef>
+        <filter>
+          <thingDefs>
+            <li>ComponentSpacer</li>
+          </thingDefs>
+        </filter>
         <count>3</count>
       </li>
       <li>
-        <thingDef>Plasteel</thingDef>
+        <filter>
+          <thingDefs>
+            <li>Plasteel</li>
+          </thingDefs>
+        </filter>
         <count>50</count>
       </li>
       <li>
-        <thingDef>Gold</thingDef>
+        <filter>
+          <thingDefs>
+            <li>Gold</li>
+          </thingDefs>
+        </filter>
         <count>20</count>
       </li>
       <li>
-        <thingDef>Neutroamine</thingDef>
+        <filter>
+          <thingDefs>
+            <li>Neutroamine</li>
+          </thingDefs>
+        </filter>
         <count>30</count>
       </li>
       <li>
-        <thingDef>MedicineUltratech</thingDef>
+        <filter>
+          <thingDefs>
+            <li>MedicineUltratech</li>
+          </thingDefs>
+        </filter>
         <count>2</count>
       </li>
     </ingredients>
