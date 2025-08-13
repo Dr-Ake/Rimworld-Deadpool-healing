@@ -18,6 +18,7 @@
       <li>Artifacts</li>
     </thingCategories>
     <stackLimit>5</stackLimit>
+    <selectable>true</selectable>
     <useHitPoints>false</useHitPoints>
     <graphicData>
       <texPath>Things/Item/Deadpool/HealingInjector</texPath>
