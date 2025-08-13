@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <Patch>
-  <!-- Add the injector explicitly to common exotic trader stocks -->
+  <!-- RimWorld 1.6 vanilla trader kinds -->
   <Operation Class="PatchOperationAdd">
-    <xpath>Defs/TraderKindDef[defName="ExoticGoods"]/stockGenerators</xpath>
+    <xpath>Defs/TraderKindDef[defName="OrbitalExotic"]/stockGenerators</xpath>
     <value>
       <li Class="StockGenerator_SingleDef">
         <thingDef>DP_HealingInjector</thingDef>
@@ -16,7 +16,7 @@
   </Operation>
 
   <Operation Class="PatchOperationAdd">
-    <xpath>Defs/TraderKindDef[defName="Orbital_Exotic"]/stockGenerators</xpath>
+    <xpath>Defs/TraderKindDef[defName="CivilOutlander_HighTech"]/stockGenerators</xpath>
     <value>
       <li Class="StockGenerator_SingleDef">
         <thingDef>DP_HealingInjector</thingDef>
