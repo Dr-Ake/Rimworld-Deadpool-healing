@@ -56,12 +56,8 @@
         <count>2</count>
       </li>
     </ingredients>
-    <products>
-      <li>
-        <thingDef>DP_HealingInjector</thingDef>
-        <count>2</count>
-      </li>
-    </products>
+    <productDef>DP_HealingInjector</productDef>
+    <productCount>1</productCount>
     <recipeUsers>
       <li>FabricationBench</li>
     </recipeUsers>
