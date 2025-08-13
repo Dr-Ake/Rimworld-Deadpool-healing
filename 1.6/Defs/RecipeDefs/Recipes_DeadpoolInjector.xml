@@ -7,7 +7,6 @@
     <jobString>crafting a healing factor injector.</jobString>
     <workAmount>50000</workAmount>
     <workSkill>Crafting</workSkill>
-    <workSpeedStat>SmithingSpeed</workSpeedStat>
     <skillRequirements>
       <Crafting>12</Crafting>
     </skillRequirements>
