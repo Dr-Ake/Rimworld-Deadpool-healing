@@ -44,6 +44,20 @@
         <severity>1.0</severity>
       </li>
     </comps>
+    <ingestible>
+      <preferability>NeverForNutrition</preferability>
+      <foodType>Fluid</foodType>
+      <drugCategory>Medical</drugCategory>
+      <ingestCommandString>inject</ingestCommandString>
+      <ingestReportString>injects {0}</ingestReportString>
+      <allowAutonomous>false</allowAutonomous>
+      <outcomeDoers>
+        <li Class="IngestionOutcomeDoer_GiveHediff">
+          <hediffDef>DP_HealingFactor</hediffDef>
+          <severity>1.0</severity>
+        </li>
+      </outcomeDoers>
+    </ingestible>
   </ThingDef>
 </Defs>
 

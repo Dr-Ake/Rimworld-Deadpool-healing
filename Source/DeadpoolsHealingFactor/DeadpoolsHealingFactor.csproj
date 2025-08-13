@@ -82,6 +82,7 @@
     <Compile Include="DeadpoolsHealingFactor.cs" />
     <Compile Include="Settings.cs" />
     <Compile Include="UseEffectGiveHediff.cs" />
+    <Compile Include="Recipe_AdministerHealingInjector.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
