@@ -7,6 +7,7 @@
     <jobString>crafting a healing factor injector.</jobString>
     <workAmount>50000</workAmount>
     <workSkill>Crafting</workSkill>
+    <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
     <skillRequirements>
       <Crafting>12</Crafting>
     </skillRequirements>
@@ -61,6 +62,7 @@
     </products>
     <recipeUsers>
       <li>FabricationBench</li>
+      <li>DrugLab</li>
     </recipeUsers>
   </RecipeDef>
 
