@@ -9,10 +9,7 @@
     <workSkill>Crafting</workSkill>
     <workSpeedStat>SmithingSpeed</workSpeedStat>
     <skillRequirements>
-      <li>
-        <skill>Crafting</skill>
-        <minLevel>12</minLevel>
-      </li>
+      <Crafting>12</Crafting>
     </skillRequirements>
     <researchPrerequisites>
       <li>Fabrication</li>
