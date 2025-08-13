@@ -33,8 +33,9 @@
     <comps>
       <li Class="CompProperties_Usable">
         <useLabel>inject</useLabel>
+        <useOnSelf>true</useOnSelf>
       </li>
-      <li Class="CompProperties_UseEffectGiveHediff">
+      <li Class="DeadpoolsHealingFactor.CompProperties_UseEffectGiveHediffDP">
         <hediffDef>DP_HealingFactor</hediffDef>
         <severity>1.0</severity>
       </li>

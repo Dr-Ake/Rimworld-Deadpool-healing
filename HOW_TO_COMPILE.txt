@@ -84,6 +84,7 @@ $args = @('/noconfig','/nostdlib+','/target:library','/optimize+','/langversion:
 foreach($r in $refs){ $args += "/reference:`"$r`"" }
 $args += 'Source\\DeadpoolsHealingFactor\\DeadpoolsHealingFactor.cs'
 $args += 'Source\\DeadpoolsHealingFactor\\Settings.cs'
+$args += 'Source\\DeadpoolsHealingFactor\\UseEffectGiveHediff.cs'
 & $roslyn @args
 
 Output: 1.6\\Assemblies\\DeadpoolsHealingFactor.dll
