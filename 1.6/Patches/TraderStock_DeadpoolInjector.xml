@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<Patch>
+  <!-- Add the injector explicitly to common exotic trader stocks -->
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/TraderKindDef[defName="ExoticGoods"]/stockGenerators</xpath>
+    <value>
+      <li Class="StockGenerator_SingleDef">
+        <thingDef>DP_HealingInjector</thingDef>
+        <countRange>
+          <min>1</min>
+          <max>1</max>
+        </countRange>
+      </li>
+    </value>
+  </Operation>
+
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/TraderKindDef[defName="Orbital_Exotic"]/stockGenerators</xpath>
+    <value>
+      <li Class="StockGenerator_SingleDef">
+        <thingDef>DP_HealingInjector</thingDef>
+        <countRange>
+          <min>1</min>
+          <max>1</max>
+        </countRange>
+      </li>
+    </value>
+  </Operation>
+</Patch>
+
+
+
