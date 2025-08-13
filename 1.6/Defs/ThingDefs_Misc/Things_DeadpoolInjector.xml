@@ -8,7 +8,7 @@
     <thingClass>ThingWithComps</thingClass>
     <category>Item</category>
     <techLevel>Spacer</techLevel>
-    <tradability>All</tradability>
+    <tradeability>All</tradeability>
     <tradeTags>
       <li>ExoticMisc</li>
       <li>TechSpecialty</li>
