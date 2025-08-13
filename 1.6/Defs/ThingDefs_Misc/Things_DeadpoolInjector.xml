@@ -16,7 +16,7 @@
     <thingCategories>
       <li>Artifacts</li>
     </thingCategories>
-    <stackLimit>5</stackLimit>
+    <stackLimit>1</stackLimit>
     <selectable>true</selectable>
     <useHitPoints>false</useHitPoints>
     <graphicData>
