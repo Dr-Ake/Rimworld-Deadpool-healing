@@ -50,7 +50,6 @@
       <drugCategory>Medical</drugCategory>
       <ingestCommandString>inject</ingestCommandString>
       <ingestReportString>injects {0}</ingestReportString>
-      <allowAutonomous>false</allowAutonomous>
       <outcomeDoers>
         <li Class="IngestionOutcomeDoer_GiveHediff">
           <hediffDef>DP_HealingFactor</hediffDef>

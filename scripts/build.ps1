@@ -40,7 +40,8 @@ function Invoke-RoslynBuild {
     $src = @(
         'Source/DeadpoolsHealingFactor/DeadpoolsHealingFactor.cs',
         'Source/DeadpoolsHealingFactor/Settings.cs',
-        'Source/DeadpoolsHealingFactor/UseEffectGiveHediff.cs'
+        'Source/DeadpoolsHealingFactor/UseEffectGiveHediff.cs',
+        'Source/DeadpoolsHealingFactor/Recipe_AdministerHealingInjector.cs'
     )
 
     & $csc /noconfig /nostdlib+ /target:library /optimize+ /langversion:latest ("/out:$out") $refs $src
