@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<Defs>
+  <RecipeDef>
+    <defName>DP_MakeHealingInjector</defName>
+    <label>make healing factor injector</label>
+    <jobString>crafting a healing factor injector.</jobString>
+    <workAmount>50000</workAmount>
+    <workSkill>Crafting</workSkill>
+    <workSpeedStat>SmithingSpeed</workSpeedStat>
+    <skillRequirements>
+      <li>
+        <skill>Crafting</skill>
+        <minLevel>12</minLevel>
+      </li>
+    </skillRequirements>
+    <researchPrerequisites>
+      <li>Fabrication</li>
+      <li>MedicineProduction</li>
+    </researchPrerequisites>
+    <ingredients>
+      <li>
+        <thingDef>ComponentSpacer</thingDef>
+        <count>3</count>
+      </li>
+      <li>
+        <thingDef>Plasteel</thingDef>
+        <count>50</count>
+      </li>
+      <li>
+        <thingDef>Gold</thingDef>
+        <count>20</count>
+      </li>
+      <li>
+        <thingDef>Neutroamine</thingDef>
+        <count>30</count>
+      </li>
+      <li>
+        <thingDef>MedicineUltratech</thingDef>
+        <count>2</count>
+      </li>
+    </ingredients>
+    <products>
+      <li>
+        <thingDef>DP_HealingInjector</thingDef>
+        <count>1</count>
+      </li>
+    </products>
+    <recipeUsers>
+      <li>FabricationBench</li>
+    </recipeUsers>
+  </RecipeDef>
+</Defs>
+
+
