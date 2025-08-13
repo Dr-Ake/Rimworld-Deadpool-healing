@@ -59,7 +59,7 @@
     <products>
       <li>
         <thingDef>DP_HealingInjector</thingDef>
-        <count>1</count>
+        <count>2</count>
       </li>
     </products>
     <recipeUsers>
