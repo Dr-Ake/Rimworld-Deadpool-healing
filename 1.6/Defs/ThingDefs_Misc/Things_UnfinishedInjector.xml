@@ -15,7 +15,7 @@
       <li>Unfinished</li>
     </thingCategories>
     <graphicData>
-      <texPath>Things/Misc/UnfinishedThing/UnfinishedThing</texPath>
+      <texPath>Things/Item/Unfinished/UnfinishedComponent</texPath>
       <graphicClass>Graphic_Single</graphicClass>
       <drawSize>(1,1)</drawSize>
     </graphicData>
