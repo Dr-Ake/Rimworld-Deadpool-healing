@@ -73,7 +73,7 @@ Psst. Hey. You. Yeah, you with the compiler. Put it away. I already did the hard
 - Also heavy inspiration and special thanks to the Immortal Mod/ Highlander Mod
 
 ## License
-MIT. See `LICENSE`.
+Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0). See `LICENSE`.
 
 ## Disclaimer
 Unofficial fan work. Not endorsed by Marvel, Ludeon Studios, or anyone with expensive lawyers. Chimichangas sold separately.
